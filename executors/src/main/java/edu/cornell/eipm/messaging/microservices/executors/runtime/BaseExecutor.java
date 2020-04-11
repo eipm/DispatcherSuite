@@ -19,17 +19,19 @@ public abstract class BaseExecutor implements Executor {
     }
 
     @Override
-    public boolean execute(Map<String, String> values, MODE mode) throws IOException {
+    public boolean execute(Map<String, String> values, boolean local, MODE mode) throws IOException {
         String actualTrigger = new TriggerValue(action.getTrigger()).getActualValue(values);
-        return this.run(actualTrigger,mode);
+        return this.run(actualTrigger, local, mode);
     }
 
     /**
      * Runs the trigger with its actual values
      * @param actualTrigger
+     * @param local
+     * @param mode
      * @return
      * @throws IOException
      */
-    protected abstract boolean run(String actualTrigger, MODE mode) throws IOException;
+    protected abstract boolean run(String actualTrigger, boolean local, MODE mode) throws IOException;
 
 }

@@ -80,6 +80,7 @@ dispatcher:
     - name: oncorseq.sequencing.in_progress
       actions:
         - trigger: nextflow /path/main.nf -w /workingDir -c /path/nextflow-manuele.config --sampleID ${sampleID} --dispatcherURL http://localhost:8080/dispatcher/ --resourceDir /path    
+          force-local: true
           reply:
             topic: oncorseq.sequencing.pipeline_initialized
             payload: sampleID=${sampleID}&status=initialized

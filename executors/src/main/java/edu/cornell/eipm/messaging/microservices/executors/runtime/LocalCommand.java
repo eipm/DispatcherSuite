@@ -24,14 +24,14 @@ public class LocalCommand extends BaseExecutor {
     }
 
     @Override
-    protected boolean run(String command, MODE mode) throws IOException {
+    protected boolean run(String command, boolean local, MODE mode) throws IOException {
         logger.info("Local execution for: {}", command);
         String ssh_command;
         String hostname = System.getenv("HOST_HOSTNAME");
         String hostuser = System.getenv("HOST_USER");
         Path tmpFile = Files.createTempFile("kd", ".sh",
                 PosixFilePermissions.asFileAttribute(PosixFilePermissions.fromString("rwx------")));
-        if (hostname != null && !hostname.isEmpty() &&
+        if (!(local) && hostname != null && !hostname.isEmpty() &&
                 hostuser != null && !hostuser.isEmpty()) {
             // we are running inside a docker container
             ssh_command = String.format("ssh -o StrictHostKeyChecking=no -i /ssh/id_rsa -T -v %s@%s %s",

@@ -1,15 +1,19 @@
+event-hubs-connection-string: "Endpoint=sb://lims-research.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=I8+u4PoGVTwxGE85Lp63N9RoceUBZrz9TcZY/g5gN54="
+event-hubs-fqdn: "lims-research.servicebus.windows.net"
+
+
 kafka:
-  bootstrap-servers: localhost:9092
+  bootstrap-servers: ${event-hubs-fqdn}:9093
   properties:
-    sasl.mechanism: GSSAPI
-    sasl.jaas.config: 'org.apache.kafka.common.security.plain.PlainLoginModule required username="" password="";'
-    security.protocol: PLAINTEXT
+    sasl.mechanism: PLAIN
+    sasl.jaas.config: 'org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="${event-hubs-connection-string}";'
+    security.protocol: SASL_SSL
   consumer:
     auto-offset-reset: earliest
-    group-id: kafka-dispatcher
     enable-auto-commit: true
+    group-id: kafka-dispatcher
     missing-topics-fatal: false
-    topics: oncorseq_sequencing_pipeline_initialized,oncorseq_sequencing_in_progress,oncorseq_sequencing_analysis_started
+    topics: lims-messages,oncorseq_sequencing_in_progress
 
 server:
   port: 8080
@@ -17,41 +21,13 @@ server:
     context-path: /dispatcher
 
 dispatcher:
-  mode: NON_BLOCKING
+  mode: BLOCKING
   service:
     topics:
+      - name: lims-messages
+        actions:
+          - trigger: echo "Message from eventhubs/lims-messages Process '${process}' has ${status}"
+            local: true
       - name: oncorseq_sequencing_in_progress
         actions:
-          - trigger: nextflow main.nf --sampleID ${sampleID} --run ${runID} --sayHello ${sayHello}
-            reply:
-              topic:  oncorseq_sequencing_pipeline_initialized
-              payload: sampleID=${sampleID}
-      - name: oncorseq_sequencing_pipeline_initialized
-        actions:
-          - trigger: https://dzone.com/articles/kafka-cluster-1?q=${query}
-            reply:
-              topic: annotation_started
-              payload: search started with ${query}
-      - name: oncorseq_sequencing_analysis_started
-        actions:
-          - trigger: command/URL for analysis_started
-            reply:
-              topic: analysis_in_progress
-              payload: ${sampleID}
-
-  scheduler:
-    fixedRate1:
-      rate: 5000
-      actions:
-        - trigger: https://dzone.com/articles/kafka-cluster-1?q=${query}
-        - trigger: echo "hello"
-    fixedRate2:
-      rate: 5000
-      actions:
-        - trigger: https://dzone.com/articles/kafka-cluster-1?q=${query}
-        - trigger: echo "hello"
-    fixedRate3:
-      rate: 5000
-      actions:
-        - trigger: https://dzone.com/articles/kafka-cluster-1?q=${query}
-        - trigger: echo "hello"
+          - trigger: echo "Received message from eventhubs/oncorseq_sequencing_in_progress '${message}'"

@@ -68,7 +68,8 @@ public class Receiver {
             kafkaService.getService().getActions(message.topic()).forEach(action -> {
                 try {
                     Map<String, String> values = new JSONPayloadDeserializer(message.value()).fromJSON();
-                    boolean needReply = ExecutorService.select(action).execute(new JSONPayloadDeserializer(message.value()).fromJSON(), mode);
+                    boolean needReply = ExecutorService.select(action).execute(
+                            new JSONPayloadDeserializer(message.value()).fromJSON(), action.isLocal(),mode);
                     if (needReply) {
                         //send back the reply, if configured
                         Reply actionReply = action.getReply();

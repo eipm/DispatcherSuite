@@ -91,6 +91,8 @@ A trigger is a string representing a command to execute locally or a URL.
 
 A trigger may have placeholders in the format `$name`. If `name` is a valid key in the [payload](kafka-service/doc/PAYLOAD.md) of the message, then it is replaced with its associated value.
 
+`local` forces the trigger to be executed inside the Docker container when running as dockerized application.
+
 ## A Complete Configuration Example
 The following example configures a dispatcher instance as follows:
 
@@ -113,6 +115,7 @@ dispatcher:
     - name: oncorseq.sequencing.in_progress
       actions:
         - trigger: nextflow /path/main.nf -w /workingDir -c /path/nextflow-manuele.config --sampleID ${sampleID} --dispatcherURL http://localhost:8080/dispatcher/ --resourceDir /path    
+          local: true/false
           reply:
             topic: oncorseq.sequencing.pipeline_initialized
             payload: sampleID=${sampleID}&status=initialized
