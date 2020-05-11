@@ -26,28 +26,35 @@ public class LocalCommand extends BaseExecutor {
     @Override
     protected boolean run(String command, boolean local, MODE mode) throws IOException {
         logger.info("Local execution for: {}", command);
+        String wrappedCommand = "#!/usr/bin/env sh \n";
         String ssh_command;
         String hostname = System.getenv("HOST_HOSTNAME");
         String hostuser = System.getenv("HOST_USER");
+        String hostuserid = System.getenv("HOST_USER_ID");
         Path tmpFile = Files.createTempFile("kd", ".sh",
                 PosixFilePermissions.asFileAttribute(PosixFilePermissions.fromString("rwx------")));
         if (!(local) && hostname != null && !hostname.isEmpty() &&
                 hostuser != null && !hostuser.isEmpty()) {
             // we are running inside a docker container
-            ssh_command = String.format("ssh -o StrictHostKeyChecking=no -i /ssh/id_rsa -T -v %s@%s %s",
+            command = command.replace("'","\'");
+            command = command.replace("\"","\\\"");
+            command = command.replace("`","\\\\\\`");
+
+            ssh_command = String.format("ssh -o StrictHostKeyChecking=no -i /ssh/id_rsa -T -v %s@%s \"%s\"",
                     hostuser,
                     hostname,
                     command);
-            logger.info("SSH command wrapped as: {}", ssh_command);
+            wrappedCommand += "adduser -u " + hostuserid + " kduser -D -h /home/kduser || true \n";
+            wrappedCommand += "su kduser -c '" + ssh_command + "'\n";
         } else {
             // we go with a local execution
-            String wrappedCommand = "#!/usr/bin/env sh \n";
             wrappedCommand += command + "\n";
-            byte[] strToBytes = wrappedCommand.getBytes();
-            Files.write(tmpFile, strToBytes);
-            ssh_command = tmpFile.toAbsolutePath().toString();
-            logger.info("Local command wrapped as: {}", ssh_command);
         }
+        logger.info("Command wrapped as: {}", wrappedCommand);
+        byte[] strToBytes = wrappedCommand.getBytes();
+        Files.write(tmpFile, strToBytes);
+        ssh_command = tmpFile.toAbsolutePath().toString();
+        logger.info("Local command wrapped as: {}", ssh_command);
         Process process = Runtime.getRuntime().exec(ssh_command);
         logger.info("Local Command Dispatched");
         if (mode == MODE.BLOCKING) {

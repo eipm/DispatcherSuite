@@ -6,8 +6,11 @@ LABEL Description='Kafka Dispatcher Service' \
 	base_image_version='8-jdk-alpine'
 
 RUN apk update
+RUN apk add --no-cache bash
 RUN apk add --no-cache openssh
 RUN apk add --no-cache curl
+RUN apk add --no-cache sudo
+
 VOLUME /tmp
 COPY target/kafka-service-1.1.2.war  /kafka-service-1.1.2.war
 RUN keytool -genkey -alias tomcat -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore /keystore.p12 -validity 3650 \
