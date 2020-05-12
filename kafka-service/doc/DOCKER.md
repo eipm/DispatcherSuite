@@ -22,7 +22,6 @@ where
 If the configuration passed to the instance is correct, you should see the following output:
 
 ~~~
-Using config file at /home/mas2182/application.yml
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -30,17 +29,22 @@ Using config file at /home/mas2182/application.yml
  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
   '  |____| .__|_| |_|_| |_\__, | / / / /
  =========|_|==============|___/=/_/_/_/
- :: Spring Boot ::        (v2.2.0.RELEASE)
+ :: Spring Boot ::        (v2.2.2.RELEASE)
 
-21:26:23.405 [main] INFO  e.c.e.m.m.dispatcher.DispatcherApp - Starting DispatcherApp v1.0 on xits-ipmhpcd01.med.cornell.edu with PID 1 (/dispatcher-1.0.war started by root in /)
-21:26:23.408 [main] DEBUG e.c.e.m.m.dispatcher.DispatcherApp - Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
-21:26:23.409 [main] INFO  e.c.e.m.m.dispatcher.DispatcherApp - No active profile set, falling back to default profiles: default
-21:26:24.533 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-21:26:25.490 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2022 ms
-21:26:25.994 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-21:26:26.421 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService
-21:26:26.450 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/dispatcher'
-21:26:26.453 [main] INFO  e.c.e.m.m.dispatcher.DispatcherApp - Started DispatcherApp in 3.528 seconds (JVM running for 4.879)
+08:42:20.657 [main] INFO  e.c.e.m.m.k.dispatcher.DispatcherApp - Starting DispatcherApp v1.1.3 on MAC162555 with PID 48432 (/Users/manuelesimi/EIPM/DispatcherSuite/kafka-service/target/kafka-service-1.1.3.war started by manuelesimi in /Users/manuelesimi/EIPM/DispatcherSuite/kafka-service)
+08:42:20.662 [main] DEBUG e.c.e.m.m.k.dispatcher.DispatcherApp - Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+08:42:20.662 [main] INFO  e.c.e.m.m.k.dispatcher.DispatcherApp - No active profile set, falling back to default profiles: default
+08:42:20.770 [main] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+08:42:22.444 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+08:42:23.391 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2621 ms
+08:42:24.154 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+08:42:24.436 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+08:42:25.174 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService
+08:42:25.271 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/dispatcher'
+08:42:25.276 [main] INFO  e.c.e.m.m.k.dispatcher.DispatcherApp - Started DispatcherApp in 5.464 seconds (JVM running for 6.286)
+edu.cornell.eipm.messaging.microservices.kafka.dispatcher.config.KafkaService$$EnhancerBySpringCGLIB$$fca011f7@1a451d4d
+08:42:26.065 [$Default-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - $Default: partitions revoked: []
+08:42:32.118 [$Default-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - $Default: partitions assigned: [ ... listening topics here ...]
 ~~~
 
 ## Running with SSL
@@ -55,6 +59,8 @@ You can start a container with an instance of the dispatcher on HTTPS as follows
     docker run -p 8443:8443 --rm \
         -e HOST_HOSTNAME=$(hostname) \
         -e HOST_USER=$LOGNAME \
-        -v /home/mas2182/.ssh/:/ssh/ \
+        -e HOST_USER_ID=$(id -u)
+        --userns=host
+        -v <HOME>/.ssh/:/ssh/:ro \
         -v <my keystore location>:/keystore.p12
         -v /home/mas2182/application.yml:/config/application.yml eipm/kafka-dispatcher:latest
