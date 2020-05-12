@@ -36,6 +36,10 @@ public class LocalCommand extends BaseExecutor {
         if (!(local) && hostname != null && !hostname.isEmpty() &&
                 hostuser != null && !hostuser.isEmpty()) {
             // we are running inside a docker container
+            if (hostuserid.isEmpty()) {
+                logger.error("The Docker container must be started with option '-e HOST_USER_ID=<id>'");
+                return false;
+            }
             command = command.replace("'","\'");
             command = command.replace("\"","\\\"");
             command = command.replace("`","\\\\\\`");
@@ -44,7 +48,7 @@ public class LocalCommand extends BaseExecutor {
                     hostuser,
                     hostname,
                     command);
-            wrappedCommand += "adduser -u " + hostuserid + " kduser -D -h /home/kduser || true \n";
+            wrappedCommand += "id -u kduser || adduser -u " + hostuserid + " kduser -D -h /home/kduser \n";
             wrappedCommand += "su kduser -c '" + ssh_command + "'\n";
         } else {
             // we go with a local execution
