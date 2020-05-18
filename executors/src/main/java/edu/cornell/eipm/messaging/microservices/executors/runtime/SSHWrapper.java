@@ -24,7 +24,7 @@ class SSHWrapper {
      * @throws IOException if the template is not found
      */
     private void loadTemplate() throws IOException {
-        ClassLoader classLoader = this.getClass().getClassLoader();
+        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         File file = new File(classLoader.getResource(wrapperTemplate).getFile());
         this.content = new String(Files.readAllBytes(file.toPath()));
     }
