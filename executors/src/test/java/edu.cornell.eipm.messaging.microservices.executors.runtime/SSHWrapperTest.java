@@ -23,7 +23,6 @@ public class SSHWrapperTest {
         try {
             SSHWrapper wrapper = new SSHWrapper();
             String command = wrapper.getCommand("mymac.med.cornel.edu","mas2182","1234",trigger);
-            System.out.println(command);
             assertEquals(getExpectedResults(),command);
         } catch (IOException e) {
             e.printStackTrace();
@@ -49,6 +48,6 @@ public class SSHWrapperTest {
                 "else\n" +
                 "    >&2 echo \"ID 1234 is reserved and cannot be used inside this Docker container, please choose another user\"\n" +
                 "    exit 1\n" +
-                "fi\n";
+                "fi";
     }
 }
