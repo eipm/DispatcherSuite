@@ -47,9 +47,9 @@ class SSHWrapper {
         content = content.replaceAll("<HOST_HOSTNAME>", hostname)
                 .replaceAll("<HOST_USER>", user)
                 .replaceAll("<HOST_USER_ID>", userID);
-        command = command.replaceAll("'", "\\'");
-        command = command.replaceAll("\"", "\\\"");
-        command = command.replaceAll("`", "\\\\\\`");
-        return content.replaceAll("<SSH_COMMAND>", command);
+        command = command.replaceAll("'", "\\\\'");
+        command = command.replaceAll("\"", "\\\\\"");
+        content = content.replace("<SSH_COMMAND>", command);
+        return content;
     }
 }
