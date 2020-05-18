@@ -2,13 +2,16 @@ package edu.cornell.eipm.messaging.microservices.executors.model.service;
 
 /**
  * An action associated to the {@link Topic}
+ *
  * @author Manuele Simi
  */
 public class Action {
 
     private String trigger;
     private Reply reply;
-    /** if the action must be executed locally (no ssh wrapper) */
+    /**
+     * if the action must be executed locally (no ssh wrapper)
+     */
     private boolean local;
 
     public String getTrigger() {
