@@ -3,6 +3,7 @@ package edu.cornell.eipm.messaging.microservices.executors.runtime;
 import org.junit.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.BlockJUnit4ClassRunner;
+
 import static org.junit.Assert.*;
 
 import java.io.IOException;
@@ -22,11 +23,12 @@ public class SSHWrapperTest {
     public void getCommand() {
         try {
             SSHWrapper wrapper = new SSHWrapper();
-            String command = wrapper.getCommand("mymac.med.cornel.edu","mas2182","1234",trigger);
+            String command = wrapper.getCommand("mymac.med.cornel.edu", "mas2182", "1234", trigger);
             System.out.println(command);
-            assertEquals(getExpectedResults(),command);
+            assertEquals(getExpectedResults(), command);
         } catch (IOException e) {
             e.printStackTrace();
+            assertNull(e);
         }
     }
 

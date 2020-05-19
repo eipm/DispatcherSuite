@@ -40,7 +40,7 @@ public class LocalCommand extends BaseExecutor {
                 logger.error("The Docker container must be started with option '-e HOST_USER_ID=<id>'");
                 return false;
             }
-            wrappedCommand = new SSHWrapper().getCommand(hostname,hostuser,hostuserid,command);
+            wrappedCommand = new SSHWrapper().getCommand(hostname, hostuser, hostuserid, command);
         } else {
             // we go with a local execution
             wrappedCommand = "#!/usr/bin/env sh \n";
@@ -87,14 +87,14 @@ public class LocalCommand extends BaseExecutor {
                 //wait few seconds before to check if the process is alive
                 Thread.sleep(5000);
             } catch (InterruptedException e) {
-                logger.error("Unable to wait ",e);
+                logger.error("Unable to wait ", e);
             }
         }
         logger.debug("Process is alive? " + process.isAlive());
         //calling exitValue if alive results in a IllegalThreadStateException.
         if (Objects.nonNull(tmpFile))
             tmpFile.toFile().delete();
-        return (process.isAlive() || process.exitValue()==0);
+        return (process.isAlive() || process.exitValue() == 0);
     }
 
 
