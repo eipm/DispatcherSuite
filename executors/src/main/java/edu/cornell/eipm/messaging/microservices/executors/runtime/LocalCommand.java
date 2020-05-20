@@ -26,7 +26,7 @@ public class LocalCommand extends BaseExecutor {
     @Override
     protected boolean run(String command, boolean local, MODE mode) throws IOException {
         logger.info("Local execution for: {}", command);
-        String wrappedCommand = "#!/usr/bin/env sh \n";
+        String wrappedCommand;
         String ssh_command;
         String hostname = System.getenv("HOST_HOSTNAME");
         String hostuser = System.getenv("HOST_USER");
@@ -40,18 +40,10 @@ public class LocalCommand extends BaseExecutor {
                 logger.error("The Docker container must be started with option '-e HOST_USER_ID=<id>'");
                 return false;
             }
-            command = command.replace("'","\'");
-            command = command.replace("\"","\\\"");
-            command = command.replace("`","\\\\\\`");
-
-            ssh_command = String.format("ssh -o StrictHostKeyChecking=no -i /ssh/id_rsa -T -v %s@%s \"%s\"",
-                    hostuser,
-                    hostname,
-                    command);
-            wrappedCommand += "id -u kduser || adduser -u " + hostuserid + " kduser -D -h /home/kduser \n";
-            wrappedCommand += "su kduser -c '" + ssh_command + "'\n";
+            wrappedCommand = new SSHWrapper().getCommand(hostname, hostuser, hostuserid, command);
         } else {
             // we go with a local execution
+            wrappedCommand = "#!/usr/bin/env sh \n";
             wrappedCommand += command + "\n";
         }
         logger.info("Command wrapped as: {}", wrappedCommand);
@@ -95,14 +87,15 @@ public class LocalCommand extends BaseExecutor {
                 //wait few seconds before to check if the process is alive
                 Thread.sleep(5000);
             } catch (InterruptedException e) {
-                logger.error("Unable to wait ",e);
+                logger.error("Unable to wait ", e);
             }
         }
         logger.debug("Process is alive? " + process.isAlive());
         //calling exitValue if alive results in a IllegalThreadStateException.
         if (Objects.nonNull(tmpFile))
             tmpFile.toFile().delete();
-        return (process.isAlive() || process.exitValue()==0);
+        return (process.isAlive() || process.exitValue() == 0);
     }
+
 
 }
