@@ -37,14 +37,22 @@ Where:
 * _sasl.jaas.config_  is the  SASL configuration for the brokers:
     * for a Kafka broker, if authentication is required, specify username and password, otherwise leave empty
     * for an Event Hubs namespace, use _$ConnectionString_ as username and the [connection string ](EVENT_HUBS.md) as password
+* _auto-offset-reset_: 'earliest' ensures the new consumer group will get the message sent in case the container started after the send was completed
 * _security.protocol_:
     * for a Kafka broker, use `SASL_SSL`
     * for an Event Hubs namespace, use `PLAINTEXT`
 * _enable-auto-commit_: automatically acknowledge the kafka server that a message has been received 
-* _group-id_ is the identifier used by the dispatcher to register to the kafka server
+* _group-id_ is the identifier used by the dispatcher to register to the kafka server.
 * _missing-topics-fatal_: if true, the service exits if any of the consumer topics does not exist
 * _topics_ is the list of topics the dispatcher will register for notifications
  
+## About the Group Id
+Kafka consumers label themselves with a consumer group name, and each record published to a topic is delivered to one consumer instance within each subscribing consumer group. Consumer instances can be in separate processes or on separate machines.
+
+If all the consumer instances have the same consumer group, then the records will effectively be load balanced over the consumer instances.
+
+If all the consumer instances have different consumer groups, then each record will be broadcast to all the consumer processes.
+
 ## Other sections
 The remaining two sections (server and dispatcher) are common across all the dispatcher services and are documented [here](../../CONFIGURATION.md).
 
