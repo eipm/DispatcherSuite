@@ -289,7 +289,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1590956964956" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1590956999052" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -299,9 +299,6 @@
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="edu.cornell.eipm.messaging.microservices.dispatcher.executors" />
-    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="edu.cornell.eipm.messaging.microservices.executors.runtime" />
       <recent name="edu.cornell.eipm.messaging.microservices.eventhubs.dispatcher" />
@@ -316,23 +313,26 @@
       <recent name="edu.cornell.eipm.messaging.microservices.dispatcher.helloworld" />
       <recent name="edu.cornell.eipm.messaging.microservices.dispatcher.rest" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/kafka-service" />
-      <recent name="$PROJECT_DIR$/executors/src/main" />
-      <recent name="$PROJECT_DIR$/kafka-service/configs" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/eventhubs-service" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="edu.cornell.eipm.messaging.microservices.executors.runtime" />
-      <recent name="edu.cornell.eipm.messaging.microservices.dispatcher.helloworld" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/executors/src/main/resources" />
       <recent name="$PROJECT_DIR$/kafka-service/src/main/resources/kafka-dispatcher" />
       <recent name="$PROJECT_DIR$/kafka-service/doc" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/eventhubs-service" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/doc" />
+      <recent name="$PROJECT_DIR$/kafka-service" />
+      <recent name="$PROJECT_DIR$/executors/src/main" />
+      <recent name="$PROJECT_DIR$/kafka-service/configs" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="edu.cornell.eipm.messaging.microservices.executors.runtime" />
+      <recent name="edu.cornell.eipm.messaging.microservices.dispatcher.helloworld" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="edu.cornell.eipm.messaging.microservices.dispatcher.executors" />
     </key>
   </component>
   <component name="RunDashboard">

@@ -1,6 +1,5 @@
 ![logo](doc/dispatcher-services-logo.png)
 
-----
 A set of microservices to interface with different messaging systems.
 
 ## Modules
