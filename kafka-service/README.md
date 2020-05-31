@@ -1,3 +1,5 @@
+![logo](../doc/dispatcher-services-logo.png)
+
 Kafka Dispatcher Service
 ----
 A microservice project based on Spring Boot to send/receive/manage messages to/from a Kafka Broker.
