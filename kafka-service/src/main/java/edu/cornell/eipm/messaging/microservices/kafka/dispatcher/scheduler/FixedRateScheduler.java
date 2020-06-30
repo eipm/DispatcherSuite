@@ -20,7 +20,7 @@ import java.util.Objects;
  */
 @Configuration
 @Component
-@ConditionalOnProperty(name = "dispatcher.fixed-rate-scheduler.enable")
+@ConditionalOnProperty(name = "dispatcher.schedulers.fixed.enable")
 public class FixedRateScheduler {
 
     private final Logger logger = LoggerFactory.getLogger(FixedRateScheduler.class);
@@ -28,38 +28,38 @@ public class FixedRateScheduler {
     @Autowired
     private KafkaService kafkaService;
 
-    @Scheduled(fixedRateString = "#{'${dispatcher.fixed-rate-scheduler.fixedRate1.rate}'}")
+    @Scheduled(fixedRateString = "#{'${dispatcher.schedulers.fixed.job1.rate}'}")
     public void fixedRateJob1() throws Exception {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
         Date now = new Date();
         String strDate = sdf.format(now);
         logger.info("Java cron1 job started at: " + strDate);
-        Objects.requireNonNull(kafkaService.getFixedRateScheduler());
-        for (Action action : kafkaService.getFixedRateScheduler().getRate(1).getActions()) {
+        Objects.requireNonNull(kafkaService.getSchedulers());
+        for (Action action : kafkaService.getSchedulers().getFixed().getJob(1).getActions()) {
             logger.info("About to launch: " + action.getTrigger());
         }
     }
 
-    @Scheduled(fixedRateString = "#{'${dispatcher.fixed-rate-scheduler.fixedRate2.rate}'}")
+    @Scheduled(fixedRateString = "#{'${dispatcher.schedulers.fixed.job2.rate}'}")
     public void fixedRateJob2() throws Exception {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
         Date now = new Date();
         String strDate = sdf.format(now);
         logger.info("Java cron2 job started at: " + strDate);
-        Objects.requireNonNull(kafkaService.getFixedRateScheduler());
-        for (Action action : kafkaService.getFixedRateScheduler().getRate(2).getActions()) {
+        Objects.requireNonNull(kafkaService.getSchedulers());
+        for (Action action : kafkaService.getSchedulers().getFixed().getJob(2).getActions()) {
             logger.info("About to launch: " + action.getTrigger());
         }
     }
 
-    @Scheduled(fixedRateString = "#{'${dispatcher.fixed-rate-scheduler.fixedRate3.rate}'}")
+    @Scheduled(fixedRateString = "#{'${dispatcher.schedulers.fixed.job3.rate}'}")
     public void fixedRateJob3() throws Exception {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
         Date now = new Date();
         String strDate = sdf.format(now);
         logger.info("Java cron3 job started at: " + strDate);
-        Objects.requireNonNull(kafkaService.getFixedRateScheduler());
-        for (Action action : kafkaService.getFixedRateScheduler().getRate(3).getActions()) {
+        Objects.requireNonNull(kafkaService.getSchedulers());
+        for (Action action : kafkaService.getSchedulers().getFixed().getJob(3).getActions()) {
             logger.info("About to launch: " + action.getTrigger());
         }
     }
