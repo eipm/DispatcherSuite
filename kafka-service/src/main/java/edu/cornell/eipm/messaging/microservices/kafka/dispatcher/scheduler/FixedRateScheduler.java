@@ -5,6 +5,7 @@ import edu.cornell.eipm.messaging.microservices.kafka.dispatcher.config.KafkaSer
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -19,6 +20,7 @@ import java.util.Objects;
  */
 @Configuration
 @Component
+@ConditionalOnProperty(name = "dispatcher.scheduler.enable")
 public class FixedRateScheduler {
 
     private final Logger logger = LoggerFactory.getLogger(FixedRateScheduler.class);
