@@ -1,6 +1,6 @@
 package edu.cornell.eipm.messaging.microservices.kafka.dispatcher.config;
 
-import edu.cornell.eipm.messaging.microservices.executors.model.scheduler.Scheduler;
+import edu.cornell.eipm.messaging.microservices.executors.model.scheduler.FixedRateScheduler;
 import edu.cornell.eipm.messaging.microservices.executors.model.service.Service;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
@@ -18,21 +18,21 @@ public class KafkaService {
 
     private Service service;
 
-    private Scheduler scheduler;
+    private FixedRateScheduler fixedRateScheduler;
 
     public Service getService() {
         return service;
     }
 
-    public Scheduler getScheduler() {
-        return scheduler;
+    public FixedRateScheduler getFixedRateScheduler() {
+        return fixedRateScheduler;
     }
 
     public void setService(Service service) {
         this.service = service;
     }
 
-    public void setScheduler(Scheduler scheduler) {
-        this.scheduler = scheduler;
+    public void setFixedRateScheduler(FixedRateScheduler scheduler) {
+        this.fixedRateScheduler = scheduler;
     }
 }

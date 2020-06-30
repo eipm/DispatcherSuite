@@ -1,15 +1,16 @@
 package edu.cornell.eipm.messaging.microservices.executors.model.scheduler;
 
 /**
- * Scheduler configuration.
+ * FixedRate Scheduler configuration.
  *
  * @author Manuele Simi
  */
-public class Scheduler {
+public class FixedRateScheduler {
 
     FixedRate fixedRate1;
     FixedRate fixedRate2;
     FixedRate fixedRate3;
+    boolean enable;
 
     public void setFixedRate1(FixedRate fixedRate1) {
         this.fixedRate1 = fixedRate1;

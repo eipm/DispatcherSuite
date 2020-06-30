@@ -6,6 +6,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @EnableScheduling
 @Configuration
-@ConditionalOnProperty(name = "dispatcher.scheduler.enable")
+@ConditionalOnProperty(name = "dispatcher.fixed-rate-scheduler.enable")
 public class ScheduleEnabling {
 }
