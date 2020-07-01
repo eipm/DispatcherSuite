@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dae2f7e8-1246-45f6-adfc-bd5a285a7c0b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/executors/src/main/java/edu/cornell/eipm/messaging/microservices/executors/model/scheduler/Cron.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/executors/src/main/java/edu/cornell/eipm/messaging/microservices/executors/model/scheduler/Delay.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kafka-service/doc/SCHEDULER.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/scheduler/jobs/fixed/FixedJob.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/scheduler/jobs/fixed/Job1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/scheduler/jobs/fixed/Job2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/scheduler/jobs/fixed/Job3.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/executors/src/main/java/edu/cornell/eipm/messaging/microservices/executors/model/scheduler/FixedRate.java" beforeDir="false" afterPath="$PROJECT_DIR$/executors/src/main/java/edu/cornell/eipm/messaging/microservices/executors/model/scheduler/Fixed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/executors/src/main/java/edu/cornell/eipm/messaging/microservices/executors/model/scheduler/Schedulers.java" beforeDir="false" afterPath="$PROJECT_DIR$/executors/src/main/java/edu/cornell/eipm/messaging/microservices/executors/model/scheduler/Schedulers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafka-service/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-service/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/config/KafkaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/config/KafkaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kafka-service/doc/SCHEDULER.md" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-service/doc/SCHEDULER.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/scheduler/FixedRateScheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/scheduler/FixedRateScheduler.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -28,24 +27,80 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/kafka-service/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="624">
-                <caret line="39" column="54" selection-start-line="39" selection-start-column="54" selection-end-line="39" selection-end-column="54" />
-              </first_editor>
-              <second_editor />
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/kafka-service/application.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="328">
+              <caret line="50" column="43" lean-forward="true" selection-start-line="30" selection-start-column="2" selection-end-line="50" selection-end-column="43" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kafka-service/doc/FOR_DEVELOPERS.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor />
-              <second_editor />
+        <entry file="file://$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/scheduler/FixedRateScheduler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/executors/src/main/java/edu/cornell/eipm/messaging/microservices/executors/model/scheduler/Fixed.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="257">
+              <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/scheduler/CronScheduler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/scheduler/ScheduleEnabling.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="128">
+              <caret line="8" column="65" selection-start-line="8" selection-start-column="65" selection-end-line="8" selection-end-column="65" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/scheduler/jobs/fixed/Job1.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="224">
+              <caret line="14" column="36" lean-forward="true" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/kafka-service/application-scheduler.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="290">
+              <caret line="50" column="43" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -54,8 +109,8 @@
         <entry file="file://$PROJECT_DIR$/kafka-service/doc/SCHEDULER.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor>
-                <caret column="18" selection-start-column="18" selection-end-column="18" />
+              <first_editor relative-caret-position="-36">
+                <caret line="12" selection-start-line="12" selection-end-line="12" />
               </first_editor>
               <second_editor />
             </state>
@@ -63,81 +118,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kafka-service/Dockerfile">
+        <entry file="file://$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/scheduler/jobs/fixed/Job3.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+            <state relative-caret-position="240">
+              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kafka-service/application-scheduler.yml">
+        <entry file="file://$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/scheduler/jobs/fixed/Job2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/executors/src/main/java/edu/cornell/eipm/messaging/microservices/executors/model/scheduler/Schedulers.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-              <folding>
-                <element signature="e#218#219#0" expanded="true" />
-                <element signature="e#246#247#0" expanded="true" />
-                <element signature="e#287#288#0" expanded="true" />
-                <element signature="e#321#322#0" expanded="true" />
-                <element signature="e#350#351#0" expanded="true" />
-                <element signature="e#377#378#0" expanded="true" />
-                <element signature="e#415#416#0" expanded="true" />
-                <element signature="e#447#448#0" expanded="true" />
-                <element signature="e#561#562#0" expanded="true" />
-                <element signature="e#589#590#0" expanded="true" />
-                <element signature="e#634#635#0" expanded="true" />
-                <element signature="e#668#669#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/executors/src/main/java/edu/cornell/eipm/messaging/microservices/executors/model/scheduler/Cron.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/executors/src/main/java/edu/cornell/eipm/messaging/microservices/executors/model/scheduler/Delay.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/executors/src/main/java/edu/cornell/eipm/messaging/microservices/executors/model/scheduler/Job.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/executors/src/main/java/edu/cornell/eipm/messaging/microservices/executors/model/scheduler/Fixed.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-40">
-              <caret line="8" column="9" selection-start-line="8" selection-end-line="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="240">
+              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -186,11 +179,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/kafka-service/src/main/resources/ssh_command_wrapper.sh" />
-        <option value="$PROJECT_DIR$/executors/src/main/java/edu/cornell/eipm/messaging/microservices/executors/runtime/LocalCommand.java" />
-        <option value="$PROJECT_DIR$/executors/src/main/java/edu/cornell/eipm/messaging/microservices/executors/model/service/Action.java" />
-        <option value="$PROJECT_DIR$/kafka-service/src/test/java/edu/cornell/eipm/messaging/microservices/executors/runtime/LocalCommandTest.java" />
-        <option value="$PROJECT_DIR$/kafka-service/src/test/java/edu/cornell/eipm/messaging/microservices/executors/runtime/SSHWrapperTest.java" />
         <option value="$PROJECT_DIR$/kafka-service/packageDispatcher.sh" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/executors/src/main/resources/executors/ssh_command_wrapper.sh" />
@@ -220,23 +208,28 @@
         <option value="$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/Scheduler.java" />
         <option value="$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/scheduler/Scheduler.java" />
         <option value="$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/DispatcherApp.java" />
-        <option value="$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/scheduler/CronScheduler.java" />
         <option value="$PROJECT_DIR$/executors/src/main/java/edu/cornell/eipm/messaging/microservices/executors/model/scheduler/Scheduler.java" />
         <option value="$PROJECT_DIR$/kafka-service/runApp.sh" />
         <option value="$PROJECT_DIR$/executors/src/main/java/edu/cornell/eipm/messaging/microservices/executors/model/scheduler/FixedRateScheduler.java" />
         <option value="$PROJECT_DIR$/executors/src/main/java/edu/cornell/eipm/messaging/microservices/executors/model/scheduler/Job.java" />
         <option value="$PROJECT_DIR$/executors/src/main/java/edu/cornell/eipm/messaging/microservices/executors/model/scheduler/FixedRate.java" />
-        <option value="$PROJECT_DIR$/kafka-service/application.yml" />
         <option value="$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/scheduler/ScheduleEnabling.java" />
-        <option value="$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/scheduler/FixedRateScheduler.java" />
-        <option value="$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/config/KafkaService.java" />
-        <option value="$PROJECT_DIR$/kafka-service/application-scheduler.yml" />
         <option value="$PROJECT_DIR$/executors/src/main/java/edu/cornell/eipm/messaging/microservices/executors/model/scheduler/Fixed.java" />
         <option value="$PROJECT_DIR$/executors/src/main/java/edu/cornell/eipm/messaging/microservices/executors/model/scheduler/Delay.java" />
         <option value="$PROJECT_DIR$/executors/src/main/java/edu/cornell/eipm/messaging/microservices/executors/model/scheduler/Cron.java" />
         <option value="$PROJECT_DIR$/executors/src/main/java/edu/cornell/eipm/messaging/microservices/executors/model/scheduler/Schedulers.java" />
-        <option value="$PROJECT_DIR$/kafka-service/doc/SCHEDULER.md" />
         <option value="$PROJECT_DIR$/kafka-service/README.md" />
+        <option value="$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/config/KafkaService.java" />
+        <option value="$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/scheduler/CronScheduler.java" />
+        <option value="$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/scheduler/jobs/fixed/BaseJob.java" />
+        <option value="$PROJECT_DIR$/kafka-service/application.yml" />
+        <option value="$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/scheduler/jobs/fixed/FixedJob.java" />
+        <option value="$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/scheduler/jobs/fixed/Job1.java" />
+        <option value="$PROJECT_DIR$/kafka-service/application-scheduler.yml" />
+        <option value="$PROJECT_DIR$/kafka-service/doc/SCHEDULER.md" />
+        <option value="$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/scheduler/jobs/fixed/Job3.java" />
+        <option value="$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/scheduler/jobs/fixed/Job2.java" />
+        <option value="$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/scheduler/FixedRateScheduler.java" />
       </list>
     </option>
   </component>
@@ -454,6 +447,27 @@
               <item name="dispatcher" type="462c0819:PsiDirectoryNode" />
               <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="dispatcher" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DispatcherSuite" type="462c0819:PsiDirectoryNode" />
+              <item name="kafka-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dispatcher" type="462c0819:PsiDirectoryNode" />
+              <item name="scheduler" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dispatcher" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DispatcherSuite" type="462c0819:PsiDirectoryNode" />
+              <item name="kafka-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dispatcher" type="462c0819:PsiDirectoryNode" />
+              <item name="scheduler" type="462c0819:PsiDirectoryNode" />
+              <item name="fixed" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -464,7 +478,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1593572156415" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1593573962097" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -499,6 +513,7 @@
       <recent name="$PROJECT_DIR$/executors/src/main" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="edu.cornell.eipm.messaging.microservices.kafka.dispatcher.scheduler.jobs.fixed" />
       <recent name="edu.cornell.eipm.messaging.microservices.kafka.dispatcher" />
       <recent name="edu.cornell.eipm.messaging.microservices.executors.runtime" />
       <recent name="edu.cornell.eipm.messaging.microservices.dispatcher.helloworld" />
@@ -685,20 +700,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1568814651162</updated>
-    </task>
-    <task id="LOCAL-00096" summary="Expand configuration doc.">
-      <created>1577200123741</created>
-      <option name="number" value="00096" />
-      <option name="presentableId" value="LOCAL-00096" />
-      <option name="project" value="LOCAL" />
-      <updated>1577200123741</updated>
-    </task>
-    <task id="LOCAL-00097" summary="Add project files.">
-      <created>1577201279978</created>
-      <option name="number" value="00097" />
-      <option name="presentableId" value="LOCAL-00097" />
-      <option name="project" value="LOCAL" />
-      <updated>1577201279978</updated>
     </task>
     <task id="LOCAL-00098" summary="Document how to generate the azure credential file.">
       <created>1577201628470</created>
@@ -1029,7 +1030,21 @@
       <option name="project" value="LOCAL" />
       <updated>1593546994339</updated>
     </task>
-    <option name="localTasksCounter" value="145" />
+    <task id="LOCAL-00145" summary="Add stubs for Cron and Delay schedulers.">
+      <created>1593572153816</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
+      <option name="project" value="LOCAL" />
+      <updated>1593572153816</updated>
+    </task>
+    <task id="LOCAL-00146" summary="Start documenting the task scheduling features.">
+      <created>1593572245346</created>
+      <option name="number" value="00146" />
+      <option name="presentableId" value="LOCAL-00146" />
+      <option name="project" value="LOCAL" />
+      <updated>1593572245346</updated>
+    </task>
+    <option name="localTasksCounter" value="147" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1068,7 +1083,7 @@
     <frame x="0" y="23" width="1249" height="701" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6380753" visible="true" weight="0.26512012" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6380753" visible="true" weight="0.35708368" />
       <window_info id="Structure" order="1" sideWeight="0.36325678" side_tool="true" weight="0.37282518" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -1082,8 +1097,8 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" auto_hide="true" id="Terminal" order="7" sideWeight="0.8351284" weight="0.3890785" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.16487159" side_tool="true" visible="true" weight="0.3890785" />
+      <window_info anchor="bottom" auto_hide="true" id="Terminal" order="7" sideWeight="0.82684344" weight="0.3139932" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.17315659" side_tool="true" visible="true" weight="0.3139932" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49875724" weight="0.41467577" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32522798" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
@@ -1184,8 +1199,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix links in the doc." />
-    <MESSAGE value="Adjust post command." />
     <MESSAGE value="Fix description in the interface." />
     <MESSAGE value="Add multiline trigger sample. Tweak doc." />
     <MESSAGE value="Wrap local commands to support I/O redirection." />
@@ -1209,7 +1222,9 @@
     <MESSAGE value="Isolate scheduling settings in a separate class." />
     <MESSAGE value="Rename scheduler to fixed-rate-scheduler to prepare for the next types of schedulers." />
     <MESSAGE value="Refactor configuration to accommodate future schedulers." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor configuration to accommodate future schedulers." />
+    <MESSAGE value="Add stubs for Cron and Delay schedulers." />
+    <MESSAGE value="Start documenting the task scheduling features." />
+    <option name="LAST_COMMIT_MESSAGE" value="Start documenting the task scheduling features." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1255,37 +1270,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/executors/test.sh">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/executors/test_orig.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kafka-service/sample-on-prem.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kafka-service/application-ssl.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-103">
-          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kafka-service/sample-eventhubs.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" column="31" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/src.zip!/java/util/concurrent/Executors.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
@@ -1485,16 +1469,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/scheduler/CronScheduler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="8" column="60" selection-start-line="8" selection-start-column="60" selection-end-line="8" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/kafka-service/packageDispatcher.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
@@ -1509,26 +1483,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="16">
           <caret line="1" column="65" selection-start-line="1" selection-start-column="65" selection-end-line="1" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/scheduler/ScheduleEnabling.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="8" column="65" selection-start-line="8" selection-start-column="65" selection-end-line="8" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/scheduler/FixedRateScheduler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="48" column="49" selection-start-line="48" selection-start-column="49" selection-end-line="48" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1553,36 +1507,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/config/KafkaService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#880#881#0" expanded="true" />
-            <element signature="e#913#914#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kafka-service/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="53" lean-forward="true" selection-start-line="30" selection-start-column="2" selection-end-line="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/kafka-service/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kafka-service/application-scheduler.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
         </state>
       </provider>
     </entry>
@@ -1628,26 +1556,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/executors/src/main/java/edu/cornell/eipm/messaging/microservices/executors/model/scheduler/Fixed.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-40">
-          <caret line="8" column="9" selection-start-line="8" selection-end-line="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kafka-service/doc/SCHEDULER.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor>
-            <caret column="18" selection-start-column="18" selection-end-column="18" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/kafka-service/doc/FOR_DEVELOPERS.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -1659,10 +1567,125 @@
     <entry file="file://$PROJECT_DIR$/kafka-service/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="624">
-            <caret line="39" column="54" selection-start-line="39" selection-start-column="54" selection-end-line="39" selection-end-column="54" />
+          <first_editor relative-caret-position="42">
+            <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/config/KafkaService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="29" column="8" lean-forward="true" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/2.2.2.RELEASE/spring-boot-autoconfigure-2.2.2.RELEASE.jar!/org/springframework/boot/autoconfigure/condition/ConditionalOnProperty.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/scheduler/jobs/fixed/FixedJob.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="27" column="41" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/scheduler/jobs/fixed/Job1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="14" column="36" lean-forward="true" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kafka-service/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="50" column="43" lean-forward="true" selection-start-line="30" selection-start-column="2" selection-end-line="50" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kafka-service/application-scheduler.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="50" column="43" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kafka-service/doc/SCHEDULER.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-36">
+            <caret line="12" selection-start-line="12" selection-end-line="12" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/scheduler/jobs/fixed/Job3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/scheduler/jobs/fixed/Job2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/scheduler/ScheduleEnabling.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="8" column="65" selection-start-line="8" selection-start-column="65" selection-end-line="8" selection-end-column="65" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/scheduler/CronScheduler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/scheduler/FixedRateScheduler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/executors/src/main/java/edu/cornell/eipm/messaging/microservices/executors/model/scheduler/Fixed.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
