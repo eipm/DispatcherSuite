@@ -9,7 +9,7 @@ The service delivers the following main features:
 * register for notifications for messages on selected topics
 * for each message received, trigger one or more actions
 * generic and configurable with respect to topics and actions
-
+* support for task scheduling
 The service works with one of the followings:
 * an instance of [Apache Kafka](https://kafka.apache.org/) running on some on-prem resource or on the cloud
 * a managed instance of Microsoft [EventHubs](https://azure.microsoft.com/en-us/services/event-hubs/) on the cloud with 
@@ -29,11 +29,15 @@ by using the [Kafka Protocol](https://kafka.apache.org/protocol).
 * [Running as App](doc/APPLICATION.md)
 * [Running with Docker](doc/DOCKER.md)
 * [How to publish messages](doc/INTERFACE.md)
-* [How to build the project](doc/FOR_DEVELOPERS.md)
+* [Task Scheduling](doc/SCHEDULER.md)
+
 
 ## Messaging systems
 * [Setting up an Apacke Kafka instance](doc/APACHE_KAFKA.md)
 * [Setting up Kafka-enabled Event Hubs on Azure](doc/EVENT_HUBS.md)
+
+## For Developers:
+See [How to build the project](doc/FOR_DEVELOPERS.md).
 
 ## Built With
 * [Spring Boot](https://spring.io/projects/spring-boot) - A framework that makes it easy to create stand-alone, production-grade Spring-based Applications

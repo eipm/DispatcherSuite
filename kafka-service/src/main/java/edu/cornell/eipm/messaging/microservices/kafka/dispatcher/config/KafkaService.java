@@ -8,6 +8,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.validation.annotation.Validated;
 
 /**
+ * Entry point for the injected configuration.
+ *
  * @author Manuele Simi
  */
 @Component
