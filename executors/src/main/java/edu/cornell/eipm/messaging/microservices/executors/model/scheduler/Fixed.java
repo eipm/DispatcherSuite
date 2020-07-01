@@ -6,11 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Job Scheduler configuration.
+ * Fixed Scheduler configuration.
  *
  * @author Manuele Simi
  */
-public class FixedRate {
+public class Fixed {
 
     private Job job1;
     private Job job2;

@@ -1,9 +1,7 @@
 package edu.cornell.eipm.messaging.microservices.kafka.dispatcher.config;
 
-import edu.cornell.eipm.messaging.microservices.executors.model.scheduler.FixedRate;
 import edu.cornell.eipm.messaging.microservices.executors.model.scheduler.Schedulers;
 import edu.cornell.eipm.messaging.microservices.executors.model.service.Service;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;

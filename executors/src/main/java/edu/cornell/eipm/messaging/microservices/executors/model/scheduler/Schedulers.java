@@ -7,31 +7,31 @@ package edu.cornell.eipm.messaging.microservices.executors.model.scheduler;
  */
 public class Schedulers {
 
-    private FixedRate fixed;
-    private FixedRate delay;
-    private FixedRate cron;
+    private Fixed fixed;
+    private Delay delay;
+    private Cron cron;
 
-    public FixedRate getDelay() {
+    public Delay getDelay() {
         return delay;
     }
 
-    public void setDelay(FixedRate delay) {
+    public void setDelay(Delay delay) {
         this.delay = delay;
     }
 
-    public FixedRate getCron() {
+    public Cron getCron() {
         return cron;
     }
 
-    public void setCron(FixedRate cron) {
+    public void setCron(Cron cron) {
         this.cron = cron;
     }
 
-    public FixedRate getFixed() {
+    public Fixed getFixed() {
         return fixed;
     }
 
-    public void setFixed(FixedRate fixed) {
+    public void setFixed(Fixed fixed) {
         this.fixed = fixed;
     }
 }
