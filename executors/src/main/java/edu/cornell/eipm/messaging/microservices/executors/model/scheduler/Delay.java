@@ -5,6 +5,5 @@ package edu.cornell.eipm.messaging.microservices.executors.model.scheduler;
  * @author Manuele Simi
  */
 public class Delay {
-    boolean enable;
 
 }

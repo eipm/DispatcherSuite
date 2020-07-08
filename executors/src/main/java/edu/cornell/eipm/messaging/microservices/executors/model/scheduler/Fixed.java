@@ -16,8 +16,6 @@ public class Fixed {
     private Job job2;
     private Job job3;
 
-    boolean enable;
-
     public void setJob1(Job job) {
         this.job1 = job;
     }
