@@ -6,4 +6,7 @@ package edu.cornell.eipm.messaging.microservices.executors.model.scheduler;
  */
 public class Cron {
 
+    public Job getJob(int jobIndex) {
+        return null;
+    }
 }
