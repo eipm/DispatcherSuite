@@ -2,6 +2,8 @@ package edu.cornell.eipm.messaging.microservices.kafka.dispatcher.scheduler;
 
 import edu.cornell.eipm.messaging.microservices.executors.model.scheduler.Job;
 import edu.cornell.eipm.messaging.microservices.executors.model.service.Action;
+import edu.cornell.eipm.messaging.microservices.executors.runtime.ExecutorService;
+import edu.cornell.eipm.messaging.microservices.executors.runtime.MODE;
 import edu.cornell.eipm.messaging.microservices.kafka.dispatcher.config.KafkaService;
 import edu.cornell.eipm.messaging.microservices.kafka.dispatcher.scheduler.jobs.JOBTYPE;
 import org.slf4j.Logger;
@@ -10,7 +12,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.Collections;
 import java.util.Date;
 import java.util.Objects;
 
@@ -45,13 +49,21 @@ public abstract class JobRunner {
             case DELAY:
                 job = this.getDelayJob(jobIndex);
                 break;
-             default:
-                 throw new IllegalArgumentException("Invalid job type");
+            default:
+                throw new IllegalArgumentException("Invalid job type");
         }
-        logger.info("Scheduler for Job " + jobIndex + " started at: " + strDate);
-        for (Action action : job.getActions()) {
+        logger.info("Scheduler for {} Job {} started at {} " + strDate, type, jobIndex, strDate);
+
+        job.getActions().forEach(action -> {
             logger.info("About to launch: " + action.getTrigger());
-        }
+            try {
+                ExecutorService.select(action).
+                        execute(Collections.emptyMap(), action.isLocal(), MODE.NON_BLOCKING);
+                logger.debug("{} Job at index {} successfully executed", type, jobIndex);
+            } catch (IOException e) {
+                logger.error("Failed to run {} Job at index {}", type, jobIndex);
+            }
+        });
     }
 
     private Job getCronJob(int jobIndex) {
