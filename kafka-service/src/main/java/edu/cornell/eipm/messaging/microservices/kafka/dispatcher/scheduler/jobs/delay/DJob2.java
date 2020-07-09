@@ -1,4 +1,4 @@
-package edu.cornell.eipm.messaging.microservices.kafka.dispatcher.scheduler.jobs.fixed;
+package edu.cornell.eipm.messaging.microservices.kafka.dispatcher.scheduler.jobs.delay;
 
 import edu.cornell.eipm.messaging.microservices.kafka.dispatcher.scheduler.JobRunner;
 import edu.cornell.eipm.messaging.microservices.kafka.dispatcher.scheduler.jobs.JOBTYPE;
@@ -13,11 +13,11 @@ import org.springframework.stereotype.Component;
  */
 @Configuration
 @Component
-@ConditionalOnProperty(name = "dispatcher.schedulers.fixed.job2.active")
-public class Job2 extends JobRunner {
+@ConditionalOnProperty(name = "dispatcher.schedulers.delay.job2.active")
+public class DJob2 extends JobRunner {
 
-    @Scheduled(fixedRateString = "#{'${dispatcher.schedulers.fixed.job2.when}'}", initialDelay = 5000)
-    public void fixedRateJob() throws Exception {
-        run(JOBTYPE.FIXED,2);
+    @Scheduled(fixedDelayString = "#{'${dispatcher.schedulers.delay.job2.when}'}", initialDelay = 5000 )
+    public void delayJob() throws Exception {
+        run(JOBTYPE.DELAY,2);
     }
 }
