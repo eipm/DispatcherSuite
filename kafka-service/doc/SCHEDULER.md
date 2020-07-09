@@ -13,8 +13,8 @@ Sample configuration:
 
 ````yml
 schedulers:
+    enable: true
     fixed:
-      enable: true
       job1:
         active: true
         rate: 5000
@@ -33,10 +33,9 @@ schedulers:
         rate: 15000
         actions:
           - trigger: echo "hello from job3"
-    delay:
-      enable: false
-    cron:
-      enable: false
-
-
+      job4:
+        active: true
+        rate: 1000
+        actions:
+          - trigger: echo "hello from job4"
 ````
