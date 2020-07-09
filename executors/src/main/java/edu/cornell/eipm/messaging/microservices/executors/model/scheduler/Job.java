@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class Job {
 
-    long rate;
+    long when;
 
     private List<Action> actions = new ArrayList<>();
 
