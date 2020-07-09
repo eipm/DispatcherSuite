@@ -13,8 +13,8 @@ RUN apk add --no-cache curl
 RUN apk add --no-cache sudo
 
 VOLUME /tmp
-COPY target/kafka-service-1.1.4.war  /kafka-service-1.1.4.war
+COPY target/kafka-service-1.2.0.warr  /kafka-service-1.2.0.war
 RUN keytool -genkey -alias tomcat -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore /keystore.p12 -validity 3650 \
          -keypass abcdef12 -storepass abcdef12 -dname "cn=Kafka Dispatcher Service, ou=EIPM, o=Weill Cornell Medicine, c=US"
 RUN mkdir -p /config
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-Dspring.config.name=application", "-jar","/kafka-service-1.1.4.war"]
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-Dspring.config.name=application", "-jar","/kafka-service-1.2.0.war"]

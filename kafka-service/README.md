@@ -10,6 +10,7 @@ The service delivers the following main features:
 * for each message received, trigger one or more actions
 * generic and configurable with respect to topics and actions
 * support for task scheduling
+
 The service works with one of the followings:
 * an instance of [Apache Kafka](https://kafka.apache.org/) running on some on-prem resource or on the cloud
 * a managed instance of Microsoft [EventHubs](https://azure.microsoft.com/en-us/services/event-hubs/) on the cloud with 
