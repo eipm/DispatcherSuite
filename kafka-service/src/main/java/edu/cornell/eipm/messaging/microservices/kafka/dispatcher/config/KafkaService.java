@@ -1,6 +1,6 @@
 package edu.cornell.eipm.messaging.microservices.kafka.dispatcher.config;
 
-import edu.cornell.eipm.messaging.microservices.executors.model.scheduler.Scheduler;
+import edu.cornell.eipm.messaging.microservices.executors.model.scheduler.Schedulers;
 import edu.cornell.eipm.messaging.microservices.executors.model.service.Service;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
@@ -8,6 +8,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.validation.annotation.Validated;
 
 /**
+ * Entry point for the injected configuration.
+ *
  * @author Manuele Simi
  */
 @Component
@@ -16,23 +18,23 @@ import org.springframework.validation.annotation.Validated;
 @ConfigurationProperties("dispatcher")
 public class KafkaService {
 
-    private Service service;
+    public Service service;
 
-    private Scheduler scheduler;
+    public Schedulers schedulers;
 
     public Service getService() {
         return service;
     }
 
-    public Scheduler getScheduler() {
-        return scheduler;
+    public Schedulers getSchedulers() {
+        return schedulers;
     }
 
     public void setService(Service service) {
         this.service = service;
     }
 
-    public void setScheduler(Scheduler scheduler) {
-        this.scheduler = scheduler;
+    public void setSchedulers(Schedulers schedulers) {
+        this.schedulers = schedulers;
     }
 }

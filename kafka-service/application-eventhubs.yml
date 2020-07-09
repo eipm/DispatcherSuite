@@ -13,7 +13,7 @@ kafka:
     enable-auto-commit: true
     group-id: kafka-dispatcher
     missing-topics-fatal: false
-    topics: lims-messages,oncorseq_sequencing_in_progress
+    topics:
 
 server:
   port: 8080

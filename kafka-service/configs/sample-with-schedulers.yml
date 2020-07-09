@@ -1,0 +1,75 @@
+kafka:
+  bootstrap-servers: hostname:port
+  properties:
+    sasl.mechanism: GSSAPI
+    sasl.jaas.config: 'org.apache.kafka.common.security.plain.PlainLoginModule required username="" password="";'
+    security.protocol: PLAINTEXT
+  consumer:
+    auto-offset-reset: earliest
+    enable-auto-commit: true
+    group-id: kafka-dispatcher
+    missing-topics-fatal: false
+    topics: topicC,topicD, topicE
+
+server:
+  port: 8080
+  servlet:
+    context-path: /dispatcher
+
+dispatcher:
+  mode: NON_BLOCKING
+  service:
+    topics:
+      - name: topicC
+        actions:
+          - trigger: echo "Message from kafka/topicC '${message}'"
+      - name: topicD
+        actions:
+          - trigger: echo "Received message from kafka/topicD '${message}'"
+      - name: topicE
+        actions:
+            - trigger: echo "Message from kafka/topicE '${message}'"
+  schedulers:
+    enable: true
+    fixed:
+      job1:
+        active: false
+        when: 5000
+        actions:
+          - trigger: >
+              https://dzone.com/articles/kafka-cluster-1
+          - trigger: echo "hello"
+      job2:
+        active: false
+        when: 10000
+        actions:
+          - trigger: http://google.com
+          - trigger: echo "hello from job2"
+      job3:
+        active: true
+        when: 15000
+        actions:
+          - trigger: echo "hello from job3"
+      job4:
+        active: false
+        when: 1000
+        actions:
+          - trigger: echo "hello from job4"
+    cron:
+      job1:
+        active: false
+        when: "*/10 * * * * MON-FRI"
+        actions:
+          - trigger: echo "hello from cron job1"
+
+    delay:
+      job1:
+        active: false
+        when: 5000
+        actions:
+          - trigger: echo "hello from delay job1"
+      job2:
+        active: true
+        when: 6000
+        actions:
+          - trigger: echo "hello from delay job2"

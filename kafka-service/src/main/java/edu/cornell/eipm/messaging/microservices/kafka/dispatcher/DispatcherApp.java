@@ -18,7 +18,6 @@ import java.io.IOException;
  * @author Manuele Simi
  */
 @SpringBootApplication
-@EnableScheduling
 public class DispatcherApp implements CommandLineRunner {
 
     private final Logger logger = LoggerFactory.getLogger(DispatcherApp.class);
