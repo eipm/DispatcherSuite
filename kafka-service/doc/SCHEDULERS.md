@@ -49,6 +49,7 @@ Sample configuration:
     delay:
     cron:
 ````
+Each job is executed every X time specified in `when`. The interval X is in milliseconds
 
 ### Cron Scheduler 
 Sample configuration:
@@ -66,6 +67,12 @@ Sample configuration:
     delay:
      
 ````
+The cron expression specified in `when` consists of seven fields:
+
+`second` `minute` `hour` `day-of-month` `month` `day-of-week` `year`
+
+From these, `year` field is optional.
+
 ### Delay Scheduler 
 Sample configuration:
 
@@ -86,3 +93,4 @@ Sample configuration:
         actions:
           - trigger: echo "hello from delay job2"
 ````
+Each job is executed after X time from the last execution. The interval X between two executions configured in `when` is in milliseconds.
