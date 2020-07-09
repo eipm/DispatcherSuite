@@ -49,7 +49,7 @@ Sample configuration:
     delay:
     cron:
 ````
-Each job is executed every X time specified in `when`. The interval X is in milliseconds
+Each job is executed every X time specified in `when`. The interval X is in milliseconds.
 
 ### Delay Scheduler 
 Sample configuration:
@@ -71,7 +71,7 @@ Sample configuration:
         actions:
           - trigger: echo "hello from delay job2"
 ````
-Each job is executed X time after the previous execution is completed. The interval X between two executions configured in `when` is in milliseconds.
+Each job is executed X time after the previous execution is completed. The interval X between two executions specified in `when` is in milliseconds.
 
 ### Cron Scheduler 
 Sample configuration:
