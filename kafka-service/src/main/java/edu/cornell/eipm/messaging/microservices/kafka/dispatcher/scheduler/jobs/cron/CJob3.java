@@ -1,4 +1,4 @@
-package edu.cornell.eipm.messaging.microservices.kafka.dispatcher.scheduler.jobs.fixed;
+package edu.cornell.eipm.messaging.microservices.kafka.dispatcher.scheduler.jobs.cron;
 
 import edu.cornell.eipm.messaging.microservices.kafka.dispatcher.scheduler.JobRunner;
 import edu.cornell.eipm.messaging.microservices.kafka.dispatcher.scheduler.jobs.JOBTYPE;
@@ -13,11 +13,11 @@ import org.springframework.stereotype.Component;
  */
 @Configuration
 @Component
-@ConditionalOnProperty(name = "dispatcher.schedulers.fixed.job3.active")
-public class Job3 extends JobRunner {
+@ConditionalOnProperty(name = "dispatcher.schedulers.cron.job3.active")
+public class CJob3 extends JobRunner {
 
-    @Scheduled(fixedRateString = "#{'${dispatcher.schedulers.fixed.job3.when}'}")
-    public void fixedRateJob() throws Exception {
-        run(JOBTYPE.FIXED,3);
+    @Scheduled(cron = "#{'${dispatcher.schedulers.cron.job3.when}'}")
+    public void cronJob() throws Exception {
+        run(JOBTYPE.CRON,3);
     }
 }

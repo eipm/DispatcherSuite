@@ -14,6 +14,11 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
 
+/**
+ * Base job runner.
+ *
+ * @author Manuele Simi
+ */
 @Configuration
 @Component
 public abstract class JobRunner {
@@ -43,7 +48,7 @@ public abstract class JobRunner {
              default:
                  throw new IllegalArgumentException("Invalid job type");
         }
-        logger.info("Scheduler fo Job " + jobIndex + " started at: " + strDate);
+        logger.info("Scheduler for Job " + jobIndex + " started at: " + strDate);
         for (Action action : job.getActions()) {
             logger.info("About to launch: " + action.getTrigger());
         }

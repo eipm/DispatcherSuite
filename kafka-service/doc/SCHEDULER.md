@@ -12,30 +12,37 @@ You can use the configurations fixedDelay/fixed/cron to provide the triggering i
 Sample configuration:
 
 ````yml
-schedulers:
+  schedulers:
     enable: true
     fixed:
       job1:
         active: true
-        rate: 5000
+        when: 5000
         actions:
           - trigger: >
               https://dzone.com/articles/kafka-cluster-1
           - trigger: echo "hello"
       job2:
         active: true
-        rate: 10000
+        when: 10000
         actions:
           - trigger: http://google.com
           - trigger: echo "hello from job2"
       job3:
         active: true
-        rate: 15000
+        when: 15000
         actions:
           - trigger: echo "hello from job3"
       job4:
         active: true
-        rate: 1000
+        when: 1000
         actions:
           - trigger: echo "hello from job4"
+    cron:
+      job1:
+        active: true
+        when: "*/10 * * * * MON-FRI"
+        actions:
+          - trigger: echo "hello from cron job1"
+
 ````
