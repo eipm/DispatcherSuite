@@ -3,7 +3,7 @@ Kafka-Dispatcher provides support for task scheduling and execution.
  
 You can use the configurations fixed/delay/cron to provide the triggering information. Where:
 
-1. <code>fixed</code> makes Spring run the task on periodic intervals even if the last invocation may be still running.
+1. <code>fixed</code> makes KD run the task on periodic intervals even if the last invocation may be still running.
 2. <code>delay</code> specifically controls the next execution time when the last execution finishes.
 3. <code>cron</code> is a feature originating from Unix [cron](https://en.wikipedia.org/wiki/Cron) utility and has various options based on your requirements
 
@@ -51,6 +51,28 @@ Sample configuration:
 ````
 Each job is executed every X time specified in `when`. The interval X is in milliseconds
 
+### Delay Scheduler 
+Sample configuration:
+
+````yaml
+  schedulers:
+    enable: true
+    fixed:
+    cron:
+    delay:
+      job1:
+        active: false
+        when: 5000
+        actions:
+          - trigger: echo "hello from delay job1"
+      job2:
+        active: true
+        when: 6000
+        actions:
+          - trigger: echo "hello from delay job2"
+````
+Each job is executed X time after the previous execution is completed. The interval X between two executions configured in `when` is in milliseconds.
+
 ### Cron Scheduler 
 Sample configuration:
 
@@ -72,25 +94,3 @@ The cron expression specified in `when` consists of seven fields:
 `second` `minute` `hour` `day-of-month` `month` `day-of-week` `year`
 
 From these, `year` field is optional.
-
-### Delay Scheduler 
-Sample configuration:
-
-````yaml
-  schedulers:
-    enable: true
-    fixed:
-    cron:
-    delay:
-      job1:
-        active: false
-        when: 5000
-        actions:
-          - trigger: echo "hello from delay job1"
-      job2:
-        active: true
-        when: 6000
-        actions:
-          - trigger: echo "hello from delay job2"
-````
-Each job is executed after X time from the last execution. The interval X between two executions configured in `when` is in milliseconds.
