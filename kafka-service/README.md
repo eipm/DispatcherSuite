@@ -29,8 +29,8 @@ by using the [Kafka Protocol](https://kafka.apache.org/protocol).
 * [Message Payload and Actions](doc/PAYLOAD.md)
 * [Running as App](doc/APPLICATION.md)
 * [Running with Docker](doc/DOCKER.md)
-* [How to publish messages](doc/INTERFACE.md)
-* [Task Scheduling](doc/SCHEDULER.md)
+* [How to publish Messages](doc/INTERFACE.md)
+* [Scheduling Jobs](doc/SCHEDULERS.md)
 
 
 ## Messaging systems
