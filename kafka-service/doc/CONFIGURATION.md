@@ -158,6 +158,19 @@ schedulers:
         when: "cron expression"
         actions:
           - trigger: command4
+    
+    
+    delay:
+          job1:
+            active: true/false
+            when: interval in ms
+            actions:
+              - trigger: command5
+          job2:
+            active: true/false
+            when: interval in ms
+            actions:
+              - trigger: command6
 
 ````
 For further details about how to configure this section, see [SCHEDULERS](SCHEDULERS.md)
