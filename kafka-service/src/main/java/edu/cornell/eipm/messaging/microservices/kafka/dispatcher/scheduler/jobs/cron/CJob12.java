@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
 public class CJob12 extends JobRunner {
 
     @Scheduled(cron = "#{'${dispatcher.schedulers.cron.job12.when}'}")
-    public void cronJob() throws Exception {
+    public void cronJob12() throws Exception {
         run(JOBTYPE.CRON,12);
     }
 }

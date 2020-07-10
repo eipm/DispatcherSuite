@@ -8,16 +8,16 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 /**
- * Job at index 6
+ * Job at index 14
  * @author Manuele Simi
  */
 @Configuration
 @Component
-@ConditionalOnProperty(name = "dispatcher.schedulers.fixed.job6.active")
-public class Job6 extends JobRunner {
+@ConditionalOnProperty(name = "dispatcher.schedulers.fixed.job14.active")
+public class FJob14 extends JobRunner {
 
-    @Scheduled(fixedRateString = "#{'${dispatcher.schedulers.fixed.job6.when}'}", initialDelay = 5000)
-    public void fixedRateJob() throws Exception {
-        run(JOBTYPE.FIXED,6);
+    @Scheduled(fixedRateString = "#{'${dispatcher.schedulers.fixed.job14.when}'}")
+    public void fixedRateJob14() throws Exception {
+        run(JOBTYPE.FIXED,14);
     }
 }
