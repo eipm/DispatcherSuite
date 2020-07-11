@@ -52,10 +52,11 @@ public abstract class JobRunner {
             default:
                 throw new IllegalArgumentException("Invalid job type");
         }
-        logger.info("Scheduler for {} Job {} started at {} " + strDate, type, jobIndex, strDate);
+        logger.trace("Scheduler for {} Job {} started at {} ", type, jobIndex, strDate);
+        logger.trace("{} Job {} configured when at {} ", type, jobIndex, job.getWhen());
 
         job.getActions().forEach(action -> {
-            logger.info("About to launch: " + action.getTrigger());
+            logger.debug("About to launch: " + action.getTrigger());
             try {
                 ExecutorService.select(action).
                         execute(Collections.emptyMap(), action.isLocal(), MODE.NON_BLOCKING);

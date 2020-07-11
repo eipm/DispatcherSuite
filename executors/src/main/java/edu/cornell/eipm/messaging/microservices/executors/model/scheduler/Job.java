@@ -6,11 +6,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * The job configuration.
+ *
  * @author Manuele Simi
  */
 public class Job {
 
-    long when;
+    String when;
+
+    public String getWhen() {
+        return when;
+    }
+
+    public void setWhen(String when) {
+        this.when = when;
+    }
 
     private List<Action> actions = new ArrayList<>();
 
