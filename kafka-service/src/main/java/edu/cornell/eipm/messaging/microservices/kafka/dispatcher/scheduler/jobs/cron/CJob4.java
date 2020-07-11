@@ -4,6 +4,7 @@ import edu.cornell.eipm.messaging.microservices.kafka.dispatcher.scheduler.JobRu
 import edu.cornell.eipm.messaging.microservices.kafka.dispatcher.scheduler.jobs.JOBTYPE;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
@@ -16,6 +17,7 @@ import org.springframework.stereotype.Component;
 @ConditionalOnProperty(name = "dispatcher.schedulers.cron.job4.active")
 public class CJob4 extends JobRunner {
 
+    @Async
     @Scheduled(cron = "#{'${dispatcher.schedulers.cron.job4.when}'}")
     public void cronJob4() throws Exception {
         run(JOBTYPE.CRON,4);

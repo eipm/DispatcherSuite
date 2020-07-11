@@ -6,7 +6,7 @@ package edu.cornell.eipm.messaging.microservices.executors.model.scheduler;
  */
 public class Cron {
 
-    private Job cjob1;
+    private Job job1;
     private Job job2;
     private Job job3;
     private Job job4;
@@ -22,8 +22,8 @@ public class Cron {
     private Job job14;
     private Job job15;
 
-    public void setCjob1(Job job) {
-        this.cjob1 = job;
+    public void setJob1(Job job) {
+        this.job1 = job;
     }
 
     public void setJob2(Job job) {
@@ -91,7 +91,7 @@ public class Cron {
         Job selected = null;
         switch (number) {
             case 1:
-                selected = cjob1;
+                selected = job1;
                 break;
             case 2:
                 selected = job2;

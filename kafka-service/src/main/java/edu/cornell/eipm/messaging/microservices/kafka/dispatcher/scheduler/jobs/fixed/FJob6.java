@@ -4,6 +4,7 @@ import edu.cornell.eipm.messaging.microservices.kafka.dispatcher.scheduler.JobRu
 import edu.cornell.eipm.messaging.microservices.kafka.dispatcher.scheduler.jobs.JOBTYPE;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
@@ -16,6 +17,7 @@ import org.springframework.stereotype.Component;
 @ConditionalOnProperty(name = "dispatcher.schedulers.fixed.job6.active")
 public class FJob6 extends JobRunner {
 
+    @Async
     @Scheduled(fixedRateString = "#{'${dispatcher.schedulers.fixed.job6.when}'}")
     public void fixedRateJob6() throws Exception {
         run(JOBTYPE.FIXED,6);

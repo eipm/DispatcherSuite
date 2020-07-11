@@ -29,47 +29,39 @@ dispatcher:
       - name: topicE
         actions:
             - trigger: echo "Message from kafka/topicE '${message}'"
+
   schedulers:
     enable: true
-    fixed:
-      job1:
-        active: false
-        when: 5000
-        actions:
-          - trigger: >
-              https://dzone.com/articles/kafka-cluster-1
-          - trigger: echo "hello"
-      job2:
-        active: false
-        when: 10000
-        actions:
-          - trigger: http://google.com
-          - trigger: echo "hello from job2"
-      job3:
-        active: true
-        when: 15000
-        actions:
-          - trigger: echo "hello from job3"
-      job4:
-        active: false
-        when: 1000
-        actions:
-          - trigger: echo "hello from job4"
     cron:
       job1:
-        active: false
-        when: "*/10 * * * * MON-FRI"
+        active: true
+        when: '*/10 * * * * ?'
         actions:
-          - trigger: echo "hello from cron job1"
-
-    delay:
-      job1:
-        active: false
-        when: 5000
-        actions:
-          - trigger: echo "hello from delay job1"
+          - trigger: now=`date` && echo "cron job1 started at ${now}" >> /Users/manuelesimi/EIPM/DispatcherSuite/kafka-service/jobs.txt
       job2:
         active: true
-        when: 6000
+        when: '*/20 * * * * ?'
         actions:
-          - trigger: echo "hello from delay job2"
+          - trigger: now=`date` && echo "cron job3 started at ${now}" >> /Users/manuelesimi/EIPM/DispatcherSuite/kafka-service/jobs.txt
+    fixed:
+      job1:
+        active: true
+        when: '10000'
+        actions:
+          - trigger: now=`date` && echo "fixed job1 started at ${now}" >> /Users/manuelesimi/EIPM/DispatcherSuite/kafka-service/jobs.txt
+      job2:
+        active: true
+        when: '12000'
+        actions:
+          - trigger: now=`date` && echo "fixed job2 started at ${now}" >> /Users/manuelesimi/EIPM/DispatcherSuite/kafka-service/jobs.txt
+    delay:
+      job1:
+        active: true
+        when: '15000'
+        actions:
+          - trigger: now=`date` && echo "delay job1 started at ${now}" >> /Users/manuelesimi/EIPM/DispatcherSuite/kafka-service/jobs.txt
+      job2:
+        active: true
+        when: '30000'
+        actions:
+          - trigger: now=`date` && echo "delay job2 started at ${now}" >> /Users/manuelesimi/EIPM/DispatcherSuite/kafka-service/jobs.txt
