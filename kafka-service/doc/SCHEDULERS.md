@@ -1,5 +1,5 @@
 # Scheduling Jobs
-Kafka-Dispatcher provides support for task scheduling and execution.
+Kafka-Dispatcher provides support for task scheduling and asynchronous execution.
  
 You can use the configurations fixed/delay/cron to provide the triggering information. Where:
 
@@ -46,8 +46,6 @@ Sample configuration:
         when: 1000
         actions:
           - trigger: echo "hello from job4"
-    delay:
-    cron:
 ````
 Each job is executed every X time specified in `when`. The interval X is in milliseconds.
 
@@ -57,8 +55,6 @@ Sample configuration for two jobs:
 ````yaml
   schedulers:
     enable: true
-    fixed:
-    cron:
     delay:
       job1:
         active: false
@@ -79,14 +75,12 @@ Sample configuration for a job executed every 10 minutes from Monday to Friday:
 ````yaml
   schedulers:
     enable: true
-    fixed:
     cron:
       job1:
         active: true
         when: "*/10 * * * * MON-FRI"
         actions:
           - trigger: echo "hello from cron job1"
-    delay:
      
 ````
 The cron expression specified in `when` consists of seven fields:
@@ -94,3 +88,45 @@ The cron expression specified in `when` consists of seven fields:
 `second` `minute` `hour` `day-of-month` `month` `day-of-week` `year`
 
 From these, `year` field is optional.
+
+### All together
+An example of jobs configured for different schedulers:
+
+````yaml
+  schedulers:
+    enable: true
+    cron:
+      job1:
+        active: true
+        when: '*/10 * * * * ?'
+        actions:
+          - trigger: now=`date` && echo "cron job1 started at ${now}" >> /Users/manuelesimi/EIPM/DispatcherSuite/kafka-service/jobs.txt
+      job2:
+        active: true
+        when: '*/20 * * * * ?'
+        actions:
+          - trigger: now=`date` && echo "cron job3 started at ${now}" >> /Users/manuelesimi/EIPM/DispatcherSuite/kafka-service/jobs.txt
+    fixed:
+      job1:
+        active: true
+        when: '10000'
+        actions:
+          - trigger: now=`date` && echo "fixed job1 started at ${now}" >> /Users/manuelesimi/EIPM/DispatcherSuite/kafka-service/jobs.txt
+      job2:
+        active: true
+        when: '12000'
+        actions:
+          - trigger: now=`date` && echo "fixed job2 started at ${now}" >> /Users/manuelesimi/EIPM/DispatcherSuite/kafka-service/jobs.txt
+    delay:
+      job1:
+        active: true
+        when: '15000'
+        actions:
+          - trigger: now=`date` && echo "delay job1 started at ${now}" >> /Users/manuelesimi/EIPM/DispatcherSuite/kafka-service/jobs.txt
+      job2:
+        active: true
+        when: '30000'
+        actions:
+          - trigger: now=`date` && echo "delay job2 started at ${now}" >> /Users/manuelesimi/EIPM/DispatcherSuite/kafka-service/jobs.txt
+
+````
