@@ -52,7 +52,7 @@ public abstract class JobRunner {
             default:
                 throw new IllegalArgumentException("Invalid job type");
         }
-        logger.trace("Scheduler for {} Job {} started at {} ", type, jobIndex, strDate);
+        logger.info("Scheduler for {} Job {} started at {} ", type, jobIndex, strDate);
         logger.trace("{} Job {} configured when at {} ", type, jobIndex, job.getWhen());
 
         job.getActions().forEach(action -> {
