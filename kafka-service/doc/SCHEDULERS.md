@@ -52,7 +52,7 @@ Sample configuration:
 Each job is executed every X time specified in `when`. The interval X is in milliseconds.
 
 ### Delay Scheduler 
-Sample configuration:
+Sample configuration for two jobs:
 
 ````yaml
   schedulers:
@@ -74,7 +74,7 @@ Sample configuration:
 Each job is executed X time after the previous execution is completed. The interval X between two executions specified in `when` is in milliseconds.
 
 ### Cron Scheduler 
-Sample configuration:
+Sample configuration for a job executed every 10 minutes from Monday to Friday:
 
 ````yaml
   schedulers:
