@@ -15,6 +15,13 @@ To enable the support for scheduling tasks, the `schedulers.enable` property mus
 ## Activating the jobs
 Each job can be individually enabled/disabled by setting the `active` property of the job to true or false. 
 
+## Trigger
+A trigger is "something" executed by the Dispatcher. Each job can launch one or more trigger.
+
+Version 1.x of the dispatcher supports two types of trigger:
+* _Local Command_ A command or script to execute on the machine where the dispatcher is running
+* _Remote Call_ A URL to invoke (e.g. http//:www.google.com?query${terms})
+
 ## Configuration
 ### Fixed Scheduler 
 Sample configuration:
