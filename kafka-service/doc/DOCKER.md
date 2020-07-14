@@ -9,8 +9,8 @@ You can start a container with an instance of the dispatcher as follows:
     docker run -p 8080:8080 --rm \
         -e HOST_HOSTNAME=$(hostname) \
         -e HOST_USER=$LOGNAME \
-        -e HOST_USER_ID=$(id -u)
-        --userns=host
+        -e HOST_USER_ID=$(id -u) \
+        --userns=host \
         -v <HOME>/.ssh/:/ssh/:ro \
         -v <ABSOLUTE_PATH>/application.yml:/config/application.yml eipm/kafka-dispatcher:latest
  

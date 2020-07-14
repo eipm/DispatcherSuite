@@ -42,7 +42,7 @@ dispatcher:
         active: true
         when: '*/20 * * * * ?'
         actions:
-          - trigger: now=`date` && echo "cron job3 started at ${now}" >> /Users/manuelesimi/EIPM/DispatcherSuite/kafka-service/jobs.txt
+          - trigger: now=`date` && echo "cron job2 started at ${now}" >> /Users/manuelesimi/EIPM/DispatcherSuite/kafka-service/jobs.txt
     fixed:
       job1:
         active: true
