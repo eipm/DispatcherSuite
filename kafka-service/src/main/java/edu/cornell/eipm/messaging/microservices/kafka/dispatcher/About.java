@@ -3,7 +3,7 @@ package edu.cornell.eipm.messaging.microservices.kafka.dispatcher;
 public class About {
 
     private String component = "Kafka-Dispatcher Service";
-    private String version = "1.1.4";
+    private String version = "1.2.0";
     private final String content;
 
 

@@ -2,6 +2,9 @@ Running Kakfa-Dispatcher with Docker
 ---
 Kafka-Dispatcher can run inside its Docker image (_eipm/kafka-dispatcher_).
 
+How the container is started depends on the triggers to launch (either from [messages](CONFIGURATION.md) or from [scheduled jobs](SCHEDULERS.md)).
+
+## Running Triggers in the Hosting Node
 **Requirement**: the container must be able to ssh the hosting machine to launch local commands.
 
 You can start a container with an instance of the dispatcher as follows:
@@ -9,8 +12,8 @@ You can start a container with an instance of the dispatcher as follows:
     docker run -p 8080:8080 --rm \
         -e HOST_HOSTNAME=$(hostname) \
         -e HOST_USER=$LOGNAME \
-        -e HOST_USER_ID=$(id -u)
-        --userns=host
+        -e HOST_USER_ID=$(id -u) \
+        --userns=host \
         -v <HOME>/.ssh/:/ssh/:ro \
         -v <ABSOLUTE_PATH>/application.yml:/config/application.yml eipm/kafka-dispatcher:latest
  
@@ -19,6 +22,19 @@ where
 * the file mounted as _/config/application.yml_ is the YAML configuration file (see [CONFIGURATION](CONFIGURATION.md))
 * the folder mounted under _/ssh_ must include a public key (_id_rsa.pub_) authorized to access the hosting machine (this is needed to execute local actions)
 
+## Running Triggers inside the Docker Container
+You can start a container with an instance of the dispatcher as follows:
+
+    docker run -p 8080:8080 --rm \
+        --userns=host \
+        -v <ABSOLUTE_PATH>/application.yml:/config/application.yml eipm/kafka-dispatcher:latest
+ 
+where 
+* 8080 is the port configured for the Dispatcher (see [CONFIGURATION](CONFIGURATION.md))
+* the file mounted as _/config/application.yml_ is the YAML configuration file (see [CONFIGURATION](CONFIGURATION.md))
+* the folder mounted under _/ssh_ must include a public key (_id_rsa.pub_) authorized to access the hosting machine (this is needed to execute local actions)
+
+## Expected Output Logs
 If the configuration passed to the instance is correct, you should see the following output:
 
 ~~~
@@ -63,4 +79,4 @@ You can start a container with an instance of the dispatcher on HTTPS as follows
         --userns=host
         -v <HOME>/.ssh/:/ssh/:ro \
         -v <my keystore location>:/keystore.p12
-        -v /home/mas2182/application.yml:/config/application.yml eipm/kafka-dispatcher:latest
+        -v <ABSOLUTE_PATH>/application.yml:/config/application.yml eipm/kafka-dispatcher:latest

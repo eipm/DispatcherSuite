@@ -1,0 +1,67 @@
+kafka:
+  bootstrap-servers: hostname:port
+  properties:
+    sasl.mechanism: GSSAPI
+    sasl.jaas.config: 'org.apache.kafka.common.security.plain.PlainLoginModule required username="" password="";'
+    security.protocol: PLAINTEXT
+  consumer:
+    auto-offset-reset: earliest
+    enable-auto-commit: true
+    group-id: kafka-dispatcher
+    missing-topics-fatal: false
+    topics: topicC,topicD, topicE
+
+server:
+  port: 8080
+  servlet:
+    context-path: /dispatcher
+
+dispatcher:
+  mode: NON_BLOCKING
+  service:
+    topics:
+      - name: topicC
+        actions:
+          - trigger: echo "Message from kafka/topicC '${message}'"
+      - name: topicD
+        actions:
+          - trigger: echo "Received message from kafka/topicD '${message}'"
+      - name: topicE
+        actions:
+            - trigger: echo "Message from kafka/topicE '${message}'"
+
+  schedulers:
+    enable: true
+    cron:
+      job1:
+        active: true
+        when: '*/10 * * * * ?'
+        actions:
+          - trigger: echo "cron job1 started at $(date)" >> /Users/manuelesimi/EIPM/DispatcherSuite/kafka-service/jobs.txt
+      job2:
+        active: true
+        when: '*/20 * * * * ?'
+        actions:
+          - trigger: echo "cron job2 started at $(date)" >> /Users/manuelesimi/EIPM/DispatcherSuite/kafka-service/jobs.txt
+    fixed:
+      job1:
+        active: true
+        when: '10000'
+        actions:
+          - trigger: echo "fixed job1 started at $(date)" >> /Users/manuelesimi/EIPM/DispatcherSuite/kafka-service/jobs.txt
+      job2:
+        active: true
+        when: '12000'
+        actions:
+          - trigger: echo "fixed job2 started at $(date)" >> /Users/manuelesimi/EIPM/DispatcherSuite/kafka-service/jobs.txt
+    delay:
+      job1:
+        active: true
+        when: '15000'
+        actions:
+          - trigger: - trigger: echo "delay job1 started at $(date)" >> /Users/manuelesimi/EIPM/DispatcherSuite/kafka-service/jobs.txt
+      job2:
+        active: true
+        when: '30000'
+        actions:
+          - trigger: echo "delay job2 started at $(date)" >> /Users/manuelesimi/EIPM/DispatcherSuite/kafka-service/jobs.txt

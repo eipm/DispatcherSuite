@@ -25,7 +25,7 @@ public class LocalCommand extends BaseExecutor {
 
     @Override
     protected boolean run(String command, boolean local, MODE mode) throws IOException {
-        logger.info("Local execution for: {}", command);
+        logger.debug("Local execution for: {}", command);
         String wrappedCommand;
         String ssh_command;
         String hostname = System.getenv("HOST_HOSTNAME");
@@ -46,13 +46,13 @@ public class LocalCommand extends BaseExecutor {
             wrappedCommand = "#!/usr/bin/env sh \n";
             wrappedCommand += command + "\n";
         }
-        logger.info("Command wrapped as: {}", wrappedCommand);
+        logger.trace("Command wrapped as: {}", wrappedCommand);
         byte[] strToBytes = wrappedCommand.getBytes();
         Files.write(tmpFile, strToBytes);
         ssh_command = tmpFile.toAbsolutePath().toString();
-        logger.info("Local command wrapped as: {}", ssh_command);
+        logger.trace("Local command wrapped as: {}", ssh_command);
         Process process = Runtime.getRuntime().exec(ssh_command);
-        logger.info("Local Command Dispatched");
+        logger.debug("Local Command Dispatched");
         if (mode == MODE.BLOCKING) {
             InputStream stdIn = process.getInputStream();
             InputStreamReader isr = new InputStreamReader(stdIn);
@@ -61,18 +61,18 @@ public class LocalCommand extends BaseExecutor {
             String line = null;
 
             //catch the std output
-            logger.info("<OUTPUT>");
+            logger.debug("<OUTPUT>");
             while ((line = br.readLine()) != null)
-                logger.info(line);
-            logger.info("</OUTPUT>");
+                logger.debug(line);
+            logger.debug("</OUTPUT>");
             BufferedReader stdError = new BufferedReader(new
                     InputStreamReader(process.getErrorStream()));
 
             //catch the std error
-            logger.info("<ERROR>");
+            logger.debug("<ERROR>");
             while ((line = stdError.readLine()) != null)
-                logger.info(line);
-            logger.info("</ERROR>");
+                logger.debug(line);
+            logger.debug("</ERROR>");
 
             //check if the process is done
             int exitVal = 0;
@@ -81,7 +81,7 @@ public class LocalCommand extends BaseExecutor {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            logger.info("Process exit value: " + exitVal);
+            logger.trace("Process exit value: " + exitVal);
         } else {
             try {
                 //wait few seconds before to check if the process is alive
@@ -90,7 +90,7 @@ public class LocalCommand extends BaseExecutor {
                 logger.error("Unable to wait ", e);
             }
         }
-        logger.debug("Process is alive? " + process.isAlive());
+        logger.trace("Process is alive? " + process.isAlive());
         //calling exitValue if alive results in a IllegalThreadStateException.
         if (Objects.nonNull(tmpFile))
             tmpFile.toFile().delete();
