@@ -219,17 +219,31 @@ server:
     context-path: /dispatcher
 
 dispatcher:
-  topics:
-    - name: oncorseq.sequencing.in_progress
-      actions:
-        - trigger: nextflow /path/main.nf -w /workingDir -c /path/nextflow-manuele.config --sampleID ${sampleID} --dispatcherURL http://localhost:8080/dispatcher/ --resourceDir /path    
-          force-local: true
-          reply:
-            topic: oncorseq.sequencing.pipeline_initialized
-            payload: sampleID=${sampleID}&status=initialized
-    - name: oncorseq.sequencing.pipeline_initialized
-      actions:
-        - trigger: echo "Good job with ${pipeline}"
+  mode: NON_BLOCKING
+  service:
+      topics:
+        - name: oncorseq.sequencing.in_progress
+          actions:
+            - trigger: nextflow /path/main.nf -w /workingDir -c /path/nextflow-manuele.config --sampleID ${sampleID} --dispatcherURL http://localhost:8080/dispatcher/ --resourceDir /path    
+              reply:
+                topic: oncorseq.sequencing.pipeline_initialized
+                payload: sampleID=${sampleID}&status=initialized
+        - name: oncorseq.sequencing.pipeline_initialized
+          actions:
+            - trigger: echo "Good job with ${pipeline}"
+  schedulers:
+      enable: true
+        cron:
+          job1:
+            active: true
+            when: '*/10 * * * * ?'
+            actions:
+              - trigger: echo "cron job2 started at $(date)" >> /Users/manuelesimi/EIPM/DispatcherSuite/kafka-service/jobs.txt
+          job2:
+            active: true
+            when: '*/20 * * * * ?'
+            actions:
+              - trigger: echo "cron job2 started at $(date)" >> /Users/manuelesimi/EIPM/DispatcherSuite/kafka-service/jobs.txt
 
 logging:
   level:
