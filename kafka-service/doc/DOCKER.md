@@ -2,12 +2,15 @@ Running Kakfa-Dispatcher with Docker
 ---
 Kafka-Dispatcher can run inside its Docker image (_eipm/kafka-dispatcher_).
 
-How the container is started depends on the triggers to launch (either from [messages](CONFIGURATION.md) or from [scheduled jobs](SCHEDULERS.md)).
+How to start container depends on the triggers to launch (either from [messages](CONFIGURATION.md) or from [scheduled jobs](SCHEDULERS.md)).
 
-## Running Triggers in the Hosting Node
+### Triggers executed in the Hosting Node
+If we want the triggers to be executed inside the hosting node environment (the node running the docker container), 
+the following requirement must be satisfied:
+
 **Requirement**: the container must be able to ssh the hosting machine to launch local commands.
 
-You can start a container with an instance of the dispatcher as follows:
+Then, you can start a container with an instance of the dispatcher as follows:
 
     docker run -p 8080:8080 --rm \
         -e HOST_HOSTNAME=$(hostname) \
@@ -22,19 +25,21 @@ where
 * the file mounted as _/config/application.yml_ is the YAML configuration file (see [CONFIGURATION](CONFIGURATION.md))
 * the folder mounted under _/ssh_ must include a public key (_id_rsa.pub_) authorized to access the hosting machine (this is needed to execute local actions)
 
-## Running Triggers inside the Docker Container
-You can start a container with an instance of the dispatcher as follows:
+### Triggers executed inside the Docker Container
+If the docker container has all it needs to execute the triggers (e.g. mounted volumes, scripts, commands, etc.), 
+you can start a container with an instance of the dispatcher as follows:
 
     docker run -p 8080:8080 --rm \
         --userns=host \
         -v <ABSOLUTE_PATH>/application.yml:/config/application.yml eipm/kafka-dispatcher:latest
  
 where 
-* 8080 is the port configured for the Dispatcher (see [CONFIGURATION](CONFIGURATION.md))
+* 8080 is the port configured for the Dispatcher (see [CONFIGURATION](CONFIGURATION.md)). 
+In this example it binds to the same port number in the hosting node, but if 8080 is not available, you can bind to a new port with _NEW PORT:8080_
 * the file mounted as _/config/application.yml_ is the YAML configuration file (see [CONFIGURATION](CONFIGURATION.md))
 * the folder mounted under _/ssh_ must include a public key (_id_rsa.pub_) authorized to access the hosting machine (this is needed to execute local actions)
 
-## Expected Output Logs
+### Expected Output Logs
 If the configuration passed to the instance is correct, you should see the following output:
 
 ~~~
@@ -63,7 +68,7 @@ edu.cornell.eipm.messaging.microservices.kafka.dispatcher.config.KafkaService$$E
 08:42:32.118 [$Default-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - $Default: partitions assigned: [ ... listening topics here ...]
 ~~~
 
-## Running with SSL
+### Running with SSL
 Kafka Dispatcher uses the Java Keystore (JKS) technology to handle certificates. A Java KeyStore is a repository of security certificates – either authorization certificates or public key certificates – plus corresponding private keys, used for instance in SSL encryption.
                                                                            
 Before starting the Docker container, you need to create a keystore repository with the certificates.
@@ -80,3 +85,6 @@ You can start a container with an instance of the dispatcher on HTTPS as follows
         -v <HOME>/.ssh/:/ssh/:ro \
         -v <my keystore location>:/keystore.p12
         -v <ABSOLUTE_PATH>/application.yml:/config/application.yml eipm/kafka-dispatcher:latest
+
+## Other Options
+For other supported options, see the [docker run documentation](https://docs.docker.com/engine/reference/commandline/run/).
