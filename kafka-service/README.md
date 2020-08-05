@@ -9,13 +9,15 @@ The service delivers the following main features:
 * register for notifications for messages on selected topics
 * for each message received, trigger one or more actions
 * generic and configurable with respect to topics and actions
+* job scheduling
 
 The service works with one of the followings:
 * an instance of [Apache Kafka](https://kafka.apache.org/) running on some on-prem resource or on the cloud
-* a managed instance of Microsoft [EventHubs](https://azure.microsoft.com/en-us/services/event-hubs/) on the cloud with 
+* a managed instance of Microsoft [Event Hubs](https://azure.microsoft.com/en-us/services/event-hubs/) on the cloud with 
 the Event Hubs for Kafka feature enabled
+* a managed instance of Amazon [MSK](https://aws.amazon.com/msk/) on the cloud
 
-by using the [Kafka Protocol](https://kafka.apache.org/protocol).
+by using the [Kafka Protocol](https://kafka.apache.org/protocol) version 2.3.1.
 
 ## Quick Start
 1. Prepare the [configuration](doc/CONFIGURATION.md) file.

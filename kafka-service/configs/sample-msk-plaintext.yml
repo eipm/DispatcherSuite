@@ -1,0 +1,33 @@
+kafka:
+  bootstrap-servers: <name1>.<zone>.amazonaws.com:9092,<name2>.<zone>.amazonaws.com:9092
+  properties:
+    sasl.mechanism: PLAIN
+    sasl.jaas.config: 'org.apache.kafka.common.security.plain.PlainLoginModule required username="" password="";'
+    security.protocol: PLAINTEXT
+  consumer:
+    auto-offset-reset: earliest
+    enable-auto-commit: true
+    group-id: kafka-dispatcher-msk
+    missing-topics-fatal: false
+    topics: MSKTopic1,MSKTopic2
+
+server:
+  port: 8080
+  servlet:
+    context-path: /dispatcher
+
+dispatcher:
+  mode: BLOCKING
+  service:
+    topics:
+      - name: MSKTopic1
+        actions:
+          - trigger: echo "Message from msk/MSKTopic1 '${message}'"
+      - name: MSKTopic2
+        actions:
+          - trigger: echo "Received message from msk/MSKTopic2 '${message}'"
+
+logging:
+  level:
+    org.apache.kafka: INFO
+    edu.cornell.eipm.messaging.microservices: TRACE
