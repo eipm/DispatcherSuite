@@ -25,10 +25,10 @@ The creation of a cluster activates a list of host/port pairs for establishing t
 Let's suppose we create a cluster named _clingen-dev1_. We will get a list of host/port pairs similar to this:   
 ````  
 TLS
-b-2.clingen-dev1.o3agq0.c2.kafka.us-east-1.amazonaws.com:9094,b-1.clingen-dev1.o3agq0.c2.kafka.us-east-1.amazonaws.com:9094
+b-2.clingen-....us-east-1.amazonaws.com:9094,b-1.clingen-....us-east-1.amazonaws.com:9094
 
 Plaintext
-b-2.clingen-dev1.o3agq0.c2.kafka.us-east-1.amazonaws.com:9092,b-1.clingen-dev1.o3agq0.c2.kafka.us-east-1.amazonaws.com:9092
+b-2.clingen-....us-east-1.amazonaws.com:9092,b-1.clingen-....us-east-1.amazonaws.com:9092
 ````  
 These servers must be reported in the KD configuration.
 
