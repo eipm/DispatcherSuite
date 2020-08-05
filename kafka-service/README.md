@@ -36,6 +36,7 @@ by using the [Kafka Protocol](https://kafka.apache.org/protocol) version 2.3.1.
 ## Messaging systems
 * [Setting up an Apacke Kafka instance](doc/APACHE_KAFKA.md)
 * [Setting up Kafka-enabled Event Hubs on Azure](doc/EVENT_HUBS.md)
+* [Setting up an MSK cluster on Amazon AWS](doc/AMAZON_MSK.md)
 
 ## Built With
 * [Spring Boot](https://spring.io/projects/spring-boot) - A framework that makes it easy to create stand-alone, production-grade Spring-based Applications
