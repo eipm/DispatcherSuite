@@ -37,6 +37,8 @@ Amazon MSK provides data encryption options that you can use to meet strict data
 The certificates that Amazon MSK uses for encryption must be renewed every 13 months.
 
 https://docs.aws.amazon.com/msk/latest/developerguide/msk-encryption.html
+## Default Cluster Configuration
+https://docs.aws.amazon.com/msk/latest/developerguide/msk-default-configuration.html
 
 ## How to create Topics
 Topics are not automatically created within an MSK instance. Therefore, any topic you wish the KD instance 
