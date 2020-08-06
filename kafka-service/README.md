@@ -13,10 +13,11 @@ The service delivers the following main features:
 
 The service works with one of the followings:
 * an instance of [Apache Kafka](https://kafka.apache.org/) running on some on-prem resource or on the cloud
-* a managed instance of Microsoft [EventHubs](https://azure.microsoft.com/en-us/services/event-hubs/) on the cloud with 
+* a managed instance of Microsoft [Event Hubs](https://azure.microsoft.com/en-us/services/event-hubs/) on the cloud with 
 the Event Hubs for Kafka feature enabled
+* a managed instance of Amazon [MSK](https://aws.amazon.com/msk/) on the cloud
 
-by using the [Kafka Protocol](https://kafka.apache.org/protocol).
+by using the [Kafka Protocol](https://kafka.apache.org/protocol) version 2.3.1.
 
 ## Quick Start
 1. Prepare the [configuration](doc/CONFIGURATION.md) file.
@@ -36,6 +37,7 @@ by using the [Kafka Protocol](https://kafka.apache.org/protocol).
 ## Messaging systems
 * [Setting up an Apacke Kafka instance](doc/APACHE_KAFKA.md)
 * [Setting up Kafka-enabled Event Hubs on Azure](doc/EVENT_HUBS.md)
+* [Setting up an MSK cluster on Amazon AWS](doc/AMAZON_MSK.md)
 
 ## For Developers:
 See [How to build the project](doc/FOR_DEVELOPERS.md).
