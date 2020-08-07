@@ -22,13 +22,13 @@ Kafka-Dispatcher supports both PLAINTEXT and TSL authentication.
 
 #### 2. Bootstrap servers
 The creation of a cluster activates a list of host/port pairs for establishing the initial connection to the Kafka cluster.
-Let's suppose we create a cluster named _clingen-dev1_. We will get a list of host/port pairs similar to this:   
+Let's suppose we create a cluster named _clingen-..._. We will get a list of host/port pairs similar to this:   
 ````  
 TLS
-b-2.clingen-....us-east-1.amazonaws.com:9094,b-1.clingen-....us-east-1.amazonaws.com:9094
+b-2.clingen-....<zone>.amazonaws.com:9094,b-1.clingen-....<zone>.amazonaws.com:9094
 
 Plaintext
-b-2.clingen-....us-east-1.amazonaws.com:9092,b-1.clingen-....us-east-1.amazonaws.com:9092
+b-2.clingen-....<zone>.amazonaws.com:9092,b-1.clingen-....<zone>.amazonaws.com:9092
 ````  
 These servers must be reported in the KD configuration.
 
