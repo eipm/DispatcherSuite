@@ -6,7 +6,7 @@ LABEL Description='Kafka Dispatcher Service' \
 	base_image_version='8-jdk-alpine'
 ENV APP_NAME='Kafka Dispatcher'
 
-RUN apk update
+RUN apk -U upgrade
 RUN apk add --no-cache bash
 RUN apk add --no-cache openssh
 RUN apk add --no-cache curl
