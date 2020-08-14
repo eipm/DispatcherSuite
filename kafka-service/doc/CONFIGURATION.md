@@ -191,6 +191,10 @@ The 5 available levels are:
 * DEBUG
 * TRACE
 
+Kafka-Dispatcher logs are available in the _/log_ folder. 
+When running inside a Docker container, if a folder is mounted as _/log_ at startup time,
+the logs are visible outside the docker container.
+
 ## A Complete Configuration Example
 The following example configures a dispatcher instance as follows:
 

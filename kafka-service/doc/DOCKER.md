@@ -18,12 +18,14 @@ Then, you can start a container with an instance of the dispatcher as follows:
         -e HOST_USER_ID=$(id -u) \
         --userns=host \
         -v <HOME>/.ssh/:/ssh/:ro \
+        -v <ABSOLUTE_PATH>:/log/ \
         -v <ABSOLUTE_PATH>/application.yml:/config/application.yml eipm/kafka-dispatcher:latest
  
 where 
 * 8080 is the port configured for the Dispatcher (see [CONFIGURATION](CONFIGURATION.md))
 * the file mounted as _/config/application.yml_ is the YAML configuration file (see [CONFIGURATION](CONFIGURATION.md))
 * the folder mounted under _/ssh_ must include a public key (_id_rsa.pub_) authorized to access the hosting machine (this is needed to execute local actions)
+* the folder mounted under _/log_ is used to output the log files.
 
 ### Triggers executed inside the Docker Container
 If the docker container has all it needs to execute the triggers (e.g. mounted volumes, scripts, commands, etc.), 
@@ -31,6 +33,7 @@ you can start a container with an instance of the dispatcher as follows:
 
     docker run -p 8080:8080 --rm \
         --userns=host \
+        -v <ABSOLUTE_PATH>:/log/ \
         -v <ABSOLUTE_PATH>/application.yml:/config/application.yml eipm/kafka-dispatcher:latest
  
 where 
@@ -84,6 +87,7 @@ You can start a container with an instance of the dispatcher on HTTPS as follows
         --userns=host
         -v <HOME>/.ssh/:/ssh/:ro \
         -v <my keystore location>:/keystore.p12
+        -v <ABSOLUTE_PATH>:/log/ \
         -v <ABSOLUTE_PATH>/application.yml:/config/application.yml eipm/kafka-dispatcher:latest
 
 ## Other Options
