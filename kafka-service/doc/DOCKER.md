@@ -4,37 +4,41 @@ Kafka-Dispatcher can run inside its Docker image (_eipm/kafka-dispatcher_).
 
 How to start container depends on the triggers to launch (either from [messages](CONFIGURATION.md) or from [scheduled jobs](SCHEDULERS.md)).
 
-### Triggers executed in the Hosting Node
+### Triggers executed in the Hosting Node (SSH wrapper)
 If we want the triggers to be executed inside the hosting node environment (the node running the docker container), 
 the following requirement must be satisfied:
 
 **Requirement**: the container must be able to ssh the hosting machine to launch local commands.
 
-Then, you can start a container with an instance of the dispatcher as follows:
+A docker container with an instance of the dispatcher is started with the following command:
 
-    docker run -p 8080:8080 --rm \
+    docker run --rm \
         -e HOST_HOSTNAME=$(hostname) \
         -e HOST_USER=$LOGNAME \
         -e HOST_USER_ID=$(id -u) \
+         --net=host \
         --userns=host \
         -v <HOME>/.ssh/:/ssh/:ro \
-        -v <ABSOLUTE_PATH>/application.yml:/config/application.yml eipm/kafka-dispatcher:latest
+        -v <ABSOLUTE_PATH>/application.yml:/config/application.yml cgen/kafka-dispatcher:latest
  
 where 
-* 8080 is the port configured for the Dispatcher (see [CONFIGURATION](CONFIGURATION.md))
+
 * the file mounted as _/config/application.yml_ is the YAML configuration file (see [CONFIGURATION](CONFIGURATION.md))
-* the folder mounted under _/ssh_ must include a public key (_id_rsa.pub_) authorized to access the hosting machine (this is needed to execute local actions)
+* the folder mounted under _/ssh_ must include a public key (_id_rsa.pub_) 
+authorized to access the hosting machine (this is needed to execute local actions)
 
 ### Triggers executed inside the Docker Container
 If the docker container has all it needs to execute the triggers (e.g. mounted volumes, scripts, commands, etc.), 
 you can start a container with an instance of the dispatcher as follows:
 
-    docker run -p 8080:8080 --rm \
+    docker run -p LOCAL_PORT:KD_CONFIG_PORT --rm \
         --userns=host \
-        -v <ABSOLUTE_PATH>/application.yml:/config/application.yml eipm/kafka-dispatcher:latest
+        -v <ABSOLUTE_PATH>/application.yml:/config/application.yml cgen/kafka-dispatcher:latest
  
 where 
-* 8080 is the port configured for the Dispatcher (see [CONFIGURATION](CONFIGURATION.md)). 
+* KD_CONFIG_PORT is the port configured inside <ABSOLUTE_PATH>/application.yml (see [CONFIGURATION](CONFIGURATION.md))
+* LOCAL_PORT is the port on the node to bind (must be available)
+
 In this example it binds to the same port number in the hosting node, but if 8080 is not available, you can bind to a new port with _NEW PORT:8080_
 * the file mounted as _/config/application.yml_ is the YAML configuration file (see [CONFIGURATION](CONFIGURATION.md))
 * the folder mounted under _/ssh_ must include a public key (_id_rsa.pub_) authorized to access the hosting machine (this is needed to execute local actions)
