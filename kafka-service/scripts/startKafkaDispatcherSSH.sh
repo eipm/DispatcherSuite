@@ -28,12 +28,13 @@ mkdir -p ${app_folder}/log/
 name="kd$RANDOM"
 echo "$name" > .pid
 
-nohup docker run -p 9098:8080 --rm --name ${name} \
+nohup docker run --rm --name ${name} \
     -e HOST_HOSTNAME=$(hostname) \
     -e HOST_USER=$LOGNAME \
     -e HOST_USER_ID=$(id -u) \
     -v ${app_folder}/log/:/log/ \
     -v $HOME/.ssh/:/ssh/:ro \
+    --net=host \
     --userns=host \
     -v ${app_folder}/application.yml:/config/application.yml \
-    eipm/kafka-dispatcher:1.2.1 &
+    cgen/kafka-dispatcher:1.2.1 &
