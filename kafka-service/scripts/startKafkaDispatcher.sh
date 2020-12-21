@@ -27,7 +27,8 @@ fi
 name="kd$RANDOM"
 echo "$name" > .pid
 
-nohup docker run -p 9098:8080 --rm --name ${name} \
+nohup docker run --rm --name ${name} \
     --userns=host \
+    --net=host \
     -v ${app_folder}/application.yml:/config/application.yml \
     cgen/kafka-dispatcher:1.2.1 &
