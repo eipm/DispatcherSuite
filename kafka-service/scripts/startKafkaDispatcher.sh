@@ -30,5 +30,6 @@ echo "$name" > .pid
 nohup docker run --rm --name ${name} \
     --userns=host \
     --net=host \
+    -e DISPATCHER_PORT=8080 \
     -v ${app_folder}/application.yml:/config/application.yml \
     cgen/kafka-dispatcher:1.2.1 &

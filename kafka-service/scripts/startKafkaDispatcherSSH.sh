@@ -32,6 +32,7 @@ nohup docker run --rm --name ${name} \
     -e HOST_HOSTNAME=$(hostname) \
     -e HOST_USER=$LOGNAME \
     -e HOST_USER_ID=$(id -u) \
+    -e DISPATCHER_PORT=8080 \
     -v ${app_folder}/log/:/log/ \
     -v $HOME/.ssh/:/ssh/:ro \
     --net=host \
