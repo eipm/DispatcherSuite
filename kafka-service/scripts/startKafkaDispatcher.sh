@@ -24,12 +24,16 @@ if [[ -e .pid ]]; then
     exit 1
 fi
 
+mkdir -p ${app_folder}/log/ || true
+chmod a+w+r -p ${app_folder}/log
+
 name="kd$RANDOM"
 echo "$name" > .pid
 
-nohup docker run --rm --name ${name} \
+docker run -d --rm --name ${name} \
     --userns=host \
     --net=host \
     -e DISPATCHER_PORT=8080 \
+    -v ${app_folder}/log/:/log/ \
     -v ${app_folder}/application.yml:/config/application.yml \
-    cgen/kafka-dispatcher:1.2.1 &
+    cgen/kafka-dispatcher:1.2.1
