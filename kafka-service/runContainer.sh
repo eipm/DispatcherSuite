@@ -6,4 +6,4 @@ WORKING_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
  -e HOST_USER=$LOGNAME \
  -v /Users/manuelesimi/tmp/:/tmp \
  -v "${WORKING_DIR}/application.yml":/application.yml \
-  eipm/kafka-dispatcher:1.2.0
+  cgen/kafka-dispatcher:1.3.0-SNAPSHOT
