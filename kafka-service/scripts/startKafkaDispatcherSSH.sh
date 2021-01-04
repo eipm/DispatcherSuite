@@ -25,6 +25,7 @@ if [[ -e .pid ]]; then
 fi
 
 mkdir -p ${app_folder}/log/
+chmod a+w+r ${app_folder}/log/
 name="kd$RANDOM"
 echo "$name" > .pid
 
