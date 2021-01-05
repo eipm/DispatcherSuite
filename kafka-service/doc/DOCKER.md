@@ -12,28 +12,37 @@ the following requirement must be satisfied:
 
 A docker container with an instance of the dispatcher is started with the following command:
 
+````bash
     docker run --rm \
         -e HOST_HOSTNAME=$(hostname) \
         -e HOST_USER=$LOGNAME \
         -e HOST_USER_ID=$(id -u) \
+        -e DISPATCHER_PORT=<KD_CONFIG_PORT> \
          --net=host \
         --userns=host \
         -v <HOME>/.ssh/:/ssh/:ro \
+        -v <ABSOLUTE_PATH>/log/:/log \        
         -v <ABSOLUTE_PATH>/application.yml:/config/application.yml cgen/kafka-dispatcher:latest
- 
+````
 where 
 
 * the file mounted as _/config/application.yml_ is the YAML configuration file (see [CONFIGURATION](CONFIGURATION.md))
 * the folder mounted under _/ssh_ must include a public key (_id_rsa.pub_) 
 authorized to access the hosting machine (this is needed to execute local actions)
+* KD_CONFIG_PORT is the port configured inside <ABSOLUTE_PATH>/application.yml (see [CONFIGURATION](CONFIGURATION.md))
 
 ### Triggers executed inside the Docker Container
 If the docker container has all it needs to execute the triggers (e.g. mounted volumes, scripts, commands, etc.), 
 you can start a container with an instance of the dispatcher as follows:
 
-    docker run -p LOCAL_PORT:KD_CONFIG_PORT --rm \
+````bash
+    docker run --rm \
         --userns=host \
+        --net=host \
+        -e DISPATCHER_PORT=<KD_CONFIG_PORT> \
+        -v <ABSOLUTE_PATH>/log/:/log \                
         -v <ABSOLUTE_PATH>/application.yml:/config/application.yml cgen/kafka-dispatcher:latest
+````
  
 where 
 * KD_CONFIG_PORT is the port configured inside <ABSOLUTE_PATH>/application.yml (see [CONFIGURATION](CONFIGURATION.md))
@@ -42,6 +51,7 @@ where
 In this example it binds to the same port number in the hosting node, but if 8080 is not available, you can bind to a new port with _NEW PORT:8080_
 * the file mounted as _/config/application.yml_ is the YAML configuration file (see [CONFIGURATION](CONFIGURATION.md))
 * the folder mounted under _/ssh_ must include a public key (_id_rsa.pub_) authorized to access the hosting machine (this is needed to execute local actions)
+* KD_CONFIG_PORT is the port configured inside <ABSOLUTE_PATH>/application.yml (see [CONFIGURATION](CONFIGURATION.md))
 
 ### Expected Output Logs
 If the configuration passed to the instance is correct, you should see the following output:
@@ -87,7 +97,8 @@ You can start a container with an instance of the dispatcher on HTTPS as follows
         -e HOST_USER_ID=$(id -u)
         --userns=host
         -v <HOME>/.ssh/:/ssh/:ro \
-        -v <my keystore location>:/keystore.p12
+        -v <ABSOLUTE_PATH>/log/:/log \
+        -v <my keystore location>:/keystore.p12 \
         -v <ABSOLUTE_PATH>/application.yml:/config/application.yml eipm/kafka-dispatcher:latest
 
 ## Other Options

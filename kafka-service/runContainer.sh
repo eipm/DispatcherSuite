@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 set -x
 WORKING_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
- docker run -p 8080:8080 --rm \
+ docker run --rm -p 8080:8080\
+ --userns=host \
+ -e DISPATCHER_PORT=8080 \
  -e HOST_HOSTNAME=$(hostname).med.cornell.edu \
  -e HOST_USER=$LOGNAME \
  -v /Users/manuelesimi/tmp/:/tmp \
+ -v /Users/manuelesimi/EIPM/DispatcherSuite/kafka-service/log/:/log \
  -v "${WORKING_DIR}/application.yml":/application.yml \
-  eipm/kafka-dispatcher:1.2.0
+  cgen/kafka-dispatcher:1.3.0-16-jdk-alpine3.12

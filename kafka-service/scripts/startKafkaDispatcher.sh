@@ -24,6 +24,7 @@ if [[ -e .pid ]]; then
     exit 1
 fi
 
+
 mkdir -p ${app_folder}/log/ || true
 chmod a+w+r -p ${app_folder}/log
 

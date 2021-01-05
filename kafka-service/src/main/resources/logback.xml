@@ -2,24 +2,24 @@
 
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+            <pattern>%d{yyyy-MM-dd'T'HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
     </appender>
 
-    <!--appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>dispatcherFile.log</file>
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>log/dispatcherFile.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>dispatcherFile.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <fileNamePattern>log/dispatcherFile.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
             <timeBasedFileNamingAndTriggeringPolicy
                     class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-                <maxFileSize>100MB</maxFileSize>
+                <maxFileSize>10MB</maxFileSize>
             </timeBasedFileNamingAndTriggeringPolicy>
             <maxHistory>30</maxHistory>
         </rollingPolicy>
         <encoder>
-            <pattern>%-4r [%thread] %X{clientIP} %d{HH:mm:ss.SSS} [%p] [%thread@%C{1}:%L] - %m%n</pattern>
+            <pattern>%-4r [%thread] %X{clientIP} %d{yyyy-MM-dd'T'HH:mm:ss.SSS} [%p] [%thread@%C{1}:%L] - %m%n</pattern>
         </encoder>
-    </appender-->
+    </appender>
 
     <logger name="edu.cornell.eipm.messaging" level="DEBUG" />
     <logger name="org.springframework" level="INFO" />
@@ -28,7 +28,7 @@
 
     <root level="WARN">
         <appender-ref ref="STDOUT" />
-        <!--appender-ref ref="FILE" /-->
+        <appender-ref ref="FILE" />
 
     </root>
 
