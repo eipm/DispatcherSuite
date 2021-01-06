@@ -40,4 +40,4 @@ docker run -d --rm --name ${name} \
     --net=host \
     --userns=host \
     -v ${app_folder}/application.yml:/config/application.yml \
-    cgen/kafka-dispatcher:1.3.0
+    cgen/kafka-dispatcher:1.3.0.patched20210105
