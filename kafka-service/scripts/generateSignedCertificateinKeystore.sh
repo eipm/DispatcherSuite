@@ -32,13 +32,7 @@ echo -n "
    How to use the new Keystore
 ######################################################################
 "
-
-echo "If running with Docker, change the docker run command as follows:"
-echo "docker run <current options>
-    -v $PWD/kd-keystore.jks:/kd-keystore.jks
-    -e KEYSTORE_PWD=<replace with the password>
-    <image>:<tag>"
-echo "If running without Docker, edit your application.yml as follows:"
+echo "Edit your application.yml as follows:"
 echo "server:
   port: 8443
   servlet:
