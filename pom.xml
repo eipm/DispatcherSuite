@@ -21,7 +21,6 @@
     <packaging>pom</packaging>
     <description>Dispatcher Services Suite</description>
 
-    <dependencies>
+    <dependencies/>
 
-    </dependencies>
 </project>

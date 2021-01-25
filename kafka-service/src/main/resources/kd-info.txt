@@ -1,0 +1,3 @@
+### Spring boot-based properties
+kd.name=@kd.name@
+kd.version=@kd.version@
