@@ -32,14 +32,19 @@ echo -n "
    How to use the new Keystore
 ######################################################################
 "
-echo "Edit your application.yml as follows:"
-echo "server:
+echo "1) Edit your application.yml as follows:
+server:
   port: 8443
   servlet:
     context-path: /dispatcher
   ssl:
-    key-store: $PWD/kd-keystore.jks
+    key-store: /kd-keystore.jks
     key-store-password: <replace with the password>
     keyStoreType: PKCS12
     keyAlias: kafka-dispatcher-certificate
+
+2) Mount the keystore in your docker container as follows:
+docker run <option>
+    -v $PWD/kd-keystore.jks:/kd-keystore.jks
+    <image>:<tag>
 "
