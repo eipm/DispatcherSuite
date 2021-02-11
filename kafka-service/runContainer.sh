@@ -6,7 +6,8 @@ WORKING_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
  -e DISPATCHER_PORT=8080 \
  -e HOST_HOSTNAME=$(hostname).med.cornell.edu \
  -e HOST_USER=$LOGNAME \
+ -e HOST_USER_ID=$LOGNAME \
  -v /Users/manuelesimi/tmp/:/tmp \
  -v /Users/manuelesimi/EIPM/DispatcherSuite/kafka-service/log/:/log \
  -v "${WORKING_DIR}/application.yml":/application.yml \
-  cgen/kafka-dispatcher:1.3.0
+  cgen/kafka-dispatcher:1.3.0.patched20210201
