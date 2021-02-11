@@ -38,13 +38,13 @@ server:
   servlet:
     context-path: /dispatcher
   ssl:
-    key-store: /kd-keystore.jks
+    key-store: /config/kd-keystore.jks
     key-store-password: <replace with the password>
     keyStoreType: PKCS12
     keyAlias: kafka-dispatcher-certificate
 
 2) Mount the keystore in your docker container as follows:
-docker run <option>
-    -v $PWD/kd-keystore.jks:/kd-keystore.jks
+docker run <option> \
+    -v $PWD/kd-keystore.jks:/config/kd-keystore.jks \
     <image>:<tag>
 "
