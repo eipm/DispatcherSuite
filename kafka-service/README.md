@@ -31,6 +31,7 @@ by using the [Kafka Protocol](https://kafka.apache.org/protocol).
 * [Running with Docker](doc/DOCKER.md)
 * [How to publish Messages](doc/INTERFACE.md)
 * [Scheduling Jobs](doc/SCHEDULERS.md)
+* [Enabling HTTPS](doc/HTTPS.md)
 
 
 ## Messaging systems
