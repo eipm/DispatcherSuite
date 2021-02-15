@@ -55,7 +55,7 @@ Verifying - Enter Export Password:
 ````
 The command requests to:
 1. insert passphrase for the private key. It must be obtained along with the key and certificates from the CA
-2. set the password for the PKCS12 keystore. It will be used in step 3.
+2. set the password for the PKCS12 keystore. It will be used in step 4.
 
 ### Step 4. Import the PKCS12 keystore into the KD keystore
 
@@ -70,6 +70,7 @@ Where:
  * _my password_ is the password to protect the keystore. It will be used to configure the instance.
  * <code>path/kd-store.keys</code> is the location and name of the file containing the keystore. 
 It will mounted on the docker container to start the instance.
+* the requested source keystore password is the one set on <code>host.p12</code> in step 3.
 
 ### Step 5. Verify the keystore
 
@@ -140,7 +141,7 @@ server:
 Where:
 * _my password_ must be replaced with the password set on the keystore
 
-Then, the <pre>docker run</pre> command must be modified to add the following option:
+Then, the <code>docker run</code> command must be modified to add the following option:
 ````bash
 -v path/kd-store.keys:/config/kd-store.keys
 ````
