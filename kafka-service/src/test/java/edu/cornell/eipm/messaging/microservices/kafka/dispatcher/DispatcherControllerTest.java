@@ -29,7 +29,7 @@ public class DispatcherControllerTest {
     @Test
     public void noParamAboutShouldReturnDefaultMessage() throws Exception {
         this.mockMvc.perform(get("/about")).andDo(print()).andExpect(status().isOk())
-                .andExpect(jsonPath("$.content").value("Kafka-Dispatcher Service 1.1"));
+                .andExpect(jsonPath("$.content").value("Kafka-Dispatcher Service 1.3.2-SNAPSHOT"));
     }
 
     @Test
