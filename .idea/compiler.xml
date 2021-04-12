@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="dispatcher" />
         <module name="EventHubs Service" />
+        <module name="eventhubs-service" />
         <module name="executors" />
         <module name="Executors Backend" />
         <module name="Kafka Service" />
@@ -16,7 +17,6 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="configmodel" target="1.8" />
-      <module name="eventhubs-service" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
