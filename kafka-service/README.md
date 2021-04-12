@@ -35,6 +35,7 @@ the Event Hubs for Kafka feature enabled
 * [Running with Docker](doc/DOCKER.md)
 * [How to publish Messages](doc/INTERFACE.md)
 * [Scheduling Jobs](doc/SCHEDULERS.md)
+* [Enabling HTTPS](doc/HTTPS.md)
 
 
 ## Messaging systems

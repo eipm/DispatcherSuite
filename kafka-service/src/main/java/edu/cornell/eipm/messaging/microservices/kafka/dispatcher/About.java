@@ -1,25 +1,42 @@
 package edu.cornell.eipm.messaging.microservices.kafka.dispatcher;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+
 public class About {
 
-    private String component = "Kafka-Dispatcher Service";
-    private String version = "1.3.0";
-    private final String content;
+    private Properties properties;
+    private String component;
+    private String version;
 
 
     public About() {
-        this.content = String.format("%s %s", component, version);
+        this.read("kd-info.txt");
+        this.component = this.getComponent();
+        this.version = this.getVersion();
     }
 
     public String getComponent() {
-        return component;
+        return getProperty("kd.name");
     }
 
     public String getVersion() {
-        return version;
+        return getProperty("kd.version");
     }
 
-    public String getContent() {
-        return content;
+    private void read(String propertyFileName) {
+        InputStream is = getClass().getClassLoader()
+                .getResourceAsStream(propertyFileName);
+        this.properties = new Properties();
+        try {
+            this.properties.load(is);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public String getProperty(String propertyName) {
+        return this.properties.getProperty(propertyName);
     }
 }
