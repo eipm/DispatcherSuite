@@ -6,7 +6,7 @@ A microservice project based on Spring Boot to send/receive/manage messages to/f
 
 [Apache Kafka](https://kafka.apache.org/) is increasingly used as the message broker in event-driven 
 architectures with asynchronous microservices. Kafka-Dispatcher can interface with any broker supporting
-[Kafka Protocol](https://kafka.apache.org/protocol) up to version 2.6.0.
+[Kafka Protocol](https://kafka.apache.org/protocol) up to version 2.6.7.
 
 
 The service delivers the following main features:

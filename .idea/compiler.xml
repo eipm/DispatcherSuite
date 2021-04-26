@@ -17,6 +17,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="configmodel" target="1.8" />
+      <module name="eventhubs-service" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
