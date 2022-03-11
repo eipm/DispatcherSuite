@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="dispatcher" />
         <module name="EventHubs Service" />
+        <module name="eventhubs-service" />
         <module name="executors" />
         <module name="Executors Backend" />
         <module name="Kafka Service" />
