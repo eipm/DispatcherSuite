@@ -11,13 +11,13 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.9</version>
+        <version>2.7.10</version>
         <relativePath /> <!-- lookup parent from repository -->
     </parent>
     <groupId>edu.cornell.eipm.messaging.microservices</groupId>
     <artifactId>dispatcher-suite</artifactId>
     <name>Dispatcher Suite</name>
-    <version>1.2.2</version>
+    <version>1.2.3</version>
     <packaging>pom</packaging>
     <description>Dispatcher Services Suite</description>
 

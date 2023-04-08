@@ -6,13 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="dispatcher" />
-        <module name="EventHubs Service" />
         <module name="eventhubs-service" />
-        <module name="executors" />
         <module name="Executors Backend" />
-        <module name="Kafka Service" />
         <module name="kafka-service" />
+        <module name="EventHubs Service" />
+        <module name="executors" />
+        <module name="dispatcher" />
+        <module name="Kafka Service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
