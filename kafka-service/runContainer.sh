@@ -7,7 +7,7 @@ WORKING_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
  -e HOST_HOSTNAME=$(hostname).med.cornell.edu \
  -e HOST_USER=$LOGNAME \
  -e HOST_USER_ID=$LOGNAME \
- -v /Users/manuelesimi/tmp/:/tmp \
- -v /Users/manuelesimi/EIPM/DispatcherSuite/kafka-service/log/:/log \
+ -v /path/to/tmp/:/tmp \
+ -v /path/to/DispatcherSuite/kafka-service/log/:/log \
  -v "${WORKING_DIR}/application.yml":/application.yml \
   eipm/kafka-dispatcher:1.4.4
