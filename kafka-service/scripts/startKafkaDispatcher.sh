@@ -37,4 +37,4 @@ docker run -d --rm --name ${name} \
     -e DISPATCHER_PORT=8080 \
     -v ${app_folder}/log/:/log/ \
     -v ${app_folder}/application.yml:/config/application.yml \
-    cgen/kafka-dispatcher:1.3.0.patched20210202
+    eipm/kafka-dispatcher:1.4.3
