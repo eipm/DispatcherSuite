@@ -4,11 +4,16 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+/**
+ * Response for /about
+ *
+ * @author Manuele Simi
+ */
 public class About {
 
     private Properties properties;
-    private String component;
-    private String version;
+    private final String component;
+    private final String version;
 
 
     public About() {

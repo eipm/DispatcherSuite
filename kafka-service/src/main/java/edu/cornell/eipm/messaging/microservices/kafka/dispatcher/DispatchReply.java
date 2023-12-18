@@ -3,6 +3,11 @@ package edu.cornell.eipm.messaging.microservices.kafka.dispatcher;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Holder for triggers and replies used for simulation.
+ *
+ * @author Manuele Simi
+ */
 public class DispatchReply {
 
 

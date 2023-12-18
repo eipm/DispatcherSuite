@@ -22,7 +22,7 @@ public class Job {
         this.when = when;
     }
 
-    private List<Action> actions = new ArrayList<>();
+    private final List<Action> actions = new ArrayList<>();
 
     public List<Action> getActions() {
         return actions;
