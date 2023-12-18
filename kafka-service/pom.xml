@@ -15,7 +15,7 @@
     <packaging>war</packaging>
 
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>18</java.version>
         <kd.name>${project.name}</kd.name>
         <kd.version>${project.version}</kd.version>
     </properties>

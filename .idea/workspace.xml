@@ -5,21 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dae2f7e8-1246-45f6-adfc-bd5a285a7c0b" name="Default Changelist" comment="Advance version to 1.3.2.">
-      <change beforePath="$PROJECT_DIR$/eventhubs-service/AZURE.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eventhubs-service/CONFIGURATION.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eventhubs-service/EventHubs Service.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eventhubs-service/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eventhubs-service/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eventhubs-service/buildRunDispatcher.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eventhubs-service/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eventhubs-service/runApp.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eventhubs-service/src/main/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/About.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eventhubs-service/src/main/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/EventHubsApp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eventhubs-service/src/main/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/EventHubsController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eventhubs-service/src/main/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/broker/Receiver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eventhubs-service/src/main/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/broker/Sender.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eventhubs-service/src/main/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/config/EventHubsService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eventhubs-service/src/test/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/EventHubsControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/executors/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/executors/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kafka-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
@@ -226,7 +213,9 @@
   "keyToString": {
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "configurable.group.appearance"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -473,11 +462,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SSHWrapperTest" />
         <item itemvalue="JUnit.SpringKafkaApplicationTest.testSend" />
         <item itemvalue="JUnit.SpringKafkaApplicationTest.testSendReceive" />
         <item itemvalue="JUnit.SpringKafkaApplicationTest" />
         <item itemvalue="JUnit.SSHWrapperTest.getCommand" />
-        <item itemvalue="JUnit.SSHWrapperTest" />
       </list>
     </recent_temporary>
   </component>
@@ -949,6 +938,14 @@
       <window_info anchor="right" id="Maven Projects" order="10" visible="true" weight="0.32962668" />
     </layout-to-restore>
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-core" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.kafka:kafka_2.13" />
+    <option featureType="dependencySupport" implementationName="maven-packaging:war" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-messaging" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.boot:spring-boot" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-webmvc" />
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="RECENT_FILTERS">
       <map>
@@ -1047,6 +1044,10 @@
         <watch expression="command" />
       </configuration>
     </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
