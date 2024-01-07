@@ -31,57 +31,6 @@
         </resources>
 
         <plugins>
-
-            <plugin>
-                <groupId>com.diffplug.spotless</groupId>
-                <artifactId>spotless-maven-plugin</artifactId>
-                <version>${spotless.version}</version>
-                <configuration>
-                    <java>
-                        <!-- These are the defaults, you can override if you want -->
-                        <includes>
-                            <include>src/main/java/**/*.java</include>
-                            <include>src/test/java/**/*.java</include>
-                        </includes>
-
-                        <!-- Cleanthat will refactor your code, but it may break your style: apply it before your formatter -->
-                        <cleanthat />        <!-- has its own section below -->
-
-                        <googleJavaFormat>
-                            <version>1.19.1</version>                      <!-- optional, 1.8 is minimum supported version -->
-                            <style>GOOGLE</style>                       <!-- or AOSP (optional) -->
-                            <reflowLongStrings>true</reflowLongStrings> <!-- optional -->
-                            <formatJavadoc>false</formatJavadoc>        <!-- optional -->
-                            <!-- optional: custom group artifact (you probably don't need this) -->
-                            <groupArtifact>com.google.googlejavaformat:google-java-format</groupArtifact>
-                        </googleJavaFormat>
-
-                        <importOrder /> <!-- standard import order -->
-                        <importOrder>  <!-- or a custom ordering -->
-                            <wildcardsLast>false</wildcardsLast> <!-- Optional, default false. Sort wildcard import after specific imports -->
-                            <order>java|javax,org,com,com.diffplug,,\#com.diffplug,\#</order>  <!-- or use <file>${project.basedir}/eclipse.importorder</file> -->
-                            <!-- you can use an empty string for all the imports you didn't specify explicitly, '|' to join group without blank line, and '\#` prefix for static imports. -->
-                            <semanticSort>false</semanticSort> <!-- Optional, default false. Sort by package, then class, then member (for static imports). Splitting is based on common conventions (packages are lower case, classes start with upper case). Use <treatAsPackage> and <treatAsClass> for exceptions. -->
-                            <treatAsPackage> <!-- Packages starting with upper case letters. -->
-                                <package>com.example.MyPackage</package>
-                            </treatAsPackage>
-                            <treatAsClass> <!-- Classes starting with lower case letters. -->
-                                <class>com.example.myClass</class>
-                            </treatAsClass>
-                        </importOrder>
-
-                        <removeUnusedImports /> <!-- self-explanatory -->
-
-                        <formatAnnotations />  <!-- fixes formatting of type annotations, see below -->
-
-                        <licenseHeader>
-                            <!--content>/* (C)$YEAR */</content-->
-                            <file>${project.basedir}/license-header</file>
-                        </licenseHeader>
-                    </java>
-                </configuration>
-            </plugin>
-
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
@@ -94,24 +43,11 @@
                         </exclude>
                     </excludes>
                 </configuration>
-
             </plugin>
         </plugins>
     </build>
+
     <dependencies>
-
-        <!-- https://mvnrepository.com/artifact/com.hubspot.maven.plugins/prettier-maven-plugin -->
-        <dependency>
-            <groupId>com.hubspot.maven.plugins</groupId>
-            <artifactId>prettier-maven-plugin</artifactId>
-            <version>0.21</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.diffplug.spotless</groupId>
-            <artifactId>spotless-maven-plugin</artifactId>
-            <version>${spotless.version}</version>
-        </dependency>
 
         <dependency>
             <groupId>org.springframework.kafka</groupId>

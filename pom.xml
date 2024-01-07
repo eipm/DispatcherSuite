@@ -19,10 +19,64 @@
     <version>1.3.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <description>Dispatcher Services Suite</description>
+
     <properties>
         <java.version>18</java.version>
+        <spotless.version>2.41.1</spotless.version>
     </properties>
 
-    <dependencies/>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.diffplug.spotless</groupId>
+                <artifactId>spotless-maven-plugin</artifactId>
+                <version>${spotless.version}</version>
+                <configuration>
+                    <java>
+                        <includes>
+                            <include>src/main/java/**/*.java</include>
+                            <include>src/test/java/**/*.java</include>
+                        </includes>
+
+                        <!-- Cleanthat will refactor your code, but it may break your style: apply it before your formatter -->
+                        <cleanthat/>
+
+                        <googleJavaFormat>
+                            <version>1.19.1</version>                      <!-- optional, 1.8 is minimum supported version -->
+                            <style>GOOGLE</style>                       <!-- or AOSP (optional) -->
+                            <reflowLongStrings>true</reflowLongStrings> <!-- optional -->
+                            <formatJavadoc>true</formatJavadoc>        <!-- optional -->
+                        </googleJavaFormat>
+
+                        <importOrder/> <!-- standard import order -->
+                        <removeUnusedImports/>
+                        <formatAnnotations/>  <!-- fixes formatting of type annotations -->
+                        <licenseHeader>
+                            <!--content>/* (C)$YEAR */</content-->
+                            <file>${maven.multiModuleProjectDirectory}/license-header</file>
+                        </licenseHeader>
+                    </java>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+
+        <!-- https://mvnrepository.com/artifact/com.hubspot.maven.plugins/prettier-maven-plugin -->
+        <!--dependency>
+            <groupId>com.hubspot.maven.plugins</groupId>
+            <artifactId>prettier-maven-plugin</artifactId>
+            <version>0.21</version>
+        </dependency-->
+
+        <!-- https://mvnrepository.com/artifact/com.diffplug.spotless/spotless-maven-plugin -->
+        <dependency>
+            <groupId>com.diffplug.spotless</groupId>
+            <artifactId>spotless-maven-plugin</artifactId>
+            <version>${spotless.version}</version>
+        </dependency>
+
+    </dependencies>
 
 </project>
