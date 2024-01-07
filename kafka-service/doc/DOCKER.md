@@ -64,7 +64,7 @@ If the configuration passed to the instance is correct, you should see the follo
  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
   '  |____| .__|_| |_|_| |_\__, | / / / /
  =========|_|==============|___/=/_/_/_/
- :: Spring Boot ::        (v2.2.2.RELEASE)
+ :: Spring Boot ::        (v2.7.10.RELEASE)
 
 08:42:20.657 [main] INFO  e.c.e.m.m.k.dispatcher.DispatcherApp - Starting DispatcherApp v1.1.3 on MAC162555 with PID 48432 (/Users/manuelesimi/EIPM/DispatcherSuite/kafka-service/target/kafka-service-1.1.3.war started by manuelesimi in /Users/manuelesimi/EIPM/DispatcherSuite/kafka-service)
 08:42:20.662 [main] DEBUG e.c.e.m.m.k.dispatcher.DispatcherApp - Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
