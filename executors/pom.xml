@@ -13,6 +13,9 @@
     <version>1.2.3</version>
     <packaging>jar</packaging>
     <name>Executors for Dispatcher services</name>
+    <properties>
+        <java.version>18</java.version>
+    </properties>
 
     <build>
         <resources>
