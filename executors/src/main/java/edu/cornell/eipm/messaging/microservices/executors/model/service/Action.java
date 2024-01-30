@@ -44,6 +44,10 @@ public class Action {
     this.trigger = trigger;
   }
 
+  /**
+   * Gets the reply configured for this action.
+   * @return the reply
+   */
   public Reply getReply() {
     return reply;
   }

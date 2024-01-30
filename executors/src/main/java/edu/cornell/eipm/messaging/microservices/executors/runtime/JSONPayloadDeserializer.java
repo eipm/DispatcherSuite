@@ -27,7 +27,7 @@ import com.google.gson.Gson;
 import java.util.Map;
 
 /**
- * Deserializer for map of values
+ * Deserializer for map of values.
  *
  * @author Manuele Simi
  */

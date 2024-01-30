@@ -24,6 +24,7 @@ SOFTWARE.
 package edu.cornell.eipm.messaging.microservices.executors.model.service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -34,7 +35,7 @@ import java.util.List;
 public class Topic {
 
   private String name;
-  private List<Action> actions = new ArrayList<>();
+  private List<Action> actions = Collections.emptyList();
 
   public String getName() {
     return name;
@@ -48,7 +49,7 @@ public class Topic {
     return actions;
   }
 
-  public void setActions(List<Action> actions) {
+  public void setActions(final List<Action> actions) {
     this.actions = actions;
   }
 

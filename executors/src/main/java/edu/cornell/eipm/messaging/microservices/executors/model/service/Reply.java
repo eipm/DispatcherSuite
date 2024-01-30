@@ -23,6 +23,13 @@ SOFTWARE.
 */
 package edu.cornell.eipm.messaging.microservices.executors.model.service;
 
+/**
+ * A reply associated to an Action.
+ * When a reply is configured, the configured payload is sent to the topic after the
+ * action has been executed.
+ *
+ * @author Manuele Simi
+ */
 public class Reply {
 
   private String topic;
