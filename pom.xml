@@ -11,7 +11,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.7.10</version>
-        <relativePath /> <!-- lookup parent from repository -->
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>edu.cornell.eipm.messaging.microservices</groupId>
     <artifactId>dispatcher-suite</artifactId>
@@ -42,7 +42,8 @@
                         <cleanthat/>
 
                         <googleJavaFormat>
-                            <version>1.19.1</version>                      <!-- optional, 1.8 is minimum supported version -->
+                            <version>1.19.1
+                            </version>                      <!-- optional, 1.8 is minimum supported version -->
                             <style>GOOGLE</style>                       <!-- or AOSP (optional) -->
                             <reflowLongStrings>true</reflowLongStrings> <!-- optional -->
                             <formatJavadoc>true</formatJavadoc>        <!-- optional -->
@@ -58,6 +59,30 @@
                     </java>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.6.3</version>
+                <executions>
+                    <execution>
+                        <id>main-javadoc</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <configuration>
+                            <sourceFileExcludes>module-info.java</sourceFileExcludes>
+                        </configuration>
+                    </execution>
+                </executions>
+                <configuration>
+                    <quiet>true</quiet>
+                    <failOnWarnings>false</failOnWarnings>
+                    <failOnError>false</failOnError>
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
 
