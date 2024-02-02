@@ -40,9 +40,7 @@ public class ExecutorService {
    */
   public static Executor select(Action action) {
     String trigger = action.getTrigger().toUpperCase();
-    if (trigger.startsWith("HTTP"))
-      return new RemoteCall(action);
-    else
-      return new LocalCommand(action);
+    if (trigger.startsWith("HTTP")) return new RemoteCall(action);
+    else return new LocalCommand(action);
   }
 }

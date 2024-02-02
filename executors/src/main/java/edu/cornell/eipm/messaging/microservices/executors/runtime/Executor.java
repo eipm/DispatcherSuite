@@ -36,6 +36,7 @@ public interface Executor {
 
   /**
    * Sets the action to execute
+   *
    * @param action the action
    */
   void setAction(Action action);
@@ -46,8 +47,8 @@ public interface Executor {
    * @param values actual parameters for the execution
    * @param local forces the action to be locally executed
    * @param mode execution mode
-   * @return true if the action completed successfully or if it has been started
-   *            successfully (depending on the MODE)
+   * @return true if the action completed successfully or if it has been started successfully
+   *     (depending on the MODE)
    * @throws IOException if an error occurred at the time to start the action
    */
   boolean execute(Map<String, String> values, boolean local, MODE mode) throws IOException;

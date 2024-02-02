@@ -1,4 +1,4 @@
-/**
+/*
  MIT License
 
  Copyright (c) 2020-2024 Englander Institute for Precision Medicine

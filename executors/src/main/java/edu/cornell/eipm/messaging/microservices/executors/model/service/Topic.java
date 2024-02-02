@@ -42,6 +42,7 @@ public class Topic {
 
   /**
    * Sets the name of this topic.
+   *
    * @param name the name
    */
   public void setName(String name) {
@@ -50,6 +51,7 @@ public class Topic {
 
   /**
    * Gets all the actions associated to this topic.
+   *
    * @return the list of actions
    */
   public List<Action> getActions() {
@@ -58,6 +60,7 @@ public class Topic {
 
   /**
    * Sets the actions for this topic.
+   *
    * @param actions the list of actions
    */
   public void setActions(final List<Action> actions) {

@@ -53,8 +53,8 @@ public abstract class BaseExecutor implements Executor {
    * @param actualTrigger the trigger to execute
    * @param local true if it's a local execution, false otherwise
    * @param mode the mode in which the trigger is executed
-   * @return true if the action completed successfully or if it has been started
-   *    *            successfully (depending on the MODE)
+   * @return true if the action completed successfully or if it has been started * successfully
+   *     (depending on the MODE)
    * @throws IOException
    */
   protected abstract boolean run(String actualTrigger, boolean local, MODE mode) throws IOException;

@@ -48,6 +48,7 @@ abstract class JobList {
 
   /**
    * Sets the job in the 1st position.
+   *
    * @param job the job
    */
   public void setJob1(Job job) {
@@ -56,6 +57,7 @@ abstract class JobList {
 
   /**
    * Sets the job in the 2nd position.
+   *
    * @param job the job
    */
   public void setJob2(Job job) {
@@ -64,6 +66,7 @@ abstract class JobList {
 
   /**
    * Sets the job in the 3rd position.
+   *
    * @param job the job
    */
   public void setJob3(Job job) {
@@ -72,6 +75,7 @@ abstract class JobList {
 
   /**
    * Sets the job in the 4th position.
+   *
    * @param job the job
    */
   public void setJob4(Job job) {
@@ -80,6 +84,7 @@ abstract class JobList {
 
   /**
    * Sets the job in the 5th position.
+   *
    * @param job the job
    */
   public void setJob5(Job job) {
@@ -88,6 +93,7 @@ abstract class JobList {
 
   /**
    * Sets the job in the 6th position.
+   *
    * @param job the job
    */
   public void setJob6(Job job) {
@@ -96,6 +102,7 @@ abstract class JobList {
 
   /**
    * Sets the job in the 7th position.
+   *
    * @param job the job
    */
   public void setJob7(Job job) {
@@ -104,6 +111,7 @@ abstract class JobList {
 
   /**
    * Sets the job in the 8th position.
+   *
    * @param job the job
    */
   public void setJob8(Job job) {
@@ -112,6 +120,7 @@ abstract class JobList {
 
   /**
    * Sets the job in the 9th position.
+   *
    * @param job the job
    */
   public void setJob9(Job job) {
@@ -120,6 +129,7 @@ abstract class JobList {
 
   /**
    * Sets the job in the 10th position.
+   *
    * @param job the job
    */
   public void setJob10(Job job) {
@@ -128,6 +138,7 @@ abstract class JobList {
 
   /**
    * Sets the job in the 11th position.
+   *
    * @param job the job
    */
   public void setJob11(Job job) {
@@ -136,6 +147,7 @@ abstract class JobList {
 
   /**
    * Sets the job in the 12th position.
+   *
    * @param job the job
    */
   public void setJob12(Job job) {
@@ -144,6 +156,7 @@ abstract class JobList {
 
   /**
    * Sets the job in the 13th position.
+   *
    * @param job the job
    */
   public void setJob13(Job job) {
@@ -152,6 +165,7 @@ abstract class JobList {
 
   /**
    * Sets the job in the 14th position.
+   *
    * @param job the job
    */
   public void setJob14(Job job) {
@@ -160,6 +174,7 @@ abstract class JobList {
 
   /**
    * Sets the job in the 15th position.
+   *
    * @param job the job
    */
   public void setJob15(Job job) {
