@@ -46,62 +46,122 @@ abstract class JobList {
   private Job job14;
   private Job job15;
 
+  /**
+   * Sets the job in the 1st position.
+   * @param job the job
+   */
   public void setJob1(Job job) {
     this.job1 = job;
   }
 
+  /**
+   * Sets the job in the 2nd position.
+   * @param job the job
+   */
   public void setJob2(Job job) {
     this.job2 = job;
   }
 
+  /**
+   * Sets the job in the 3rd position.
+   * @param job the job
+   */
   public void setJob3(Job job) {
     this.job3 = job;
   }
 
+  /**
+   * Sets the job in the 4th position.
+   * @param job the job
+   */
   public void setJob4(Job job) {
     this.job4 = job;
   }
 
+  /**
+   * Sets the job in the 5th position.
+   * @param job the job
+   */
   public void setJob5(Job job) {
     this.job5 = job;
   }
 
+  /**
+   * Sets the job in the 6th position.
+   * @param job the job
+   */
   public void setJob6(Job job) {
     this.job6 = job;
   }
 
+  /**
+   * Sets the job in the 7th position.
+   * @param job the job
+   */
   public void setJob7(Job job) {
     this.job7 = job;
   }
 
+  /**
+   * Sets the job in the 8th position.
+   * @param job the job
+   */
   public void setJob8(Job job) {
     this.job8 = job;
   }
 
+  /**
+   * Sets the job in the 9th position.
+   * @param job the job
+   */
   public void setJob9(Job job) {
     this.job9 = job;
   }
 
+  /**
+   * Sets the job in the 10th position.
+   * @param job the job
+   */
   public void setJob10(Job job) {
     this.job10 = job;
   }
 
+  /**
+   * Sets the job in the 11th position.
+   * @param job the job
+   */
   public void setJob11(Job job) {
     this.job11 = job;
   }
 
+  /**
+   * Sets the job in the 12th position.
+   * @param job the job
+   */
   public void setJob12(Job job) {
     this.job12 = job;
   }
 
+  /**
+   * Sets the job in the 13th position.
+   * @param job the job
+   */
   public void setJob13(Job job) {
     this.job13 = job;
   }
 
+  /**
+   * Sets the job in the 14th position.
+   * @param job the job
+   */
   public void setJob14(Job job) {
     this.job14 = job;
   }
 
+  /**
+   * Sets the job in the 15th position.
+   * @param job the job
+   */
   public void setJob15(Job job) {
     this.job15 = job;
   }
@@ -109,12 +169,12 @@ abstract class JobList {
   /**
    * Gets the N-th job in the list
    *
-   * @param number
-   * @return
+   * @param index the position of the job
+   * @return the job
    */
-  public Job getJob(int number) {
+  public Job getJob(int index) {
     Job selected = null;
-    switch (number) {
+    switch (index) {
       case 1:
         selected = job1;
         break;
