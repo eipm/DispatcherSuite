@@ -34,22 +34,24 @@ public class TriggerValue {
 
   private final String formalValue;
 
+  /**
+   * Creates a new value to associate to a trigger.
+   * @param value the value
+   */
   public TriggerValue(String value) {
     this.formalValue = value;
   }
 
   /**
    * Looks for malicious parameters
-   *
-   * @param
-   * @return
+   * @param value the value to check
+   * @return the same value if validated
+   * @throws IllegalArgumentException if the value is not valid
    */
-  private String validate(String replacement) {
-    // if (replacement.contains(" "))
-    //    throw new IllegalArgumentException("Parameters with space(s) are not accepted");
-    if (replacement.toLowerCase().contains("bash"))
+  private String validate(String value) {
+     if (value.toLowerCase().contains("bash"))
       throw new IllegalArgumentException("Looks like the parameter is trying to execute a script");
-    return replacement;
+    return value;
   }
 
   /**
