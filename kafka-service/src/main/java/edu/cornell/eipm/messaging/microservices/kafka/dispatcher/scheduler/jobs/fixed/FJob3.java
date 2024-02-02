@@ -41,6 +41,11 @@ import org.springframework.stereotype.Component;
 @ConditionalOnProperty(name = "dispatcher.schedulers.fixed.job3.active")
 public class FJob3 extends JobRunner {
 
+  /**
+   * Runs the job.
+   *
+   * @throws Exception if the job fails
+   */
   @Async
   @Scheduled(fixedRateString = "#{'${dispatcher.schedulers.fixed.job3.when}'}")
   public void fixedRateJob3() throws Exception {

@@ -41,6 +41,11 @@ import org.springframework.stereotype.Component;
 @ConditionalOnProperty(name = "dispatcher.schedulers.delay.job12.active")
 public class DJob12 extends JobRunner {
 
+  /**
+   * Runs the job.
+   *
+   * @throws Exception if the job fails
+   */
   @Async
   @Scheduled(fixedDelayString = "#{'${dispatcher.schedulers.delay.job12.when}'}")
   public void delayJob12() throws Exception {

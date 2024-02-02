@@ -36,12 +36,17 @@ public class Topic {
   private String name;
   private List<Action> actions = Collections.emptyList();
 
+  /**
+   * Gets the name of the topic.
+   *
+   * @return the name
+   */
   public String getName() {
     return name;
   }
 
   /**
-   * Sets the name of this topic.
+   * Sets the name of the topic.
    *
    * @param name the name
    */
@@ -50,7 +55,7 @@ public class Topic {
   }
 
   /**
-   * Gets all the actions associated to this topic.
+   * Gets all the actions associated to the topic.
    *
    * @return the list of actions
    */

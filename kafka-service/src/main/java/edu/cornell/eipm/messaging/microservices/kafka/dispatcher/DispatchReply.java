@@ -24,6 +24,7 @@ SOFTWARE.
 package edu.cornell.eipm.messaging.microservices.kafka.dispatcher;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -48,15 +49,30 @@ public class DispatchReply {
     return triggers;
   }
 
-  public void setTriggers(List<String> triggers) {
+  /**
+   * Sets the triggers for the reply.
+   *
+   * @param triggers the list of triggers
+   */
+  public void setTriggers(final List<String> triggers) {
     this.triggers = triggers;
   }
 
+  /**
+   * Gets the list of replies.
+   *
+   * @return the list of replies
+   */
   public List<String> getReplies() {
-    return replies;
+    return Collections.unmodifiableList(replies);
   }
 
-  public void setReplies(List<String> replies) {
+  /**
+   * Sets the replies.
+   *
+   * @param replies the replies
+   */
+  public void setReplies(final List<String> replies) {
     this.replies = replies;
   }
 }
