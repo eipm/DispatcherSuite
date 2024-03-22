@@ -35,8 +35,8 @@ public class ExecutorService {
   /**
    * Selects the appropriate executor for the action
    *
-   * @param action
-   * @return
+   * @param action the input action
+   * @return an executor capable to run the action
    */
   public static Executor select(Action action) {
     String trigger = action.getTrigger().toUpperCase();

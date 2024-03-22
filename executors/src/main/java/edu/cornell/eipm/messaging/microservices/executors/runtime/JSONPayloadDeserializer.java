@@ -43,6 +43,11 @@ public class JSONPayloadDeserializer {
     this.data = data;
   }
 
+  /**
+   * Extracts a map with names and values in the payload
+   *
+   * @return the map with the values
+   */
   public Map<String, String> fromJSON() {
     return new Gson().fromJson(data, Map.class);
   }

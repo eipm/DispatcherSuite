@@ -42,8 +42,7 @@
                         <cleanthat/>
 
                         <googleJavaFormat>
-                            <version>1.19.1
-                            </version>                      <!-- optional, 1.8 is minimum supported version -->
+                            <version>1.19.1</version>                      <!-- optional, 1.8 is minimum supported version -->
                             <style>GOOGLE</style>                       <!-- or AOSP (optional) -->
                             <reflowLongStrings>true</reflowLongStrings> <!-- optional -->
                             <formatJavadoc>true</formatJavadoc>        <!-- optional -->
