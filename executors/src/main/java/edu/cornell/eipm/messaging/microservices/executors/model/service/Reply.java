@@ -34,6 +34,11 @@ public class Reply {
   private String topic;
   private String payload;
 
+  /**
+   * Gets the topic where to publish the reply.
+   *
+   * @return the topic name
+   */
   public String getTopic() {
     return topic;
   }
