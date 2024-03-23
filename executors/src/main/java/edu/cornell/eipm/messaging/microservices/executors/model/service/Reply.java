@@ -38,14 +38,29 @@ public class Reply {
     return topic;
   }
 
+  /**
+   * Sets the topic where to publish the reply.
+   *
+   * @param topic the topic name
+   */
   public void setTopic(String topic) {
     this.topic = topic;
   }
 
+  /**
+   * Gets the payload of the reply.
+   *
+   * @return the payload
+   */
   public String getPayload() {
     return payload;
   }
 
+  /**
+   * Sets the payload to send with this reply.
+   *
+   * @param payload the payload
+   */
   public void setPayload(String payload) {
     this.payload = payload;
   }

@@ -24,7 +24,7 @@ SOFTWARE.
 package edu.cornell.eipm.messaging.microservices.executors.model.scheduler;
 
 /**
- * Configured schedulers
+ * Configured schedulers with their jobs
  *
  * @author Manuele Simi
  */
@@ -34,26 +34,55 @@ public class Schedulers {
   private Delay delay;
   private Cron cron;
 
+  /**
+   * Gets the list of jobs to start with a delay.
+   *
+   * @return the list
+   */
   public Delay getDelay() {
     return delay;
   }
 
+  /**
+   * Sets the list of jobs to start with a delay.
+   *
+   * @param delay the list
+   */
   public void setDelay(Delay delay) {
     this.delay = delay;
   }
 
+  /**
+   * Gets the list of cron-like jobs.
+   * @return
+   */
   public Cron getCron() {
     return cron;
   }
 
+  /**
+   * Sets the list of cron-like jobs.
+   *
+   * @param cron the list
+   */
   public void setCron(Cron cron) {
     this.cron = cron;
   }
 
+  /**
+   * Gets the list of fixed jobs.
+   *
+   * @return the list
+   */
   public Fixed getFixed() {
     return fixed;
   }
 
+  /**
+   * Sets the list of fixed jobs.
+   *
+   * @param fixed the list
+   */
   public void setFixed(Fixed fixed) {
     this.fixed = fixed;
   }

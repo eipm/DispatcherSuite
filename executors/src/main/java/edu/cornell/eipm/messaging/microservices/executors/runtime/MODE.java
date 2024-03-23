@@ -28,6 +28,12 @@ package edu.cornell.eipm.messaging.microservices.executors.runtime;
  * A mode defines a specific behavior when executing the jobs.
  */
 public enum MODE {
-  BLOCKING, //will block the execution until the job is done
-  NON_BLOCKING //will launch the job and return immediately
+  /**
+   * will block the execution until the job is done
+   */
+  BLOCKING,
+  /**
+   * will launch the job and return immediately
+   */
+  NON_BLOCKING
 }
