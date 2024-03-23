@@ -38,11 +38,11 @@
                             <include>src/test/java/**/*.java</include>
                         </includes>
 
-                        <!-- Cleanthat will refactor your code, but it may break your style: apply it before your formatter -->
+                        <!-- Clean that will refactor your code, but it may break your style: apply it before your formatter -->
                         <cleanthat/>
 
                         <googleJavaFormat>
-                            <version>1.19.1</version>                      <!-- optional, 1.8 is minimum supported version -->
+                            <version>1.19.1</version>
                             <style>GOOGLE</style>                       <!-- or AOSP (optional) -->
                             <reflowLongStrings>true</reflowLongStrings> <!-- optional -->
                             <formatJavadoc>true</formatJavadoc>        <!-- optional -->
