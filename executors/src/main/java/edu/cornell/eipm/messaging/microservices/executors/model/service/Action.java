@@ -24,7 +24,9 @@ SOFTWARE.
 package edu.cornell.eipm.messaging.microservices.executors.model.service;
 
 /**
- * An action associated to the {@link Topic}
+ * An action associated to the {@link Topic} An action is something to execute when a message is
+ * received from the topic. An action can have a reply, which is a message to send after the action
+ * is executed.
  *
  * @author Manuele Simi
  */
@@ -36,26 +38,56 @@ public class Action {
   /** if the action must be executed locally (no ssh wrapper) */
   private boolean local;
 
+  /**
+   * Gets the trigger for this action.
+   *
+   * @return the string with the trigger to launch
+   */
   public String getTrigger() {
     return trigger;
   }
 
+  /**
+   * Sets the trigger for this action.
+   *
+   * @param trigger the trigger to execute
+   */
   public void setTrigger(String trigger) {
     this.trigger = trigger;
   }
 
+  /**
+   * Gets the reply configured for this action.
+   *
+   * @return the reply
+   */
   public Reply getReply() {
     return reply;
   }
 
+  /**
+   * Sets the reply.
+   *
+   * @param reply the reply.
+   */
   public void setReply(Reply reply) {
     this.reply = reply;
   }
 
+  /**
+   * Checks if the action has executed locally.
+   *
+   * @return true if local, false otherwise.
+   */
   public boolean isLocal() {
     return local;
   }
 
+  /**
+   * Sets the action as local.
+   *
+   * @param local true if the action is locally executed, false otherwise.
+   */
   public void setLocal(boolean local) {
     this.local = local;
   }

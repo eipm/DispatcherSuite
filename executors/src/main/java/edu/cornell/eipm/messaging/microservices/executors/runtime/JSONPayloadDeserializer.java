@@ -27,7 +27,7 @@ import com.google.gson.Gson;
 import java.util.Map;
 
 /**
- * Deserializer for map of values
+ * Deserializer for map of values.
  *
  * @author Manuele Simi
  */
@@ -43,6 +43,11 @@ public class JSONPayloadDeserializer {
     this.data = data;
   }
 
+  /**
+   * Extracts a map with names and values in the payload
+   *
+   * @return the map with the values
+   */
   public Map<String, String> fromJSON() {
     return new Gson().fromJson(data, Map.class);
   }

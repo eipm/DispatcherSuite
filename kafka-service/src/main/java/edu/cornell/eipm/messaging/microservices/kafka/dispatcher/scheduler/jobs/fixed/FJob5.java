@@ -31,14 +31,14 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
+@Configuration
+@Component
+@ConditionalOnProperty(name = "dispatcher.schedulers.fixed.job5.active")
 /**
  * Job at index 5
  *
  * @author Manuele Simi
  */
-@Configuration
-@Component
-@ConditionalOnProperty(name = "dispatcher.schedulers.fixed.job5.active")
 public class FJob5 extends JobRunner {
 
   @Async

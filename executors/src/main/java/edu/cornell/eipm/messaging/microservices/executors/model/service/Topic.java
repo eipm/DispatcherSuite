@@ -23,7 +23,7 @@ SOFTWARE.
 */
 package edu.cornell.eipm.messaging.microservices.executors.model.service;
 
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -34,21 +34,41 @@ import java.util.List;
 public class Topic {
 
   private String name;
-  private List<Action> actions = new ArrayList<>();
+  private List<Action> actions = Collections.emptyList();
 
+  /**
+   * Gets the name of the topic.
+   *
+   * @return the name
+   */
   public String getName() {
     return name;
   }
 
+  /**
+   * Sets the name of the topic.
+   *
+   * @param name the name
+   */
   public void setName(String name) {
     this.name = name;
   }
 
+  /**
+   * Gets all the actions associated to the topic.
+   *
+   * @return the list of actions
+   */
   public List<Action> getActions() {
     return actions;
   }
 
-  public void setActions(List<Action> actions) {
+  /**
+   * Sets the actions for this topic.
+   *
+   * @param actions the list of actions
+   */
+  public void setActions(final List<Action> actions) {
     this.actions = actions;
   }
 

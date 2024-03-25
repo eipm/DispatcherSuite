@@ -41,6 +41,11 @@ public class RemoteCall extends BaseExecutor {
 
   RestTemplate restTemplate = new RestTemplate();
 
+  /**
+   * Creates the remote call.
+   *
+   * @param action the action to perform in the call
+   */
   public RemoteCall(Action action) {
     this.setAction(action);
   }

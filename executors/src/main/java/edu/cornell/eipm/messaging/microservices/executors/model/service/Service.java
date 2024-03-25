@@ -38,16 +38,26 @@ public class Service {
 
   private List<Topic> topics = new ArrayList<>();
 
-  public void setTopics(List<Topic> topics) {
+  /**
+   * Sets the list of topic for the service.
+   *
+   * @param topics the list of topics
+   */
+  public void setTopics(final List<Topic> topics) {
     this.topics = topics;
   }
 
+  /**
+   * Gets all the topics for the service.
+   *
+   * @return the topics
+   */
   public Optional<List<Topic>> getTopics() {
     return Optional.ofNullable(topics);
   }
 
   /**
-   * Gets all registered topics.
+   * Gets the names of the registered topics.
    *
    * @return the names
    */
@@ -59,7 +69,7 @@ public class Service {
    * Gets the actions of interest for the given topic.
    *
    * @param name the topic name
-   * @return the list of messages
+   * @return the list of actions
    */
   public List<Action> getActions(String name) {
     Optional<Topic> action = topics.stream().filter(t -> name.equals(t.getName())).findAny();

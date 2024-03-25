@@ -36,16 +36,30 @@ public class Job {
 
   String when;
 
+  /**
+   * Gets when to execute the job
+   *
+   * @return the config for when
+   */
   public String getWhen() {
     return when;
   }
 
+  /**
+   * Sets when the job will be executed
+   * @param when the value of when, it can be crontab-style (eg.g *\/20 * * * * ?) or in milliseconds
+   */
   public void setWhen(String when) {
     this.when = when;
   }
 
   private final List<Action> actions = new ArrayList<>();
 
+  /**
+   * List of actions associated to the job
+   *
+   * @return the list of actions
+   */
   public List<Action> getActions() {
     return actions;
   }

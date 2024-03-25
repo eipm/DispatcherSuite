@@ -45,6 +45,11 @@ public class JSONPayloadSerializer {
     this.data = data;
   }
 
+  /**
+   * Serializes the payload as JSON document.
+   *
+   * @return the serialized payload
+   */
   public String toJSON() {
     Gson prettyGson = new GsonBuilder().setPrettyPrinting().create();
     return prettyGson.toJson(data);

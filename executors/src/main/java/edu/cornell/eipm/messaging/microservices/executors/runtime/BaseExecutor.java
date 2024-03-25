@@ -34,6 +34,9 @@ import java.util.Map;
  */
 public abstract class BaseExecutor implements Executor {
 
+  /**
+   * The action to execute
+   */
   protected Action action;
 
   @Override
@@ -50,11 +53,12 @@ public abstract class BaseExecutor implements Executor {
   /**
    * Runs the trigger with its actual values
    *
-   * @param actualTrigger
-   * @param local
-   * @param mode
-   * @return
-   * @throws IOException
+   * @param actualTrigger the trigger to execute
+   * @param local true if it's a local execution, false otherwise
+   * @param mode the mode in which the trigger is executed
+   * @return true if the action completed successfully or if it has been started * successfully
+   *     (depending on the MODE)
+   * @throws IOException if the trigger fails
    */
   protected abstract boolean run(String actualTrigger, boolean local, MODE mode) throws IOException;
 }

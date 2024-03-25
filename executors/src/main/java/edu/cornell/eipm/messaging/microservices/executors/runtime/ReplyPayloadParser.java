@@ -29,8 +29,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Build map of values from the configured payload of a {@link
- * edu.cornell.eipm.messaging.microservices.dispatcher.config.Reply}
+ * Build a map of values from the configured payload.
  *
  * @author Manuele Simi
  */
@@ -39,11 +38,11 @@ public class ReplyPayloadParser {
   private static final Logger LOGGER = LoggerFactory.getLogger(ReplyPayloadParser.class);
 
   /**
-   * Parses the payload and creates the map ov values for the message payload
+   * Parses the payload and creates the map of values from the message payload.
    *
-   * @param payload
-   * @param requestValues
-   * @return
+   * @param payload the payload
+   * @param requestValues the actual values to replace in the payload
+   * @return a map with an entry for each var and its actual value
    */
   public static Map<String, String> parse(String payload, final Map<String, String> requestValues) {
 
