@@ -25,6 +25,8 @@ package edu.cornell.eipm.messaging.microservices.kafka.dispatcher.broker.produce
 
 import edu.cornell.eipm.messaging.microservices.executors.runtime.JSONPayloadSerializer;
 import java.util.Map;
+import java.util.concurrent.CompletableFuture;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,8 +55,8 @@ public class Sender {
   public void send(String topic, Map<String, String> values) {
     String json = new JSONPayloadSerializer(values).toJSON();
     LOGGER.info("sending payload='{}' to topic {}", json, topic);
-    ListenableFuture<SendResult<String, String>> future = kafkaTemplate.send(topic, topic, json);
-    future.addCallback(
+    CompletableFuture<SendResult<String, String>> future = kafkaTemplate.send(topic, topic, json);
+    future.whenCompleteAsync(
         new ListenableFutureCallback<SendResult<String, String>>() {
 
           @Override
