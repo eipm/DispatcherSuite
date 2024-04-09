@@ -6,28 +6,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="dispatcher" />
-        <module name="EventHubs Service" />
         <module name="eventhubs-service" />
-        <module name="executors" />
         <module name="Executors Backend" />
-        <module name="Kafka Service" />
         <module name="kafka-service" />
+        <module name="EventHubs Service" />
+        <module name="executors" />
+        <module name="dispatcher" />
+        <module name="Kafka Service" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="configmodel" target="1.8" />
-      <module name="eventhubs-service" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="Dispatcher" options="-parameters" />
-      <module name="EventHubs Service" options="-parameters" />
-      <module name="Executors Backend" options="-parameters" />
-      <module name="Kafka Service" options="-parameters" />
-      <module name="dispatcher" options="-parameters" />
-      <module name="eventhubs-service" options="-parameters" />
       <module name="executors" options="-parameters" />
       <module name="kafka-service" options="-parameters" />
     </option>
