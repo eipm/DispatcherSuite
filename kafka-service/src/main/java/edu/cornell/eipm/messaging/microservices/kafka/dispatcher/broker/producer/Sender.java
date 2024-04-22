@@ -26,14 +26,11 @@ package edu.cornell.eipm.messaging.microservices.kafka.dispatcher.broker.produce
 import edu.cornell.eipm.messaging.microservices.executors.runtime.JSONPayloadSerializer;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
-import org.springframework.util.concurrent.ListenableFuture;
-import org.springframework.util.concurrent.ListenableFutureCallback;
 
 /**
  * Send string payloads to selected topics.
@@ -57,21 +54,19 @@ public class Sender {
     LOGGER.info("sending payload='{}' to topic {}", json, topic);
     CompletableFuture<SendResult<String, String>> future = kafkaTemplate.send(topic, topic, json);
     future.whenCompleteAsync(
-        new ListenableFutureCallback<SendResult<String, String>>() {
-
-          @Override
-          public void onSuccess(SendResult<String, String> result) {
+        (result, throwable) -> {
+          if (throwable != null) {
+            LOGGER.error(
+                "Unable to send message to =[" + topic + "] due to : " + throwable.getMessage());
+            future.completeExceptionally(throwable);
+          } else {
             LOGGER.info(
                 "Sent message to topic=["
                     + topic
                     + "] with offset=["
                     + result.getRecordMetadata().offset()
                     + "]");
-          }
-
-          @Override
-          public void onFailure(Throwable ex) {
-            LOGGER.error("Unable to send message to =[" + topic + "] due to : " + ex.getMessage());
+            future.complete(result);
           }
         });
   }
