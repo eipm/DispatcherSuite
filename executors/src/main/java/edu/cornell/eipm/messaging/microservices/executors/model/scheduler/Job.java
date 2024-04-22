@@ -47,7 +47,9 @@ public class Job {
 
   /**
    * Sets when the job will be executed
-   * @param when the value of when, it can be crontab-style (eg.g *\/20 * * * * ?) or in milliseconds
+   *
+   * @param when the value of when, it can be crontab-style (eg.g *\/20 * * * * ?) or in
+   *     milliseconds
    */
   public void setWhen(String when) {
     this.when = when;

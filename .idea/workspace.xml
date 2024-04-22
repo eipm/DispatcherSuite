@@ -7,13 +7,14 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dae2f7e8-1246-45f6-adfc-bd5a285a7c0b" name="Default Changelist" comment="Remove typos from pom.">
+    <list default="true" id="dae2f7e8-1246-45f6-adfc-bd5a285a7c0b" name="Default Changelist" comment="Prepare version for the next release.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/executors/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/executors/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafka-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/executors/src/main/java/edu/cornell/eipm/messaging/microservices/executors/model/scheduler/Job.java" beforeDir="false" afterPath="$PROJECT_DIR$/executors/src/main/java/edu/cornell/eipm/messaging/microservices/executors/model/scheduler/Job.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/executors/src/main/java/edu/cornell/eipm/messaging/microservices/executors/model/scheduler/Schedulers.java" beforeDir="false" afterPath="$PROJECT_DIR$/executors/src/main/java/edu/cornell/eipm/messaging/microservices/executors/model/scheduler/Schedulers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/executors/src/main/java/edu/cornell/eipm/messaging/microservices/executors/runtime/BaseExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/executors/src/main/java/edu/cornell/eipm/messaging/microservices/executors/runtime/BaseExecutor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/executors/src/main/java/edu/cornell/eipm/messaging/microservices/executors/runtime/MODE.java" beforeDir="false" afterPath="$PROJECT_DIR$/executors/src/main/java/edu/cornell/eipm/messaging/microservices/executors/runtime/MODE.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/DispatcherApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/DispatcherApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/broker/producer/Sender.java" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/broker/producer/Sender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -262,7 +263,7 @@
       <recent name="edu.cornell.eipm.messaging.microservices.executors.runtime" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DispatcherControllerTest">
+  <component name="RunManager" selected="Maven.dispatcher-suite [spotless:apply]">
     <configuration default="true" type="tests" factoryName="Nosetests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
