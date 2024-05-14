@@ -34,9 +34,7 @@ import java.util.Map;
  */
 public abstract class BaseExecutor implements Executor {
 
-  /**
-   * The action to execute
-   */
+  /** The action to execute */
   protected Action action;
 
   @Override

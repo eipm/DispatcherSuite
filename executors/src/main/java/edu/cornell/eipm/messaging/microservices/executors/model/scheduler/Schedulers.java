@@ -54,6 +54,7 @@ public class Schedulers {
 
   /**
    * Gets the list of cron-like jobs.
+   *
    * @return
    */
   public Cron getCron() {
