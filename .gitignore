@@ -5,10 +5,8 @@ target
 *.csr
 *.key
 data
-eventhubs-service/src/main/resources/azure-credentials.json
-eventhubs-service/azure-credentials.auth
 kafka-service/configs/demo-*.yml
 kafka-service/demo-*.yml
 kafka-service/sample-*.yml
 .idea/*
-application*.yml
+application.yml
