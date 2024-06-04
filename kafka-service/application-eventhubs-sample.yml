@@ -43,22 +43,42 @@ dispatcher:
               topic: analysis_in_progress
               payload: ${sampleID}
 
-  scheduler:
-    fixedRate1:
-      rate: 5000
-      actions:
-        - trigger: https://dzone.com/articles/kafka-cluster-1?q=${query}
-        - trigger: echo "hello"
-    fixedRate2:
-      rate: 5000
-      actions:
-        - trigger: https://dzone.com/articles/kafka-cluster-1?q=${query}
-        - trigger: echo "hello"
-    fixedRate3:
-      rate: 5000
-      actions:
-        - trigger: https://dzone.com/articles/kafka-cluster-1?q=${query}
-        - trigger: echo "hello"
+  schedulers:
+    enable: true
+    cron:
+      job1:
+        active: true
+        when: '*/10 * * * * ?'
+        actions:
+          - trigger: echo "cron job2 started at $(date)" >> $HOME/DispatcherSuite/kafka-service/jobs.txt
+      job2:
+        active: true
+        when: '*/20 * * * * ?'
+        actions:
+          - trigger: echo "cron job2 started at $(date)" >> $HOME/DispatcherSuite/kafka-service/jobs.txt
+    fixed:
+      job1:
+        active: true
+        when: '10000'
+        actions:
+          - trigger: echo "fixed job1 started at $(date)"" >> $HOME/DispatcherSuite/kafka-service/jobs.txt
+      job2:
+        active: true
+        when: '12000'
+        actions:
+          - trigger: echo "fixed job2 started at $(date)" >> $HOME/DispatcherSuite/kafka-service/jobs.txt
+    delay:
+      job1:
+        active: true
+        when: '15000'
+        actions:
+          - trigger: echo "delay job1 started at $(date)" >> $HOME/DispatcherSuite/kafka-service/jobs.txt
+      job2:
+        active: true
+        when: '30000'
+        actions:
+          - trigger: echo "delay job2 started at $(date)" >> $HOME/DispatcherSuite/kafka-service/jobs.txt
+
 
 logging:
   level:

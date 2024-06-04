@@ -24,16 +24,12 @@ SOFTWARE.
 package edu.cornell.eipm.messaging.microservices.executors.runtime;
 
 /**
- * List of modes that can be used for the executions.
- * A mode defines a specific behavior when executing the jobs.
+ * List of modes that can be used for the executions. A mode defines a specific behavior when
+ * executing the jobs.
  */
 public enum MODE {
-  /**
-   * will block the execution until the job is done
-   */
+  /** will block the execution until the job is done */
   BLOCKING,
-  /**
-   * will launch the job and return immediately
-   */
+  /** will launch the job and return immediately */
   NON_BLOCKING
 }
