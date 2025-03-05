@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+title: Dispatcher Suite
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: dataset
+authors:
+  - family-names: Simi
+    given-names: Manuele
+    affiliation: Weill Cornell Medicine (WCM)
+    orcid: '0000-0001-6898-6249'
+  - given-names: Alexandros
+    family-names: Sigaras
+    email: als2076@med.cornell.edu
+    affiliation: Weill Cornell Medicine (WCM)
+    orcid: 'https://orcid.org/0000-0002-7607-559X'
+  - family-names: Sboner
+    given-names: Andrea
+    affiliation: Weill Cornell Medicine (WCM)
+    orcid: 'https://orcid.org/0000-0001-6915-3070'
+  - family-names: Tang
+    given-names: Jeff
+    affiliation: Weill Cornell Medicine (WCM)
+    orcid: 'https://orcid.org/0009-0006-0366-5050'
+  - family-names: Zisimopoulos
+    given-names: Pantelis
+    affiliation: Weill Cornell Medicine (WCM)
+    orcid: 'https://orcid.org/0009-0006-2425-0882'
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.14975839
+repository-code: 'https://github.com/eipm/DispatcherSuite'
+keywords:
+  - Apache Kafka
+  - Azure Event Hubs
+license: MIT
