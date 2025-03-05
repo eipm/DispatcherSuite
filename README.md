@@ -2,7 +2,7 @@
 
 ![logo](doc/dispatcher-services-logo.png)
 
-[![Github](https://img.shields.io/badge/github-1.4.7-green?style=flat&logo=github)](https://github.com/eipm/bridge2ai-redcap) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14975839.svg)](https://zenodo.org/doi/10.5281/zenodo.14975839)
+[![Github](https://img.shields.io/badge/github-1.4.7-green?style=flat&logo=github)](https://github.com/eipm/DispatcherSuite) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14975839.svg)](https://zenodo.org/doi/10.5281/zenodo.14975839)
 
 A set of microservices to interface with different messaging systems.
 
