@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>kafka-service</artifactId>
-    <version>1.4.5</version>
+    <version>1.4.6</version>
     <name>Kafka Dispatcher service</name>
     <packaging>war</packaging>
 
