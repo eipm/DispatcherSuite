@@ -7,11 +7,8 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dae2f7e8-1246-45f6-adfc-bd5a285a7c0b" name="Default Changelist" comment="Advance Spring Boot to 3.5.0.">
+    <list default="true" id="dae2f7e8-1246-45f6-adfc-bd5a285a7c0b" name="Default Changelist" comment="Advance parent and service version.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/executors/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/executors/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafka-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -910,7 +907,7 @@
       <option name="project" value="LOCAL" />
       <updated>1702870162319</updated>
     </task>
-    <option name="localTasksCounter" value="205" />
+    <option name="localTasksCounter" value="206" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1090,7 +1087,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Remove build script." />
     <MESSAGE value="Update rolling policies for the log file. Add date to the pattern." />
     <MESSAGE value="Update docker doc." />
     <MESSAGE value="Update README." />
@@ -1115,7 +1111,8 @@
     <MESSAGE value="Update sample configs and gitingore." />
     <MESSAGE value="Add new sample configs." />
     <MESSAGE value="Advance Spring Boot to 3.5.0." />
-    <option name="LAST_COMMIT_MESSAGE" value="Advance Spring Boot to 3.5.0." />
+    <MESSAGE value="Advance parent and service version." />
+    <option name="LAST_COMMIT_MESSAGE" value="Advance parent and service version." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
