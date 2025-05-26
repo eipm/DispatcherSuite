@@ -7,9 +7,10 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dae2f7e8-1246-45f6-adfc-bd5a285a7c0b" name="Default Changelist" comment="Add new sample configs.">
+    <list default="true" id="dae2f7e8-1246-45f6-adfc-bd5a285a7c0b" name="Default Changelist" comment="Advance Spring Boot to 3.5.0.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafka-service/application-eventhubs-sample.yml" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-service/application-eventhubs-sample.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/executors/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/executors/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kafka-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -228,6 +229,9 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Maven.dispatcher-suite [clean].executor": "Run",
+    "Maven.dispatcher-suite [javadoc:jar].executor": "Run",
+    "Maven.dispatcher-suite [package].executor": "Run",
+    "Maven.dispatcher-suite [spotless:apply].executor": "Run",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "migrate-spring-boot-3.5.0",
     "kotlin-language-version-configured": "true",
@@ -278,7 +282,7 @@
       <recent name="edu.cornell.eipm.messaging.microservices.executors.runtime" />
     </key>
   </component>
-  <component name="RunManager" selected="Maven.dispatcher-suite [spotless:apply]">
+  <component name="RunManager" selected="Maven.dispatcher-suite [javadoc:jar]">
     <configuration default="true" type="tests" factoryName="Nosetests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -906,7 +910,7 @@
       <option name="project" value="LOCAL" />
       <updated>1702870162319</updated>
     </task>
-    <option name="localTasksCounter" value="204" />
+    <option name="localTasksCounter" value="205" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1086,7 +1090,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update about description." />
     <MESSAGE value="Remove build script." />
     <MESSAGE value="Update rolling policies for the log file. Add date to the pattern." />
     <MESSAGE value="Update docker doc." />
@@ -1111,7 +1114,8 @@
     <MESSAGE value="Remove scripts belonging to the docker image." />
     <MESSAGE value="Update sample configs and gitingore." />
     <MESSAGE value="Add new sample configs." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add new sample configs." />
+    <MESSAGE value="Advance Spring Boot to 3.5.0." />
+    <option name="LAST_COMMIT_MESSAGE" value="Advance Spring Boot to 3.5.0." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
