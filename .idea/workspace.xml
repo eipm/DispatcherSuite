@@ -7,12 +7,8 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dae2f7e8-1246-45f6-adfc-bd5a285a7c0b" name="Default Changelist" comment="Update launch/build scripts.">
+    <list default="true" id="dae2f7e8-1246-45f6-adfc-bd5a285a7c0b" name="Default Changelist" comment="Advance parent and service version.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafka-service/scripts/startKafkaDispatcher.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafka-service/scripts/startKafkaDispatcherSSH.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafka-service/scripts/stopKafkaDispatcher.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafka-service/scripts/testSSH.sh" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,12 +61,24 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;manuelesimi&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/eipm/DispatcherSuite.git&quot;,
+    &quot;accountId&quot;: &quot;694ab4c9-c14c-405d-a1be-ab180942b87c&quot;
+  }
+}</component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -168,6 +176,9 @@
   <component name="MavenRunner">
     <option name="skipTests" value="true" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1249" />
@@ -212,15 +223,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven.dispatcher-suite [clean].executor": "Run",
+    "Maven.dispatcher-suite [javadoc:jar].executor": "Run",
+    "Maven.dispatcher-suite [package].executor": "Run",
+    "Maven.dispatcher-suite [spotless:apply].executor": "Run",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "migrate-spring-boot-3.5.0",
+    "kotlin-language-version-configured": "true",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="edu.cornell.eipm.messaging.microservices.dispatcher.executors" />
@@ -261,7 +279,7 @@
       <recent name="edu.cornell.eipm.messaging.microservices.executors.runtime" />
     </key>
   </component>
-  <component name="RunManager" selected="Maven.dispatcher-suite [spotless:apply]">
+  <component name="RunManager" selected="Maven.dispatcher-suite [javadoc:jar]">
     <configuration default="true" type="tests" factoryName="Nosetests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -461,6 +479,7 @@
         <option name="myRunnerSettings" />
         <option name="myRunnerParameters">
           <MavenRunnerParameters>
+            <option name="cmdOptions" />
             <option name="profiles">
               <set />
             </option>
@@ -469,9 +488,13 @@
                 <option value="javadoc:jar" />
               </list>
             </option>
+            <option name="multimoduleDir" />
             <option name="pomFileName" />
             <option name="profilesMap">
               <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
             </option>
             <option name="resolveToWorkspace" value="false" />
             <option name="workingDirPath" value="$PROJECT_DIR$" />
@@ -486,6 +509,7 @@
         <option name="myRunnerSettings" />
         <option name="myRunnerParameters">
           <MavenRunnerParameters>
+            <option name="cmdOptions" />
             <option name="profiles">
               <set />
             </option>
@@ -494,9 +518,13 @@
                 <option value="spotless:apply" />
               </list>
             </option>
+            <option name="multimoduleDir" />
             <option name="pomFileName" />
             <option name="profilesMap">
               <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
             </option>
             <option name="resolveToWorkspace" value="false" />
             <option name="workingDirPath" value="$PROJECT_DIR$" />
@@ -879,7 +907,7 @@
       <option name="project" value="LOCAL" />
       <updated>1702870162319</updated>
     </task>
-    <option name="localTasksCounter" value="201" />
+    <option name="localTasksCounter" value="206" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1008,6 +1036,11 @@
             <list>
               <RecentGroup>
                 <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
                   <option value="main" />
                 </option>
               </RecentGroup>
@@ -1035,18 +1068,25 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="develop" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Remove Dockerfile (moved to another repo)." />
-    <MESSAGE value="Remove zstd-jni from the executable jar." />
-    <MESSAGE value="Update script to run 1.3.0-SNAPSHOT." />
-    <MESSAGE value="Update about description." />
-    <MESSAGE value="Remove build script." />
     <MESSAGE value="Update rolling policies for the log file. Add date to the pattern." />
     <MESSAGE value="Update docker doc." />
     <MESSAGE value="Update README." />
@@ -1067,7 +1107,12 @@
     <MESSAGE value="More javadoc." />
     <MESSAGE value="Remove typos from pom." />
     <MESSAGE value="Update launch/build scripts." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update launch/build scripts." />
+    <MESSAGE value="Remove scripts belonging to the docker image." />
+    <MESSAGE value="Update sample configs and gitingore." />
+    <MESSAGE value="Add new sample configs." />
+    <MESSAGE value="Advance Spring Boot to 3.5.0." />
+    <MESSAGE value="Advance parent and service version." />
+    <option name="LAST_COMMIT_MESSAGE" value="Advance parent and service version." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
