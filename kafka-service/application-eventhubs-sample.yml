@@ -26,7 +26,7 @@ dispatcher:
     topics:
       - name: oncorseq_sequencing_in_progress
         actions:
-          - trigger: nextflow main.nf --sampleID ${sampleID} --run ${runID} --sayHello ${sayHello}
+          - trigger: nextflow run main.nf --sampleID ${sampleID} --run ${runID} --sayHello ${sayHello}
             reply:
               topic:  oncorseq_sequencing_pipeline_initialized
               payload: sampleID=${sampleID}
