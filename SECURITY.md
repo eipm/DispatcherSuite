@@ -6,9 +6,9 @@ Use this section to tell people about which versions of your project are
 currently being supported with security updates.
 
 | Version | Supported          |
-| ------- | ------------------ |
-| 1.4.7   | :white_check_mark: |
-| < 1.4.7   | :x:                |
+|---------| ------------------ |
+| 1.4.8   | :white_check_mark: |
+| < 1.4.8 | :x:                |
 
 ## Reporting a Vulnerability
 
