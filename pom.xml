@@ -10,7 +10,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.5.3</version>
+        <version>3.5.4</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>edu.cornell.eipm.messaging.microservices</groupId>
@@ -22,7 +22,7 @@
 
     <properties>
         <java.version>18</java.version>
-        <spotless.version>2.41.1</spotless.version>
+        <spotless.version>2.46.1</spotless.version>
     </properties>
 
     <build>
@@ -86,13 +86,6 @@
     </build>
 
     <dependencies>
-
-        <!-- https://mvnrepository.com/artifact/com.hubspot.maven.plugins/prettier-maven-plugin -->
-        <!--dependency>
-            <groupId>com.hubspot.maven.plugins</groupId>
-            <artifactId>prettier-maven-plugin</artifactId>
-            <version>0.21</version>
-        </dependency-->
 
         <!-- https://mvnrepository.com/artifact/com.diffplug.spotless/spotless-maven-plugin -->
         <dependency>
