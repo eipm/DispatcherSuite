@@ -1,0 +1,8 @@
+# Scanning the Maven dependencies and creating pull requests to update them.
+version: 2
+updates:
+  - package-ecosystem: "maven"
+    directory: "/" # Location of pom.xml ("/" = repo root)
+    schedule:
+      interval: "daily"
+    target-branch: "develop" # PRs go to develop branch
