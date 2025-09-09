@@ -51,7 +51,7 @@ public class Sender {
    */
   public void send(String topic, Map<String, String> values) {
     // Sanitize the topic parameter to prevent log injection
-    String sanitizedTopic = topic.replace("\n", "").replace("\r", "");
+    String sanitizedTopic = topic.replaceAll("[^a-zA-Z0-9._-]", "");
     String json = new JSONPayloadSerializer(values).toJSON();
     LOGGER.info("sending payload='{}' to topic {}", json, sanitizedTopic);
     CompletableFuture<SendResult<String, String>> future = kafkaTemplate.send(sanitizedTopic, topic, json);
