@@ -54,7 +54,7 @@ public class Sender {
     String sanitizedTopic = topic.replace("\n", "").replace("\r", "");
     String json = new JSONPayloadSerializer(values).toJSON();
     LOGGER.info("sending payload='{}' to topic {}", json, sanitizedTopic);
-    CompletableFuture<SendResult<String, String>> future = kafkaTemplate.send(sanitizedTopic, sanitizedTopic, json);
+    CompletableFuture<SendResult<String, String>> future = kafkaTemplate.send(sanitizedTopic, topic, json);
     future.whenCompleteAsync(
         (result, throwable) -> {
           if (throwable != null) {
