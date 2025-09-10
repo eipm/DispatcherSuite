@@ -1111,8 +1111,8 @@
     <MESSAGE value="Add new sample configs." />
     <MESSAGE value="Advance Spring Boot to 3.5.0." />
     <MESSAGE value="Advance parent and service version." />
-    <MESSAGE value="Configure dependabot to target develop." />
-    <option name="LAST_COMMIT_MESSAGE" value="Configure dependabot to target develop." />
+    <MESSAGE value="Address some security vulnerabilities." />
+    <option name="LAST_COMMIT_MESSAGE" value="Address some security vulnerabilities." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
