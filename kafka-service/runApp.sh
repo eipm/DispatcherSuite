@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-java -jar target/kafka-service-1.4.9.war -Dspring.config.location=/path/to/EIPM/DispatcherSuite/kafka-service/application.yml
+java -jar target/kafka-service-1.4.10.war -Dspring.config.location=/path/to/EIPM/DispatcherSuite/kafka-service/application.yml
