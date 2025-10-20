@@ -24,6 +24,10 @@ Caches the local Maven repository (`~/.m2/repository`) to speed up builds.
 4. **Build and Test**  
 Executes `mvn clean install --batch-mode` to build the project and run all tests.
 
+## Build status
+
+[![Build DispatcherSuite](https://github.com/eipm/DispatcherSuite/actions/workflows/build.yml/badge.svg)](https://github.com/eipm/DispatcherSuite/actions/workflows/build.yml)
+
 ---
 
 The build workflow ensures the code is built and tested automatically, helping maintain code quality.
