@@ -35,4 +35,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: kafka-service-war
-          path: target/*.war
+          path: kafka-service/target/*.war
