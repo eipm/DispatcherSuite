@@ -1,0 +1,33 @@
+## GitHub Actions Workflow: Build DispatcherSuite
+
+This workflow automates building and testing the project using Maven and JDK 17 on every push and pull request.
+
+### Workflow Location
+
+- File: `.github/workflows/build.yml`
+
+### Triggers
+
+- Runs on every push and pull request to any branch.
+
+### Steps
+
+1. **Checkout Code**  
+Clones the repository using the official GitHub action.
+
+2. **Set Up JDK 17**  
+Installs the Temurin JDK 17 distribution for building the project.
+
+3. **Cache Maven Dependencies**  
+Caches the local Maven repository (`~/.m2/repository`) to speed up builds.
+
+4. **Build and Test**  
+Executes `mvn clean install --batch-mode` to build the project and run all tests.
+
+## Build status
+
+[![Build DispatcherSuite](https://github.com/eipm/DispatcherSuite/actions/workflows/build.yml/badge.svg)](https://github.com/eipm/DispatcherSuite/actions/workflows/build.yml)
+
+---
+
+The build workflow ensures the code is built and tested automatically, helping maintain code quality.
