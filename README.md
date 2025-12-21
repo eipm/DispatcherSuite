@@ -12,7 +12,7 @@ A set of microservices to interface with different messaging systems.
 See [LICENSE](./LICENSE)
 
 ## 📚 How to Cite
-> Manuele Simi, Alexandros Sigaras, Jeff Tang, & Pantelis Zisimopoulos. (2025). eipm/DispatcherSuite: v1.4.9 (v1.4.9). Zenodo. [https://zenodo.org/records/14975856](https://zenodo.org/records/14975856)
+> Manuele Simi, Alexandros Sigaras, Jeff Tang, & Pantelis Zisimopoulos. (2025). eipm/DispatcherSuite: v1.4.8 (v1.4.8). Zenodo. [https://zenodo.org/records/14975856](https://zenodo.org/records/14975856)
 
 ## Modules
 * [Kafka-Dispatcher Service](kafka-service/README.md) - to interface with Apache Kafka brokers (on-prem or on the cloud, like Microsoft EventHubs or AWS MSK)
