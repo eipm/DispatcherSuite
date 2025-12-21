@@ -15,8 +15,8 @@ This workflow automates building and testing the project using Maven and JDK 17 
 1. **Checkout Code**  
 Clones the repository using the official GitHub action.
 
-2. **Set Up JDK 17**  
-Installs the Temurin JDK 17 distribution for building the project.
+2. **Set Up JDK 21**  
+Installs the Temurin 21 distribution for building the project.
 
 3. **Cache Maven Dependencies**  
 Caches the local Maven repository (`~/.m2/repository`) to speed up builds.

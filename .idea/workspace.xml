@@ -7,7 +7,11 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dae2f7e8-1246-45f6-adfc-bd5a285a7c0b" name="Default Changelist" comment="Configure dependabot to target develop." />
+    <list default="true" id="dae2f7e8-1246-45f6-adfc-bd5a285a7c0b" name="Default Changelist" comment="Update parent POM version from 1.4.4-SNAPSHOT to 1.4.4.">
+      <change beforePath="$PROJECT_DIR$/.github/GHA.rmd" beforeDir="false" afterPath="$PROJECT_DIR$/.github/GHA.rmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,6 +75,14 @@
     &quot;assignee&quot;: &quot;manuelesimi&quot;
   }
 }</component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="main" />
+        <option value="develop" />
+      </list>
+    </option>
+  </component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/eipm/DispatcherSuite.git&quot;,
@@ -224,11 +236,12 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Maven.dispatcher-suite [clean].executor": "Run",
+    "Maven.dispatcher-suite [install].executor": "Run",
     "Maven.dispatcher-suite [javadoc:jar].executor": "Run",
     "Maven.dispatcher-suite [package].executor": "Run",
     "Maven.dispatcher-suite [spotless:apply].executor": "Run",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "develop",
+    "git-widget-placeholder": "#60 on develop",
     "kotlin-language-version-configured": "true",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
