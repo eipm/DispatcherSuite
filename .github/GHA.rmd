@@ -22,7 +22,7 @@ Installs the Temurin JDK 17 distribution for building the project.
 Caches the local Maven repository (`~/.m2/repository`) to speed up builds.
 
 4. **Build and Test**  
-Executes `mvn clean install --batch-mode` to build the project and run all tests.
+Executes `mvn clean package --batch-mode` to build the project and run all tests.
 
 ## Build status
 
