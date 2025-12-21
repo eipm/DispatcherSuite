@@ -8,7 +8,7 @@ This workflow automates building and testing the project using Maven and JDK 17 
 
 ### Triggers
 
-- Runs on every push and pull request to any branch.
+- Runs on every push to any branch.
 
 ### Steps
 
