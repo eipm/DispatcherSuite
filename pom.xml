@@ -10,19 +10,19 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.5.4</version>
+        <version>3.5.7</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>edu.cornell.eipm.messaging.microservices</groupId>
     <artifactId>dispatcher-suite</artifactId>
     <name>Dispatcher Suite</name>
-    <version>1.4.2-SNAPSHOT</version>
+    <version>1.4.4</version>
     <packaging>pom</packaging>
     <description>Dispatcher Services Suite</description>
 
     <properties>
-        <java.version>18</java.version>
-        <spotless.version>2.46.1</spotless.version>
+        <java.version>21</java.version>
+        <spotless.version>3.1.0</spotless.version>
     </properties>
 
     <build>
@@ -62,7 +62,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.6.3</version>
+                <version>3.12.0</version>
                 <executions>
                     <execution>
                         <id>main-javadoc</id>
