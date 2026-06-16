@@ -22,7 +22,7 @@
 
     <properties>
         <java.version>21</java.version>
-        <spotless.version>3.5.1</spotless.version>
+        <spotless.version>3.7.0</spotless.version>
     </properties>
 
     <build>
