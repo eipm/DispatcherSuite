@@ -26,6 +26,7 @@ package edu.cornell.eipm.messaging.microservices.kafka.dispatcher.broker.consume
 import edu.cornell.eipm.messaging.microservices.executors.model.service.Reply;
 import edu.cornell.eipm.messaging.microservices.executors.runtime.ExecutorService;
 import edu.cornell.eipm.messaging.microservices.executors.runtime.JSONPayloadDeserializer;
+import edu.cornell.eipm.messaging.microservices.executors.runtime.LogSanitizer;
 import edu.cornell.eipm.messaging.microservices.executors.runtime.MODE;
 import edu.cornell.eipm.messaging.microservices.executors.runtime.ReplyPayloadParser;
 import edu.cornell.eipm.messaging.microservices.kafka.dispatcher.broker.producer.Sender;
@@ -83,7 +84,10 @@ public class Receiver {
     LOGGER.info("-----start of batch receive-----");
     for (int i = 0; i < messages.size(); i++) {
       ConsumerRecord<?, String> message = messages.get(i);
-      LOGGER.info("Received messages on topic [{}]: [{}] ", message.topic(), message.value());
+      LOGGER.info(
+          "Received messages on topic [{}]: [{}] ",
+          LogSanitizer.sanitize(message.topic()),
+          LogSanitizer.sanitize(message.value()));
       kafkaService
           .getService()
           .getActions(message.topic())
