@@ -104,6 +104,13 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- runs the JUnit 4 tests on the JUnit Platform used by spring-boot-starter-test -->
+        <dependency>
+            <groupId>org.junit.vintage</groupId>
+            <artifactId>junit-vintage-engine</artifactId>
+            <scope>test</scope>
+        </dependency>
+
 
     </dependencies>
 </project>
