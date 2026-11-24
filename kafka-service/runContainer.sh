@@ -10,4 +10,4 @@ WORKING_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
  -v /path/to/tmp/:/tmp \
  -v /path/to/DispatcherSuite/kafka-service/log/:/log \
  -v "${WORKING_DIR}/application.yml":/application.yml \
-  eipm/kafka-dispatcher:1.4.9
+  eipm/kafka-dispatcher:1.4.10
