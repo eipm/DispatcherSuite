@@ -46,6 +46,11 @@ public class LocalCommand extends BaseExecutor {
   }
 
   @Override
+  protected boolean isShellCommand() {
+    return true;
+  }
+
+  @Override
   protected boolean run(String command, boolean local, MODE mode) throws IOException {
     logger.debug("Local execution for: {}", LogSanitizer.sanitize(command));
     String wrappedCommand;
