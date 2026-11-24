@@ -44,8 +44,29 @@ public abstract class BaseExecutor implements Executor {
 
   @Override
   public boolean execute(Map<String, String> values, boolean local, MODE mode) throws IOException {
-    String actualTrigger = new TriggerValue(action.getTrigger()).getActualValue(values);
+    TriggerValue trigger = new TriggerValue(action.getTrigger());
+    String actualTrigger;
+    try {
+      actualTrigger =
+          this.isShellCommand()
+              ? trigger.getShellSafeValue(values)
+              : trigger.getActualValue(values);
+    } catch (IllegalArgumentException e) {
+      // report a rejected value as a failure of this action only, instead of an unchecked exception
+      // that would fail (and eventually discard) the whole batch of received messages
+      throw new IOException("Trigger not executed: " + e.getMessage(), e);
+    }
     return this.run(actualTrigger, local, mode);
+  }
+
+  /**
+   * Tells whether the trigger is executed by a shell, in which case substituted values are checked
+   * for shell metacharacters.
+   *
+   * @return true if the trigger is a shell command
+   */
+  protected boolean isShellCommand() {
+    return false;
   }
 
   /**

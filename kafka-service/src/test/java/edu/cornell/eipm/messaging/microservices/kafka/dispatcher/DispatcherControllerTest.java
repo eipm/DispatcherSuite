@@ -23,12 +23,16 @@ SOFTWARE.
 */
 package edu.cornell.eipm.messaging.microservices.kafka.dispatcher;
 
+import static org.hamcrest.Matchers.matchesPattern;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.header;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import java.nio.charset.StandardCharsets;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,7 +59,8 @@ public class DispatcherControllerTest {
         .perform(get("/about"))
         .andDo(print())
         .andExpect(status().isOk())
-        .andExpect(jsonPath("$.content").value("Kafka-Dispatcher Service 1.3.2-SNAPSHOT"));
+        .andExpect(jsonPath("$.component").value("Kafka Dispatcher service"))
+        .andExpect(jsonPath("$.version").value(matchesPattern("\\d+\\.\\d+\\.\\d+.*")));
   }
 
   @Test
@@ -71,6 +76,40 @@ public class DispatcherControllerTest {
                 .content("{\"runID\":\"xyz\",\"sampleID\":\"1234\"}")
                 .contentType(MediaType.TEXT_PLAIN_VALUE))
         .andDo(print())
-        .andExpect(status().isOk());
+        .andExpect(status().isOk())
+        .andExpect(header().string("Content-Type", "text/plain;charset=UTF-8"))
+        .andExpect(header().string("X-Content-Type-Options", "nosniff"));
+  }
+
+  @Test
+  public void publishNeverAnswersWithHtml() throws Exception {
+    for (MediaType accept :
+        new MediaType[] {MediaType.TEXT_HTML, MediaType.APPLICATION_JSON, MediaType.ALL}) {
+      this.mockMvc
+          .perform(
+              get("/publish/" + SpringKafkaApplicationTest.TEST_TOPIC)
+                  .param("runID", "<script>alert(1)</script>")
+                  .accept(accept))
+          .andExpect(status().isOk())
+          .andExpect(header().string("Content-Type", "text/plain;charset=UTF-8"))
+          .andExpect(header().string("X-Content-Type-Options", "nosniff"))
+          .andExpect(
+              content()
+                  .string(
+                      "Sent payload [runID=<script>alert(1)</script>] to Topic "
+                          + SpringKafkaApplicationTest.TEST_TOPIC));
+    }
+  }
+
+  @Test
+  public void publishKeepsUtf8Payloads() throws Exception {
+    this.mockMvc
+        .perform(get("/publish/" + SpringKafkaApplicationTest.TEST_TOPIC).param("runID", "café"))
+        .andExpect(status().isOk())
+        .andExpect(
+            content()
+                .bytes(
+                    ("Sent payload [runID=café] to Topic " + SpringKafkaApplicationTest.TEST_TOPIC)
+                        .getBytes(StandardCharsets.UTF_8)));
   }
 }

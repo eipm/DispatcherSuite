@@ -52,11 +52,11 @@ public class RemoteCall extends BaseExecutor {
 
   @Override
   protected boolean run(String url, boolean local, MODE mode) {
-    logger.debug("Remote call to: {}", url);
+    logger.debug("Remote call to: {}", LogSanitizer.sanitize(url));
     // Fire the request.
     ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
     logger.debug("Remote Call Dispatched");
-    logger.trace(response.getBody());
+    logger.trace("Remote call response: {}", LogSanitizer.sanitize(response.getBody()));
     return response.getStatusCode() == HttpStatus.OK;
   }
 }

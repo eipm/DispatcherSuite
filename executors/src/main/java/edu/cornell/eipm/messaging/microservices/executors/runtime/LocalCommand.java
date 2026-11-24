@@ -46,8 +46,13 @@ public class LocalCommand extends BaseExecutor {
   }
 
   @Override
+  protected boolean isShellCommand() {
+    return true;
+  }
+
+  @Override
   protected boolean run(String command, boolean local, MODE mode) throws IOException {
-    logger.debug("Local execution for: {}", command);
+    logger.debug("Local execution for: {}", LogSanitizer.sanitize(command));
     String wrappedCommand;
     String ssh_command;
     String hostname = System.getenv("HOST_HOSTNAME");
@@ -74,7 +79,7 @@ public class LocalCommand extends BaseExecutor {
       wrappedCommand = "#!/usr/bin/env sh \n";
       wrappedCommand += command + "\n";
     }
-    logger.trace("Command wrapped as: {}", wrappedCommand);
+    logger.trace("Command wrapped as: {}", LogSanitizer.sanitize(wrappedCommand));
     byte[] strToBytes = wrappedCommand.getBytes();
     Files.write(tmpFile, strToBytes);
     ssh_command = tmpFile.toAbsolutePath().toString();

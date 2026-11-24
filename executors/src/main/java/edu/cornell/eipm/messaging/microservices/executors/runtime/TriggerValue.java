@@ -24,6 +24,7 @@ SOFTWARE.
 package edu.cornell.eipm.messaging.microservices.executors.runtime;
 
 import java.util.Map;
+import java.util.regex.Pattern;
 
 /**
  * Handle trigger values by evaluating the actual values of the placeholders (if any).
@@ -31,6 +32,12 @@ import java.util.Map;
  * @author Manuele Simi
  */
 public class TriggerValue {
+
+  /**
+   * Characters that allow a substituted value to escape its position in a shell command (quote
+   * breaking, command separators, substitutions, redirections, line breaks).
+   */
+  private static final Pattern SHELL_UNSAFE = Pattern.compile("[`$;&|<>()\"'\\\\\\r\\n\\x00]");
 
   private final String formalValue;
 
@@ -66,5 +73,27 @@ public class TriggerValue {
     final String[] actualValue = new String[] {formalValue};
     values.forEach((k, v) -> actualValue[0] = actualValue[0].replace("${" + k + "}", validate(v)));
     return actualValue[0];
+  }
+
+  /**
+   * Gets the actual value of a trigger that is executed by a shell. In addition to {@link
+   * #getActualValue(Map)}, every value that replaces a placeholder of this trigger is rejected if
+   * it contains shell metacharacters, so that message payloads cannot inject commands.
+   *
+   * @param values list of values for the placeholders (if any)
+   * @return the actual value, safe to pass to a shell
+   * @throws IllegalArgumentException if a substituted value contains shell metacharacters
+   */
+  public String getShellSafeValue(final Map<String, String> values) {
+    for (Map.Entry<String, String> entry : values.entrySet()) {
+      if (entry.getValue() != null
+          && formalValue.contains("${" + entry.getKey() + "}")
+          && SHELL_UNSAFE.matcher(entry.getValue()).find())
+        throw new IllegalArgumentException(
+            "The value of placeholder '"
+                + LogSanitizer.sanitize(entry.getKey())
+                + "' contains shell metacharacters and was rejected");
+    }
+    return getActualValue(values);
   }
 }
